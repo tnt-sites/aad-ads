@@ -91,42 +91,16 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: false
         name: New Blog Post
-  data:
+  branding:
     path: src/data
+    name: Branding
     glob:
-      - "**/*.json"
-    icon: database
-    disable_url: false
+      - branding.json
+    icon: palette
+    disable_url: true
     _enabled_editors:
       - data
     _inputs:
-      logoSource:
-        type: image
-        options:
-          paths:
-            uploads: src/assets/images
-        cascade: true
-      image:
-        type: image
-        options:
-          paths:
-            uploads: src/assets/images
-        cascade: true
-      navData:
-        type: array
-        options:
-          structures: _structures.navData
-        cascade: true
-      buttonSections:
-        type: array
-        options:
-          structures: _structures.buttonSections
-        cascade: true
-      pageButtons:
-        type: array
-        options:
-          structures: _structures.buttonSections
-        cascade: true
       colorBrand:
         type: color
         cascade: true
@@ -202,9 +176,111 @@ collections_config:
         type: url
         cascade: true
         comment: Full stylesheet URL.
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  site_info:
+    path: src/data
+    name: Site Info
+    glob:
+      - siteInfo.json
+    icon: info
+    disable_url: true
+    _enabled_editors:
+      - data
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  fixed_tabs:
+    path: src/data
+    name: Fixed Tabs
+    glob:
+      - fixedTabs.json
+    icon: tab
+    disable_url: true
+    _enabled_editors:
+      - data
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  main_nav:
+    path: src/data
+    name: Main Nav
+    glob:
+      - mainNav.json
+    icon: menu
+    disable_url: true
+    _enabled_editors:
+      - data
+    _inputs:
+      logoSource:
+        type: image
+        options:
+          paths:
+            uploads: src/assets/images
+        cascade: true
+      image:
+        type: image
+        options:
+          paths:
+            uploads: src/assets/images
+        cascade: true
+      navData:
+        type: array
+        options:
+          structures: _structures.navData
+        cascade: true
+      buttonSections:
+        type: array
+        options:
+          structures: _structures.buttonSections
+        cascade: true
+      pageButtons:
+        type: array
+        options:
+          structures: _structures.buttonSections
+        cascade: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  footer:
+    path: src/data
+    name: Footer
+    glob:
+      - footer.json
+    icon: call_to_action
+    disable_url: true
+    _enabled_editors:
+      - data
+    _inputs:
+      logoSource:
+        type: image
+        options:
+          paths:
+            uploads: src/assets/images
+        cascade: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  seo:
+    path: src/data
+    name: SEO
+    glob:
+      - seo.json
+    icon: travel_explore
+    disable_url: true
+    _enabled_editors:
+      - data
+    _inputs:
+      logoSource:
+        type: image
+        options:
+          paths:
+            uploads: src/assets/images
+        cascade: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
   landing_pages:
     path: src/content/landing-pages
     name: Landing Pages
@@ -687,7 +763,12 @@ collection_groups:
       - blog
   - heading: Data
     collections:
-      - data
+      - branding
+      - site_info
+      - fixed_tabs
+      - main_nav
+      - footer
+      - seo
   - heading: Landing Pages
     collections:
       - landing_pages

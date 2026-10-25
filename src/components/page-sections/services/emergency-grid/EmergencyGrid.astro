@@ -104,7 +104,7 @@ const hasModalItems = items.some((item: any) => item.contentSections.length > 0)
         const iconName = item.iconPreset ? `emergency/${item.iconPreset}` : "emergency/toothache";
 
         return (
-          <editable-array-item data-component="page-sections/info-blocks/emergency-grid/emergency-item">
+          <editable-array-item data-component="page-sections/services/emergency-grid/emergency-item">
             {item.contentSections.length > 0 ? (
               // If the item has a modal, render a button that triggers the modal
               <button

@@ -2,7 +2,7 @@
 title: FAQ Section
 spacing: all
 blocks:
-  _component: "page-sections/info-blocks/faq-section"
+  _component: "page-sections/services/faq-section"
   heading: "Frequently Asked Questions"
   items:
     - _component: building-blocks/wrappers/accordion/accordion-item

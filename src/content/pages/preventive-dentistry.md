@@ -211,7 +211,7 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
-  - _component: page-sections/info-blocks/emergency-grid
+  - _component: page-sections/services/emergency-grid
     id: ''
     heading: Most Common Dental Emergencies
     subtext: >-
@@ -223,7 +223,7 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     emergencyItems:
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Toothache
         iconPreset: toothache
         contentSections:
@@ -241,7 +241,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Chipped Tooth
         iconPreset: chipped-tooth
         contentSections:
@@ -259,7 +259,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Cracked Tooth
         iconPreset: cracked-tooth
         contentSections:
@@ -277,7 +277,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Sensitivity to Hot and Cold
         iconPreset: sensitivity-hot-cold
         contentSections:
@@ -295,7 +295,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Loose Tooth
         iconPreset: loose-tooth
         contentSections:
@@ -313,7 +313,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Jaw Pain or Clenching
         iconPreset: jaw-pain-clenching
         contentSections:
@@ -331,7 +331,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Knocked-Out Tooth
         iconPreset: knocked-out-tooth
         contentSections:
@@ -349,7 +349,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Lost Filling or Crown
         iconPreset: lost-filling-crown
         contentSections:
@@ -367,7 +367,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Broken Denture
         iconPreset: broken-denture
         contentSections:
@@ -385,7 +385,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Gum, Lip or Tongue Injury
         iconPreset: gum-lip-tongue-injury
         contentSections:
@@ -403,7 +403,7 @@ pageSections:
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             alignX: start
-      - _component: page-sections/info-blocks/emergency-grid/emergency-item
+      - _component: page-sections/services/emergency-grid/emergency-item
         title: Something Stuck Between Teeth
         iconPreset: stuck-between-teeth
         contentSections:
@@ -424,7 +424,7 @@ pageSections:
     enableModals: true
     backgroundColor: base
     backgroundGradient: ''
-  - _component: page-sections/features/office-tour
+  - _component: page-sections/services/office-tour
     id: ''
     heading: Office Tour Heading
     tourSlides:

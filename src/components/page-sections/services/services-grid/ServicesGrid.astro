@@ -136,7 +136,7 @@ const htmlAttributes = Object.fromEntries(
       <div class="services-grid-items" {...servicesArrayDataAttributes}>
         {normalizedServices.map((service) => (
           <editable-array-item
-            data-component="page-sections/ctas/services-grid/services-grid-item"
+            data-component="page-sections/services/services-grid/services-grid-item"
             class:list={["services-grid-item", service.wide && "is-wide"]}
           >
             <ServicesGridItem {...service} editable={editable} />

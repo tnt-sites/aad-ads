@@ -23,7 +23,7 @@ pageSections:
     colorScheme: default
     backgroundColor: base
     paddingVertical: 4xl
-  - _component: page-sections/info-blocks/faq-section
+  - _component: page-sections/services/faq-section
     heading: Frequently asked questions
     headingLevel: h2
     headingSize: lg

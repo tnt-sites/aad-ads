@@ -80,7 +80,7 @@ const normalizedLinks = Array.isArray(links)
             const linkHref =
               typeof link.href === "string" && link.href.trim().length > 0 ? link.href : "#";
             return (
-              <editable-array-item data-component="page-sections/ctas/services-grid/service-link">
+              <editable-array-item data-component="page-sections/services/services-grid/service-link">
                 <a
                   href={linkHref}
                   data-editable={editable ? "text" : undefined}

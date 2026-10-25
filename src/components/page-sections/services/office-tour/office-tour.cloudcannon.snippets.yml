@@ -34,4 +34,4 @@ officeTour:
         type: object
         optional: true
   _inputs_from_glob:
-    - /src/components/page-sections/features/office-tour/office-tour.cloudcannon.inputs.yml
+    - /src/components/page-sections/services/office-tour/office-tour.cloudcannon.inputs.yml

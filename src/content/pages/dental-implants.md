@@ -151,7 +151,7 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
-  - _component: page-sections/features/office-tour
+  - _component: page-sections/services/office-tour
     id: ''
     heading: office-tour Heading
     tourSlides:

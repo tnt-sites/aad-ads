@@ -1,46 +1,41 @@
-faqSection:
+serviceSplit:
   template: mdx_component
   inline: false
   preview:
     text:
-      - FAQ Section
+      - Service Split
     subtext:
       - key: heading
-    icon: help_outline
+    icon: hero
   definitions:
-    component_name: FaqSection
+    component_name: ServiceSplit
     named_args:
+      - editor_key: anchorName
+        type: string
+        optional: true
+        remove_empty: true
       - editor_key: heading
         type: string
         optional: true
         remove_empty: true
-      - editor_key: headingLevel
-        type: number
-        optional: true
-      - editor_key: headingSize
+      - editor_key: subtext
         type: string
         optional: true
         remove_empty: true
-      - editor_key: singleOpen
-        type: boolean
+      - editor_key: imageSource
+        type: string
         optional: true
-      - editor_key: openFirst
-        type: boolean
+        remove_empty: true
+      - editor_key: imageAlt
+        type: string
         optional: true
-      - editor_key: items
+        remove_empty: true
+      - editor_key: buttonSections
         type: array
-      - editor_key: maxContentWidth
-        type: string
         optional: true
-        remove_empty: true
-      - editor_key: paddingHorizontal
-        type: string
+      - editor_key: reverse
+        type: boolean
         optional: true
-        remove_empty: true
-      - editor_key: paddingVertical
-        type: string
-        optional: true
-        remove_empty: true
       - editor_key: colorScheme
         type: string
         optional: true
@@ -49,5 +44,8 @@ faqSection:
         type: string
         optional: true
         remove_empty: true
+      - editor_key: rounded
+        type: boolean
+        optional: true
   _inputs_from_glob:
-    - /src/components/page-sections/info-blocks/faq-section/faq-section.cloudcannon.inputs.yml
+    - /src/components/page-sections/services/service-split/service-split.cloudcannon.inputs.yml

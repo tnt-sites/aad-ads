@@ -2,7 +2,7 @@ label: Office Tour
 icon: view_carousel
 description: Description for office-tour component.
 value:
-  _component: page-sections/features/office-tour
+  _component: page-sections/services/office-tour
   id: ""
   heading: Office Tour
   tourSlides: []
@@ -16,7 +16,7 @@ value:
     positionVertical: top
     positionHorizontal: center
 _inputs_from_glob:
-  - /src/components/page-sections/features/office-tour/office-tour.cloudcannon.inputs.yml
+  - /src/components/page-sections/services/office-tour/office-tour.cloudcannon.inputs.yml
 _structures:
   carouselSections:
     values:

@@ -2,7 +2,7 @@ label: FAQ Section
 icon: help_outline
 description: Section displaying frequently asked questions in an accordion format.
 value:
-  _component: page-sections/info-blocks/faq-section
+  _component: page-sections/services/faq-section
   id: ""
   heading: Frequently Asked Questions
   headingLevel: h2
@@ -31,7 +31,7 @@ picker_preview:
   text: FAQ Section
   subtext: Accordion of frequently asked questions.
 _inputs_from_glob:
-  - /src/components/page-sections/info-blocks/faq-section/faq-section.cloudcannon.inputs.yml
+  - /src/components/page-sections/services/faq-section/faq-section.cloudcannon.inputs.yml
 _structures:
   faqItems:
     values:
