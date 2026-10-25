@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-np-three-callouts
 title: New Patient Three Callouts Landing Page
+pageTheme: ""
 landingStyle: new-patient-three-callouts
 landingMainNav:
   - _component: navigation/landing/landing-header

@@ -6,15 +6,13 @@ const {
   reviews = [],
   cardBackgroundColor = "#484846",
   textColor = "#ffffff",
-  starColor = "#febb21",
+  starColor = "var(--color-star)",
   backgroundColor = "none",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const styleVars = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   cardBackgroundColor ? `--np-review-card-bg: ${cardBackgroundColor}` : "",
   textColor ? `--np-review-card-text: ${textColor}` : "",
   starColor ? `--np-review-card-stars: ${starColor}` : "",
@@ -32,7 +30,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="none"
   paddingHorizontal="none"
   colorScheme="default"
-  backgroundColor={backgroundColorHex ? "none" : backgroundColor}
+  backgroundColor={backgroundColor}
   style={styleVars || undefined}
   {...htmlAttributes}
 >
@@ -123,7 +121,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .np-review-cards .stars {
-    color: var(--np-review-card-stars, #febb21);
+    color: var(--np-review-card-stars, var(--color-star));
     font-size: 28px;
     letter-spacing: 0.3em;
     line-height: 1;

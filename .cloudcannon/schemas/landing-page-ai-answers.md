@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-ai-answers
 title: New AI Answers Landing Page
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

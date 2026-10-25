@@ -21,10 +21,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: text
   comment: Section heading (h2) for the review quote column (e.g. "Patients Love Us").
@@ -94,8 +90,11 @@ afterImage:
               type: text
 
 starColor:
-  type: color
-  comment: Color for the star rating icons (default "#fcd800").
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+  comment: Color for the star rating icons. Leave blank for the default star color.
 
 accentColor:
   type: select
@@ -164,7 +163,3 @@ handleArrowColor:
         name: Black
       - id: "var(--color-text-inverse)"
         name: White
-
-fontHeadings:
-  type: text
-  comment: Override heading font family. Leave blank to use the site default.

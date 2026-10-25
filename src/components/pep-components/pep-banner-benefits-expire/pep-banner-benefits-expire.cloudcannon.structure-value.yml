@@ -5,7 +5,6 @@ value:
   _component: pep-components/pep-banner-benefits-expire
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   borderColor: "var(--color-accent)"
   headingColor: "var(--color-text-inverse)"
   textColor: "var(--color-text)"

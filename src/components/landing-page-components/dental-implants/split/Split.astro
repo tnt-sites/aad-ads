@@ -15,25 +15,18 @@ const {
   imageNoShadow = false,
   headingColor = "",
   accentColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   headingColor ? `--di-heading-color: ${headingColor}` : "",
   accentColor ? `--di-accent-color: ${accentColor}` : "",
-  fontHeadings ? `--di-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--di-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -44,7 +37,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -112,7 +105,7 @@ const htmlAttributes = Object.fromEntries(
 
   .di-split h2 {
     color: var(--di-heading-color, var(--color-heading));
-    font-family: var(--di-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 2.125rem;
     font-weight: 400;
     letter-spacing: 0.03em;
@@ -121,7 +114,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .di-split p {
-    font-family: var(--di-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.65;
     margin: 0 0 0.875rem;

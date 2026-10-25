@@ -5,14 +5,10 @@ value:
   _component: pep-components/pep-form-nctm
   id: ""
   backgroundColor: none
-  backgroundColorHex: ""
   contentBackgroundColor: ""
-  contentBackgroundColorHex: ""
   callBackgroundColor: ""
-  callBackgroundColorHex: ""
   callTextColor: ""
   formBackgroundColor: ""
-  formBackgroundColorHex: ""
   linkColor: ""
   image:
     source: https://placehold.co/485x400

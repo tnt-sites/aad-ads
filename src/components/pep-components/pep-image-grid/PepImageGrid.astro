@@ -8,31 +8,23 @@ const {
   items = [],
   paddingVertical = "xl",
   backgroundColor = "base",
-  backgroundColorHex = "",
   cardBackgroundColor = "",
-  cardBackgroundColorHex = "",
   captionBackgroundColor = "",
-  captionBackgroundColorHex = "",
   captionTextColor = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const resolvedCardBackground =
-  cardBackgroundColorHex || cardBackgroundColor || "var(--color-bg-base, #fff)";
-const resolvedCaptionBackground =
-  captionBackgroundColorHex || captionBackgroundColor || "var(--color-bg-base, #fff)";
+const resolvedCardBackground = cardBackgroundColor || "var(--color-bg-base)";
+const resolvedCaptionBackground = captionBackgroundColor || "var(--color-bg-base)";
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   `--pig-card-bg: ${resolvedCardBackground}`,
   `--pig-caption-bg: ${resolvedCaptionBackground}`,
   captionTextColor ? `--pig-caption-text: ${captionTextColor}` : "",
 ]
   .filter(Boolean)
   .join("; ");
-
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
@@ -44,7 +36,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical={paddingVertical}
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -156,7 +148,7 @@ const htmlAttributes = Object.fromEntries(
 
   .pep-image-grid__item figcaption {
     background-color: var(--pig-caption-bg);
-    color: var(--pig-caption-text, var(--color-text, #000));
+    color: var(--pig-caption-text, var(--color-text));
     font-size: clamp(0.9rem, 1.6vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.12em;

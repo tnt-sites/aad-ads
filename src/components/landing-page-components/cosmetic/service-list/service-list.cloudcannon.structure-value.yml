@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/cosmetic/service-list
   id: ""
   backgroundColor: accent
-  backgroundColorHex: ""
   services:
     - label: Veneers
       url: "#"

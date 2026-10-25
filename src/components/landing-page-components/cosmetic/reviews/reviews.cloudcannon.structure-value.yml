@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/cosmetic/reviews
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   heading: "Patients Love Us"
   reviewText: "Dr. Smith is so nice and does a great job. His assistant makes my visit enjoyable!"
   author: "Regina W."
@@ -34,6 +33,5 @@ value:
   headingColor: ""
   handleColor: ""
   handleArrowColor: ""
-  fontHeadings: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/cosmetic/reviews/reviews.cloudcannon.inputs.yml

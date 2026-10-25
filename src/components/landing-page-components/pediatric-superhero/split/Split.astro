@@ -23,20 +23,17 @@ const {
   headingColor = "",
   accentColor = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   headingColor ? `--ps-split-heading: ${headingColor}` : "",
   accentColor ? `--ps-split-accent: ${accentColor}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -47,7 +44,7 @@ const htmlAttributes = Object.fromEntries(
   paddingHorizontal="md"
   paddingVertical="4xl"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -153,22 +150,18 @@ const htmlAttributes = Object.fromEntries(
 
   .ps-split h2 {
     color: var(--ps-split-heading, #000);
-    font:
-      700 3.5rem/1 "Amatic SC",
-      sans-serif;
+    font: 700 3.5rem/1 var(--font-headings);
     margin: 0 0 0.625rem;
     text-transform: uppercase;
   }
 
   .ps-split h2 :global(span) {
-    color: var(--ps-split-accent, #64ab2e);
+    color: var(--ps-split-accent, var(--color-brand-secondary));
   }
 
   .ps-split p {
     color: #252627;
-    font:
-      400 1.125rem/1.4 Neuton,
-      serif;
+    font: 400 1.125rem/1.4 var(--font-body);
     margin: 0.625rem 0;
   }
 

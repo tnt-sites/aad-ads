@@ -55,7 +55,6 @@ value:
   mapEmbedUrl: ""
   questionsLine: Have Questions? Get Answers
   backgroundColor: brand-secondary
-  backgroundColorHex: ""
   officeHoursAlignment: right
   topWaveImage:
     source: ""

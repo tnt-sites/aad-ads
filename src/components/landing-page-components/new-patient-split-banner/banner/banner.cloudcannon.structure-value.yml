@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/new-patient-split-banner/banner
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   subheading: "City's"
   heading: "Top-Rated<br>Dental Expert"
   text: ""
@@ -18,8 +17,6 @@ value:
     alt: Doctor photo
   figcaption: "Dr. LastName"
   buttonSections: []
-  fontHeadings: ""
-  fontBody: ""
   borderColor: "var(--color-brand)"
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-split-banner/banner/banner.cloudcannon.inputs.yml

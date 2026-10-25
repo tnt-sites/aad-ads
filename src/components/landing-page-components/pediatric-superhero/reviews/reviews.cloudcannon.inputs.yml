@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 reviewLogo:
   type: object
   comment: Optional review platform logo shown in the badge (e.g. Google).
@@ -57,8 +53,11 @@ reviewerName:
   comment: Name shown after the testimonial text.
 
 badgeBackgroundColor:
-  type: text
+  type: select
   comment: Background color for the badge column (CSS color value).
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
 
 headingColor:
   type: select

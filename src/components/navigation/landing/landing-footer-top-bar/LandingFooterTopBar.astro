@@ -15,7 +15,6 @@ const {
   legalBlurb = "",
   backgroundImage = { source: "", alt: "" },
   backgroundColor = "",
-  backgroundColorHex = "",
   accentColor = "",
   officeHoursAlignment = "right",
   linkColor = "",
@@ -158,7 +157,7 @@ const resolvedOfficeHoursAlignment = officeHoursAlignment === "left" ? "left" : 
 const bgImage = await backgroundImageCss(backgroundImage);
 const bgStyle = [
   bgImage.style,
-  (backgroundColorHex || getColorValue(backgroundColor)) ? `--lftb-bg-color: ${backgroundColorHex || getColorValue(backgroundColor)}` : "",
+  getColorValue(backgroundColor) ? `--lftb-bg-color: ${getColorValue(backgroundColor)}` : "",
   accentColor ? `--lftb-accent-color: ${accentColor}` : "",
   getColorValue(linkColor) ? `--footer-link-color: ${getColorValue(linkColor)}` : "",
   getColorValue(linkHoverColor)
@@ -431,7 +430,7 @@ const blurb = typeof legalBlurb === "string" ? legalBlurb.trim() : "";
       }
 
       .copy a {
-        color: var(--footer-link-color, var(--lftb-accent-color, #4f95d0));
+        color: var(--footer-link-color, var(--lftb-accent-color, var(--color-brand)));
         text-decoration: none;
 
         &:hover,

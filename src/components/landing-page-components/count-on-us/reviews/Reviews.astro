@@ -10,26 +10,19 @@ const {
   starColor = "",
   bracketColor = "",
   googlePanelColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   starColor ? `--cou-star-color: ${starColor}` : "",
   bracketColor ? `--cou-bracket-color: ${bracketColor}` : "",
   googlePanelColor ? `--cou-google-panel-color: ${googlePanelColor}` : "",
-  fontHeadings ? `--cou-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--cou-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -40,7 +33,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   backgroundImage={backgroundImage}
   style={inlineStyle || undefined}
   {...htmlAttributes}
@@ -147,7 +140,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cou-reviews .stars {
-    color: var(--cou-star-color, var(--color-star, #febb21));
+    color: var(--cou-star-color, var(--color-star));
     font-size: 1.75rem;
     letter-spacing: 0.2em;
   }
@@ -159,7 +152,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cou-reviews .google-label {
     color: var(--color-text);
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 0.9375rem;
     letter-spacing: 0.1em;
     line-height: 1.25;
@@ -180,7 +173,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cou-reviews .quote {
     color: var(--color-text);
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: normal;
@@ -191,7 +184,7 @@ const htmlAttributes = Object.fromEntries(
   .cou-reviews .attribution {
     color: var(--color-text-muted);
     float: right;
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.15em;

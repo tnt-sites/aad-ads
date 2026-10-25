@@ -18,9 +18,6 @@ value:
     alt: ""
   figcaption: ""
   backgroundColor: none
-  backgroundColorHex: ""
   borderColor: "var(--color-brand)"
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-emergency-combo/banner/banner.cloudcannon.inputs.yml

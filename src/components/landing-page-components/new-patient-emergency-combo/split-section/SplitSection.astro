@@ -11,13 +11,11 @@ const {
   headingMain = "",
   content = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   editable = true,
   ...rest
 } = Astro.props;
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -27,8 +25,7 @@ const htmlAttributes = Object.fromEntries(
   id="dentist"
   class:list={["split-section", "even", className]}
   colorScheme="default"
-  backgroundColor={resolvedBg}
-  style={backgroundColorHex ? `background-color: ${backgroundColorHex}` : undefined}
+  backgroundColor={backgroundColor}
   {...htmlAttributes}
 >
   <div class="flex-ed">

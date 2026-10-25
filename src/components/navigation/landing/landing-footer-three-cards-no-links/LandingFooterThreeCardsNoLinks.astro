@@ -32,7 +32,6 @@ const {
   backgroundGradient = "",
   legalBlurb = "",
   backgroundColor = "",
-  backgroundColorHex = "",
   linkColor = "",
   linkHoverColor = "",
   addressLinkColor = "",
@@ -95,7 +94,7 @@ const getColorValue = (value: any) => {
   return normalized && normalized !== "none" ? normalized : "";
 };
 
-const bgColor = backgroundColorHex || getColorValue(backgroundColor);
+const bgColor = getColorValue(backgroundColor);
 const footerBackgroundStyle = [
   bgImage.style,
   backgroundGradientValue
@@ -315,10 +314,10 @@ const normalizedOffices =
       --bg-gradient:
         var(
           --lp-footer-bg-gradient,
-          linear-gradient(180deg, color-mix(in srgb, #2c363c 88%, black) 0%, #2c363c 100%)
+          linear-gradient(180deg, color-mix(in srgb, var(--color-bg-dark) 88%, black) 0%, var(--color-bg-dark) 100%)
         );
 
-      background-color: var(--lp-footer-bg-color, #2c363c);
+      background-color: var(--lp-footer-bg-color, var(--color-bg-dark));
       color: #fff;
       padding: 20px;
       padding-top: 1.4rem;
@@ -351,14 +350,14 @@ const normalizedOffices =
         background: var(--lp-footer-card-bg, #fff);
         border-radius: 15px;
         box-shadow: 1px 3px 7px 0 rgba(0, 0, 0, 0.35);
-        color: #1f2633;
+        color: var(--color-text);
         flex: 0 1 340px;
         padding: 1.25rem;
         text-align: center;
       }
 
       .lp-footer-card-title {
-        color: #101926;
+        color: var(--color-text-strong);
         font-family: var(--font-body, sans-serif);
         font-size: 1.9rem;
         font-weight: 300;
@@ -416,7 +415,7 @@ const normalizedOffices =
       }
 
       .pho-label {
-        color: var(--color-text, #000);
+        color: var(--color-text);
         display: block;
         font-size: 1.125rem;
         letter-spacing: 0.0625rem;
@@ -424,7 +423,7 @@ const normalizedOffices =
       }
 
       .cta {
-        color: var(--color-text, #000);
+        color: var(--color-text);
         display: block;
         font-size: 1.125rem;
         letter-spacing: 0.0625rem;

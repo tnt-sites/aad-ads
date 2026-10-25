@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/new-patient-split-banner/insurance
   id: ""
   backgroundColor: surface
-  backgroundColorHex: ""
   blocks:
     - heading: Dental Insurance Welcome
       text: >-
@@ -15,7 +14,6 @@ value:
         If you do not have dental insurance, give us a call. We are proud to offer our in-house Dental Savings Plan.
   headingColor: "var(--color-text)"
   dividerColor: "var(--color-brand)"
-  fontHeadings: ""
   headingFontFamily: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-split-banner/insurance/insurance.cloudcannon.inputs.yml

@@ -11,24 +11,15 @@ const {
   figcaption = "",
   buttonSections = [],
   borderColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "surface",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
-  borderColor ? `--cou-border-color: ${borderColor}` : "",
-  fontHeadings ? `--cou-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--cou-font-body: ${fontBody}` : "",
-]
+const inlineStyle = [borderColor ? `--cou-border-color: ${borderColor}` : ""]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -38,7 +29,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["cou-banner", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -111,7 +102,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cou-banner h1 {
     color: var(--color-text);
-    font-family: var(--cou-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 5.625rem;
     font-weight: 300;
     letter-spacing: normal;
@@ -121,7 +112,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cou-banner h1 small {
     display: block;
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.375rem;
     font-weight: 400;
     letter-spacing: 0.2em;

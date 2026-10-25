@@ -1,0 +1,8 @@
+{
+  "name": "Pediatric Superhero",
+  "headingsFont": { "fontFamily": "\"Amatic SC\", sans-serif" },
+  "bodyFont": { "fontFamily": "Neuton, serif" },
+  "fontLinks": [
+    "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Neuton:wght@400;700&display=swap"
+  ]
+}

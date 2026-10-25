@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/dental-implants/service-callouts
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   heading: "Your Implant Options"
   headingFontFamily: ""
   items:
@@ -35,7 +34,5 @@ value:
       link: /all-on-4/
   headingColor: "var(--color-heading)"
   accentColor: "var(--color-brand)"
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/service-callouts/service-callouts.cloudcannon.inputs.yml

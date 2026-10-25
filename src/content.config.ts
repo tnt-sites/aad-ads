@@ -135,6 +135,7 @@ const landingPageSchema = z.object({
   head_scripts: z.array(z.string()).optional(),
   footer_scripts: z.array(z.string()).optional(),
   extraFonts: z.array(z.string()).optional(),
+  pageTheme: z.string().optional(),
   parentLandingPage: z.string().optional(),
 });
 
@@ -154,6 +155,7 @@ const pepPagesCollection = defineCollection({
     landingFooter: landingComponentConfigSchema.optional(),
     pepSections: z.array(z.any()).optional(),
     extraFonts: z.array(z.string()).optional(),
+    pageTheme: z.string().optional(),
     head_scripts: z.array(z.string()).optional(),
     footer_scripts: z.array(z.string()).optional(),
     parentLandingPage: z.string().optional(),

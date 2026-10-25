@@ -1,6 +1,6 @@
 backgroundColor:
   type: select
-  comment: Background color of the banner section. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color of the banner section.
   options:
     values:
       - id: none
@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
 
 backgroundImage:
   type: file
@@ -150,8 +146,11 @@ heading:
   comment: Main H1 heading. Supports <br> for manual line breaks.
 
 headingFontFamily:
-  type: text
-  comment: Override the font family for this heading. Leave blank to use the site default. Use any font family loaded by the page, including extra fonts.
+  type: select
+  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
+  options:
+    allow_empty: true
+    values: _select_data.fontRoles
 
 contentStyle:
   type: select
@@ -218,7 +217,7 @@ checkColor:
 
 checkmarkShadowColor:
   type: select
-  comment: Shadow color behind checklist checkmarks. Use the hex override below for any custom shadow color.
+  comment: Shadow color behind checklist checkmarks.
   options:
     values:
       - id: ""
@@ -233,7 +232,3 @@ checkmarkShadowColor:
         name: Dark
       - id: "var(--color-text-inverse)"
         name: White
-
-checkmarkShadowColorHex:
-  type: color
-  comment: Optional custom hex shadow color for checklist checkmarks. Overrides the shadow dropdown when set.

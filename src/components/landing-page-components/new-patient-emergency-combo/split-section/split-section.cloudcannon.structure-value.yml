@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/new-patient-emergency-combo/split-section
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   desktopImage:
     source: ""
     alt: ""

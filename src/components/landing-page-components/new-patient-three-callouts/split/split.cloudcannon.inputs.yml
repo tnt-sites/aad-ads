@@ -17,17 +17,16 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: text
   comment: Section heading (h2). Supports <br> for manual line breaks.
 
 headingFontFamily:
-  type: text
-  comment: Override the font family for this heading. Leave blank to use the site default. Use any font family loaded by the page, including extra fonts.
+  type: select
+  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
+  options:
+    allow_empty: true
+    values: _select_data.fontRoles
 
 listItems:
   type: array
@@ -107,11 +106,3 @@ headingColor:
         name: Body Text
       - id: "var(--color-text-inverse)"
         name: White
-
-fontHeadings:
-  type: text
-  comment: Override the heading font family. Leave blank for site default.
-
-fontBody:
-  type: text
-  comment: Override the list font family. Leave blank for site default.

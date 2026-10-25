@@ -26,7 +26,6 @@ value:
     source: ""
     alt: ""
   backgroundColor: ""
-  backgroundColorHex: ""
   accentColor: "#4f95d0"
 preview:
   text:

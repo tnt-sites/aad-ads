@@ -18,10 +18,6 @@ backgroundColor:
       - id: "var(--color-bg-black)"
         name: Black
 
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the outer section background. Overrides the dropdown above.
-
 contentBackgroundColor:
   type: select
   comment: Background color of the inner content card (behind the form).
@@ -44,10 +40,6 @@ contentBackgroundColor:
       - id: "var(--color-bg-black)"
         name: Black
 
-contentBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the inner content card. Overrides the dropdown above.
-
 callBackgroundColor:
   type: select
   comment: Background color of the call-to-action row (photo + call text).
@@ -69,10 +61,6 @@ callBackgroundColor:
         name: Dark
       - id: "var(--color-bg-black)"
         name: Black
-
-callBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the call row background. Overrides the dropdown above.
 
 callTextColor:
   type: select

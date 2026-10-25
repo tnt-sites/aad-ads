@@ -10,23 +10,14 @@ const {
   pageButtons = [],
   offices = [],
   backgroundColor = "",
-  backgroundColorHex = "",
   iconBackgroundColor = "",
-  iconBackgroundColorHex = "",
   linkColor = "",
-  linkColorHex = "",
   addressLinkColor = "",
-  addressLinkColorHex = "",
   addressLinkHoverColor = "",
-  addressLinkHoverColorHex = "",
   phoneLinkColor = "",
-  phoneLinkColorHex = "",
   phoneLinkHoverColor = "",
-  phoneLinkHoverColorHex = "",
   mobileCallBackgroundColor = "",
-  mobileCallBackgroundColorHex = "",
   mobileRequestBackgroundColor = "",
-  mobileRequestBackgroundColorHex = "",
   mobileCallTextColor = "",
   mobileCallSmallTextColor = "",
   mobileRequestTextColor = "",
@@ -43,23 +34,14 @@ const {
   pageButtons?: any[];
   offices?: any[];
   backgroundColor?: string;
-  backgroundColorHex?: string;
   iconBackgroundColor?: string;
-  iconBackgroundColorHex?: string;
   linkColor?: string;
-  linkColorHex?: string;
   addressLinkColor?: string;
-  addressLinkColorHex?: string;
   addressLinkHoverColor?: string;
-  addressLinkHoverColorHex?: string;
   phoneLinkColor?: string;
-  phoneLinkColorHex?: string;
   phoneLinkHoverColor?: string;
-  phoneLinkHoverColorHex?: string;
   mobileCallBackgroundColor?: string;
-  mobileCallBackgroundColorHex?: string;
   mobileRequestBackgroundColor?: string;
-  mobileRequestBackgroundColorHex?: string;
   mobileCallTextColor?: string;
   mobileCallSmallTextColor?: string;
   mobileRequestTextColor?: string;
@@ -103,19 +85,15 @@ const getColorValue = (value: any) => {
   return normalized && normalized !== "none" ? normalized : "";
 };
 
-const resolvedBg = backgroundColorHex || getColorValue(backgroundColor) || "";
-const resolvedIconBg = iconBackgroundColorHex || getColorValue(iconBackgroundColor) || "";
-const resolvedLinkColor = linkColorHex || getColorValue(linkColor) || "";
-const resolvedAddressLinkColor = addressLinkColorHex || getColorValue(addressLinkColor) || "";
-const resolvedAddressLinkHoverColor =
-  addressLinkHoverColorHex || getColorValue(addressLinkHoverColor) || "";
-const resolvedPhoneLinkColor = phoneLinkColorHex || getColorValue(phoneLinkColor) || "";
-const resolvedPhoneLinkHoverColor =
-  phoneLinkHoverColorHex || getColorValue(phoneLinkHoverColor) || "";
-const resolvedMobileCallBg =
-  mobileCallBackgroundColorHex || getColorValue(mobileCallBackgroundColor) || "";
-const resolvedMobileRequestBg =
-  mobileRequestBackgroundColorHex || getColorValue(mobileRequestBackgroundColor) || "";
+const resolvedBg = getColorValue(backgroundColor) || "";
+const resolvedIconBg = getColorValue(iconBackgroundColor) || "";
+const resolvedLinkColor = getColorValue(linkColor) || "";
+const resolvedAddressLinkColor = getColorValue(addressLinkColor) || "";
+const resolvedAddressLinkHoverColor = getColorValue(addressLinkHoverColor) || "";
+const resolvedPhoneLinkColor = getColorValue(phoneLinkColor) || "";
+const resolvedPhoneLinkHoverColor = getColorValue(phoneLinkHoverColor) || "";
+const resolvedMobileCallBg = getColorValue(mobileCallBackgroundColor) || "";
+const resolvedMobileRequestBg = getColorValue(mobileRequestBackgroundColor) || "";
 const resolvedMobileCallTextColor = getColorValue(mobileCallTextColor) || "";
 const resolvedMobileCallSmallTextColor = getColorValue(mobileCallSmallTextColor) || "";
 const resolvedMobileRequestTextColor = getColorValue(mobileRequestTextColor) || "";
@@ -298,7 +276,7 @@ const mobileRequestSecondLine = mobileRequestLabelParts.slice(1).join(" ");
 
       .lhci-icon-badge {
         align-items: center;
-        background-color: var(--lhci-icon-bg, var(--color-brand, #95982d));
+        background-color: var(--lhci-icon-bg, var(--color-brand));
         border-radius: 50%;
         color: #fff;
         display: inline-flex;
@@ -339,7 +317,7 @@ const mobileRequestSecondLine = mobileRequestLabelParts.slice(1).join(" ");
             align-items: center;
             background-color: #fff;
             border-radius: 50%;
-            color: var(--lhci-icon-bg, var(--color-brand, #95982d));
+            color: var(--lhci-icon-bg, var(--color-brand));
             display: inline-flex;
             flex-shrink: 0;
             height: 35px;
@@ -384,7 +362,7 @@ const mobileRequestSecondLine = mobileRequestLabelParts.slice(1).join(" ");
         .lhci-mobile-call {
           background-color: var(
             --lhci-mobile-call-bg,
-            var(--lhci-icon-bg, var(--color-brand, #95982d))
+            var(--lhci-icon-bg, var(--color-brand))
           );
           color: var(--lhci-mobile-call-text-color, #fff);
 
@@ -396,7 +374,7 @@ const mobileRequestSecondLine = mobileRequestLabelParts.slice(1).join(" ");
         .lhci-mobile-request {
           background-color: var(
             --lhci-mobile-request-bg,
-            var(--lhci-icon-bg, var(--color-brand, #95982d))
+            var(--lhci-icon-bg, var(--color-brand))
           );
           color: var(--lhci-mobile-request-text-color, #fff);
           text-transform: uppercase;

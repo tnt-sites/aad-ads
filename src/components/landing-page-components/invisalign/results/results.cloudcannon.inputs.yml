@@ -25,7 +25,7 @@ images:
 
 backgroundColor:
   type: select
-  comment: Background color of the section. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color of the section.
   options:
     values:
       - id: ""
@@ -41,10 +41,9 @@ backgroundColor:
       - id: "var(--color-text)"
         name: Text
 
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 textColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Heading text color.

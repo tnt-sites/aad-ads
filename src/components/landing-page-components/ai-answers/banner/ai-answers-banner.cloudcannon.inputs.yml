@@ -1,6 +1,6 @@
 backgroundColor:
   type: select
-  comment: Background color of the banner section. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color of the banner section.
   options:
     values:
       - id: ""
@@ -21,10 +21,6 @@ backgroundColor:
         name: Dark
       - id: "var(--color-bg-black)"
         name: Black
-
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
 
 heading:
   type: text
@@ -84,7 +80,7 @@ borderColor:
 
 titleBackground:
   type: select
-  comment: Background color of the title section. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color of the title section.
   options:
     values:
       - id: ""
@@ -105,10 +101,6 @@ titleBackground:
         name: Dark
       - id: "var(--color-bg-black)"
         name: Black
-
-titleBackgroundHex:
-  type: color
-  comment: Optional custom hex color that overrides the title background color above. Leave blank to use the theme color.
 
 titleColor:
   type: select

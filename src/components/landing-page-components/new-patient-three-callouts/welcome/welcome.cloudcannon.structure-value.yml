@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/new-patient-three-callouts/welcome
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   paragraphs:
     - emphasis: "We understand."
       body: >-
@@ -19,6 +18,5 @@ value:
     - emphasis: "We want you to love"
       body: visiting our dental practice.
   accentColor: "var(--color-brand)"
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-three-callouts/welcome/welcome.cloudcannon.inputs.yml

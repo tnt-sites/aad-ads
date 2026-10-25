@@ -11,14 +11,13 @@ const {
   figcaption = "",
   textPanelBackgroundImage = { source: "", alt: "" },
   sectionBackground = "var(--color-brand)",
-  sectionBackgroundHex = "",
-  borderBottomColor = "#4f95d0",
+  borderBottomColor = "var(--color-brand)",
   class: className,
   ...rest
 } = Astro.props;
 
 const styleVars = [
-  `--invis-banner-bg: ${sectionBackgroundHex || sectionBackground}`,
+  `--invis-banner-bg: ${sectionBackground}`,
   `--invis-banner-border: ${borderBottomColor}`,
   textPanelBackgroundImage?.source
     ? `--invis-banner-article-bg: url('${textPanelBackgroundImage.source}')`
@@ -85,8 +84,8 @@ const htmlAttributes = Object.fromEntries(
 
 <style>
   .invis-banner {
-    background: var(--invis-banner-bg, #476682);
-    border-bottom: 11px solid var(--invis-banner-border, #4f95d0);
+    background: var(--invis-banner-bg, var(--color-brand-secondary));
+    border-bottom: 11px solid var(--invis-banner-border, var(--color-brand));
     overflow: hidden;
   }
 
@@ -114,7 +113,7 @@ const htmlAttributes = Object.fromEntries(
 
   .invis-banner h1 {
     color: #fff;
-    font-family: the-seasons, var(--font-headings);
+    font-family: var(--font-headings);
     font-size: 103px;
     font-weight: 400;
     letter-spacing: 0.05em;
@@ -125,7 +124,7 @@ const htmlAttributes = Object.fromEntries(
   .invis-banner h1 small {
     color: #fff;
     display: block;
-    font-family: josefin-sans, var(--font-body);
+    font-family: var(--font-body);
     font-size: 28px;
     letter-spacing: 2.8px;
     text-transform: uppercase;

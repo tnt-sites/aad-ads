@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: textarea
   comment: Section heading (h2). Supports <br> and <span> to apply accent color (e.g. "Nobody Cares <br><span>More</span>").
@@ -68,17 +64,15 @@ reverse:
   comment: When checked, the image appears on the left and text on the right.
 
 accentColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Override accent color for heading spans. Leave blank to use the site default.
 
 headingColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Override heading text color. Leave blank to use the site default.
-
-fontHeadings:
-  type: text
-  comment: Override heading font family. Leave blank to use the site default.
-
-fontBody:
-  type: text
-  comment: Override body font family. Leave blank to use the site default.

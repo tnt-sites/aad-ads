@@ -53,8 +53,6 @@ landingPageSections:
     buttonSections: []
     accentColor: var(--color-brand)
     headingColor: var(--color-text)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/new-patient-three-callouts/count
     id: ""
     backgroundColor: ""
@@ -87,8 +85,6 @@ landingPageSections:
     accentCardColor: ""
     accentCardTextColor: ""
     bulletColor: ""
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/new-patient-three-callouts/welcome
     id: ""
     backgroundColor: base
@@ -108,7 +104,6 @@ landingPageSections:
       - emphasis: We want you to love
         body: visiting our dental practice.
     accentColor: var(--color-brand)
-    fontBody: ""
   - _component: landing-page-components/new-patient-three-callouts/split
     id: insurance
     backgroundColor: base
@@ -126,8 +121,6 @@ landingPageSections:
     buttonSections: []
     accentColor: var(--color-brand)
     headingColor: var(--color-brand)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/new-patient-three-callouts/split
     id: no-insurance
     backgroundColor: "var(--color-bg-surface)"
@@ -163,8 +156,6 @@ landingPageSections:
             uppercase: false
     accentColor: var(--color-brand)
     headingColor: var(--color-brand)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/new-patient-three-callouts/split
     id: about
     backgroundColor: base
@@ -182,6 +173,4 @@ landingPageSections:
     buttonSections: []
     accentColor: var(--color-brand)
     headingColor: var(--color-brand)
-    fontHeadings: ""
-    fontBody: ""
 ---

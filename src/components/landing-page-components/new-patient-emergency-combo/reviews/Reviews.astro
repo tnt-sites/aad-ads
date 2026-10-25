@@ -22,15 +22,13 @@ const {
   authorAlignX = "left",
   textColor = "#fff",
   mobileTextColor = "#000",
-  starColor = "#febb21",
+  starColor = "var(--color-star)",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   editable = true,
   ...rest
 } = Astro.props;
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -42,9 +40,8 @@ const htmlAttributes = Object.fromEntries(
   paddingHorizontal="lg"
   paddingVertical="4xl"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   backgroundImage={backgroundImage}
-  style={backgroundColorHex ? `background-color: ${backgroundColorHex}` : undefined}
   {...htmlAttributes}
 >
   <div class="content">

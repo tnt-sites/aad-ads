@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 cityState:
   type: text
   comment: City/state name shown in lighter text above the main heading (e.g. "Vermont's").
@@ -105,11 +101,3 @@ headingColor:
         name: Brand Secondary
       - id: "var(--color-brand-muted)"
         name: Brand Tertiary
-
-fontHeadings:
-  type: text
-  comment: Override the heading font family. Leave blank for site default.
-
-fontBody:
-  type: text
-  comment: Override the offer box font family. Leave blank for site default.

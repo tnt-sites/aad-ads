@@ -11,7 +11,6 @@ const {
   image = { source: "", alt: "" },
   stampImage = { source: "", alt: "" },
   backgroundColor = "base",
-  backgroundColorHex = "",
   borderColor = "",
   headingColor = "",
   textColor = "",
@@ -20,15 +19,12 @@ const {
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   borderColor ? `--pep-benefits-border-color: ${borderColor}` : "",
   headingColor ? `--pep-benefits-heading-color: ${headingColor}` : "",
   textColor ? `--pep-benefits-text-color: ${textColor}` : "",
 ]
   .filter(Boolean)
   .join("; ");
-
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
@@ -39,7 +35,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["pep-banner-benefits-expire", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -113,7 +109,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .pep-banner-benefits-expire__article :global(.pep-banner-benefits-expire__heading) {
-    color: var(--pep-benefits-heading-color, var(--color-text-inverse, #fff));
+    color: var(--pep-benefits-heading-color, var(--color-text-inverse));
     font-size: clamp(4rem, 7vw, 5.75rem);
     font-weight: 700;
     line-height: 1;
@@ -191,7 +187,7 @@ const htmlAttributes = Object.fromEntries(
     }
 
     .pep-banner-benefits-expire__article :global(.pep-banner-benefits-expire__heading) {
-      color: var(--pep-benefits-heading-color, var(--color-text-inverse, #fff));
+      color: var(--pep-benefits-heading-color, var(--color-text-inverse));
       font-size: clamp(3rem, 10vw, 4rem);
       margin-bottom: 1.25rem;
       max-width: none;

@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-invisalign
 title: Invisalign Test
+pageTheme: invisalign
 landingMainNav:
   - _component: navigation/landing/landing-header-four-col
     logoSource: /images/logo.svg
@@ -110,12 +111,11 @@ landingFooter:
       source: ''
       alt: ''
     backgroundColor: brand-secondary
-    accentColor: '#4f95d0'
+    accentColor: var(--color-brand)
 landingPageSections:
   - _component: landing-page-components/shared/top-bar
     id: ''
     backgroundColor: brand
-    backgroundColorHex: ''
     textColor: var(--color-text-inverse)
     items:
       - New Patients Welcome!
@@ -138,8 +138,7 @@ landingPageSections:
       source: ''
       alt: ''
     sectionBackground: '#000'
-    sectionBackgroundHex: ''
-    borderBottomColor: '#4f95d0'
+    borderBottomColor: var(--color-brand)
   - _component: landing-page-components/invisalign/form-review
     id: ''
     formHeading: Request a FREE Consultation
@@ -155,9 +154,7 @@ landingPageSections:
     reviewerName: Jonathan B.
     sectionSpacingTop: 100px
     formBackgroundColor: var(--color-brand)
-    formBackgroundColorHex: ''
     reviewBackgroundColor: '#fff'
-    reviewBackgroundColorHex: ''
   - _component: landing-page-components/invisalign/results
     id: ''
     heading: Real Results. Real Smiles.
@@ -166,8 +163,7 @@ landingPageSections:
         alt: Result 1
       - source: https://placehold.co/460x330
         alt: Result 2
-    backgroundColor: ''
-    backgroundColorHex: '#4f95d0'
+    backgroundColor: var(--color-brand)
     textColor: '#ffffff'
   - _component: landing-page-components/invisalign/benefits
     id: ''
@@ -188,7 +184,6 @@ landingPageSections:
       source: https://placehold.co/500x600
       alt: Woman with Invisalign and braces
     backgroundColor: var(--color-brand)
-    backgroundColorHex: ''
     backgroundImage:
       source: ''
       alt: ''

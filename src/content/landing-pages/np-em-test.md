@@ -10,9 +10,7 @@ landingMainNav:
     mobileRequestLabel: Request an Appointment
     mobileRequestHref: ''
     mobileCallBackgroundColor: ''
-    mobileCallBackgroundColorHex: ''
     mobileRequestBackgroundColor: ''
-    mobileRequestBackgroundColorHex: ''
     mobileCallTextColor: ''
     mobileCallSmallTextColor: ''
     mobileRequestTextColor: ''
@@ -45,7 +43,7 @@ landingFooter:
     logoAlt: Logo
     siteName: Dental Studio
     contactTitle: Schedule Your Visit Today!
-    cardBackgroundColor: '#343434'
+    cardBackgroundColor: var(--color-bg-dark)
     pageButtons:
       - _component: building-blocks/core-elements/button
         id: ''
@@ -117,8 +115,6 @@ landingPageSections:
     figcaption: ''
     backgroundColor: none
     borderColor: var(--color-brand)
-    fontHeadings: ''
-    fontBody: ''
   - _component: landing-page-components/new-patient-emergency-combo/list-section
     id: ''
     heading:
@@ -205,10 +201,10 @@ landingPageSections:
       alt: ''
     reviewText: lorem ipsum
     author: First Last
-    textColor: '#fff'
-    mobileTextColor: '#000000'
+    textColor: var(--color-text-inverse)
+    mobileTextColor: '#000'
     authorAlignX: left
-    starColor: '#febb21'
+    starColor: var(--color-star)
   - _component: landing-page-components/new-patient-emergency-combo/insurance-text
     id: ''
     heading: Insurance Text Heading

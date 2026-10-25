@@ -5,14 +5,10 @@ value:
   _component: pep-components/callout-squares
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   headingBackgroundColor: ""
-  headingBackgroundColorHex: ""
   headingTextColor: ""
   oddItemBackgroundColor: ""
-  oddItemBackgroundColorHex: ""
   evenItemBackgroundColor: ""
-  evenItemBackgroundColorHex: ""
   itemHeadingColor: ""
   heading: "Common Problems Covered by Insurance"
   items:

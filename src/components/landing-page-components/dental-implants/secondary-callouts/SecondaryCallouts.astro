@@ -16,25 +16,18 @@ const {
   items = [] as Item[],
   sectionColor = "",
   accentColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   sectionColor ? `--di-section-color: ${sectionColor}` : "",
   accentColor ? `--di-accent-color: ${accentColor}` : "",
-  fontHeadings ? `--di-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--di-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -45,7 +38,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -110,7 +103,7 @@ const htmlAttributes = Object.fromEntries(
     box-shadow:
       0 0 0 10px rgba(255, 255, 255, 0.15),
       0 3px 16px 7px rgba(0, 0, 0, 0.35);
-    color: var(--di-section-color, #324248);
+    color: var(--di-section-color, var(--color-bg-dark));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,10 +125,10 @@ const htmlAttributes = Object.fromEntries(
 
   .di-secondary-callouts h3 {
     align-items: center;
-    color: var(--di-section-color, #324248);
+    color: var(--di-section-color, var(--color-bg-dark));
     display: flex;
     flex-direction: column;
-    font-family: var(--di-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 1.25rem;
     font-weight: 600;
     gap: 0.2rem;

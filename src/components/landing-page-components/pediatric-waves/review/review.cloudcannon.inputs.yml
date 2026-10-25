@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 badgeHeading:
   type: text
   comment: Heading text shown in the left testimonial badge card. Supports <br> line breaks.
@@ -68,25 +64,8 @@ badgeBackgroundColor:
   type: select
   comment: Background color for the left badge card.
   options:
-    values:
-      - id: brand
-        name: Brand (Primary)
-      - id: brand-secondary
-        name: Brand (Secondary)
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.brandColors
 headingColor:
   type: select
   comment: Optional heading color override.

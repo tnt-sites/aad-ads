@@ -21,7 +21,6 @@ const {
   cardBackgroundColor = "",
   officeHoursAlignment = "right",
   backgroundColor = "",
-  backgroundColorHex = "",
   linkColor = "",
   linkHoverColor = "",
   addressLinkColor = "",
@@ -52,9 +51,7 @@ const bgColorMap: Record<string, string> = {
   black: "var(--color-bg-black)",
 };
 const resolvedBgColor =
-  backgroundColorHex ||
-  (backgroundColor && backgroundColor !== "none" && bgColorMap[backgroundColor]) ||
-  "";
+  (backgroundColor && backgroundColor !== "none" && bgColorMap[backgroundColor]) || "";
 const linkColorMap: Record<string, string> = {
   white: "#fff",
   brand: "var(--color-brand)",
@@ -443,7 +440,7 @@ const getOfficeHoursEntries = (office: any) => {
         align-items: flex-start;
 
         .fo-icon {
-          color: #8bd3eb;
+          color: var(--color-brand-secondary);
           display: inline-block;
           flex: 0 0 40px;
           font-size: 30px;

@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-count-on-us
 title: New Count On Us Landing Page
+pageTheme: ""
 landingStyle: count-on-us
 landingMainNav:
   - _component: navigation/landing/landing-header

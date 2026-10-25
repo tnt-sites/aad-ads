@@ -18,10 +18,6 @@ backgroundColor:
       - id: black
         name: Black
 
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 headingBackgroundColor:
   type: select
   comment: Background color of the h2 heading banner. Defaults to brand secondary.
@@ -45,10 +41,6 @@ headingBackgroundColor:
         name: Black
       - id: "#ffffff"
         name: White
-
-headingBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the h2 background. Overrides the dropdown above.
 
 headingTextColor:
   type: select
@@ -90,10 +82,6 @@ oddItemBackgroundColor:
       - id: "transparent"
         name: Transparent
 
-oddItemBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for odd items. Overrides the dropdown above.
-
 evenItemBackgroundColor:
   type: select
   comment: Background color for even-numbered callout items (2nd, 4th, 6th…). Defaults to white.
@@ -115,10 +103,6 @@ evenItemBackgroundColor:
         name: White
       - id: "transparent"
         name: Transparent
-
-evenItemBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for even items. Overrides the dropdown above.
 
 itemHeadingColor:
   type: select

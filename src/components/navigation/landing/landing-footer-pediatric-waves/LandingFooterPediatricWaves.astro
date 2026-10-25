@@ -18,7 +18,6 @@ const {
   topWaveImage = { source: "", alt: "" },
   questionsLine = "Have Questions? Get Answers",
   backgroundColor = "",
-  backgroundColorHex = "",
   officeHoursAlignment = "right",
   linkColor = "",
   linkHoverColor = "",
@@ -251,7 +250,7 @@ const resolvedFormBlocks =
   Array.isArray(formBlocks) && formBlocks.length > 0 ? formBlocks : buildDefaultFormBlocks();
 
 const cssVars = [
-  (backgroundColorHex || getColorValue(backgroundColor)) ? `--pw-footer-bg: ${backgroundColorHex || getColorValue(backgroundColor)}` : "",
+  getColorValue(backgroundColor) ? `--pw-footer-bg: ${getColorValue(backgroundColor)}` : "",
   getColorValue(linkColor) ? `--footer-link-color: ${getColorValue(linkColor)}` : "",
   getColorValue(linkHoverColor)
     ? `--footer-link-hover-color: ${getColorValue(linkHoverColor)}`
@@ -581,7 +580,7 @@ const cssVars = [
 
         &:hover,
         &:focus-visible {
-          color: var(--footer-link-hover-color, #dbe45a);
+          color: var(--footer-link-hover-color, var(--color-accent-1));
         }
       }
 

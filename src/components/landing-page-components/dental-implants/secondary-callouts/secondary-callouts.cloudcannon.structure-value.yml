@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/dental-implants/secondary-callouts
   id: ""
   backgroundColor: none
-  backgroundColorHex: ""
   items:
     - headingLine1: "Find Us"
       headingLine2: "On The Map"
@@ -37,7 +36,5 @@ value:
       link: /financing/
   sectionColor: "#000"
   accentColor: "var(--color-brand-secondary)"
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/secondary-callouts/secondary-callouts.cloudcannon.inputs.yml

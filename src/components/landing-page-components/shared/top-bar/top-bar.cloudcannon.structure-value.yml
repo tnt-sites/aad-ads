@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/shared/top-bar
   id: ""
   backgroundColor: brand
-  backgroundColorHex: ""
   textColor: "var(--color-text-inverse)"
   items:
     - New Patients Welcome

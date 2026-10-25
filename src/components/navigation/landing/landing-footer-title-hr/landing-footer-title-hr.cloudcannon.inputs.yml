@@ -211,9 +211,6 @@ backgroundColor:
         name: Dark
       - id: "var(--color-bg-black)"
         name: Black
-backgroundColorHex:
-  type: color
-  comment: "Optional custom hex color for the footer background. Overrides the dropdown above."
 headingColor:
   type: select
   comment: "Color applied to the h3 headings and hr dividers in each column."
@@ -231,6 +228,3 @@ headingColor:
         name: Dark
       - id: "#fff"
         name: White
-headingColorHex:
-  type: color
-  comment: "Optional custom hex color for headings and dividers. Overrides the dropdown above."

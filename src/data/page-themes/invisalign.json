@@ -1,0 +1,8 @@
+{
+  "name": "Invisalign",
+  "headingsFont": { "fontFamily": "the-seasons, serif" },
+  "bodyFont": { "fontFamily": "\"Josefin Sans\", josefin-sans, sans-serif" },
+  "fontLinks": [
+    "https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+  ]
+}

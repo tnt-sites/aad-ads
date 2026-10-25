@@ -87,7 +87,6 @@ pepSections:
   - _component: pep-components/pep-banner-centered
     id: ''
     backgroundColor: base
-    backgroundColorHex: ''
     backgroundImage: ''
     backgroundPositionX: center
     backgroundPositionY: center
@@ -127,7 +126,6 @@ pepSections:
     checkIconName: check-circle
     checkColor: ''
     checkmarkShadowColor: ''
-    checkmarkShadowColorHex: ''
 head_scripts: []
 footer_scripts: []
 extraFonts: []

@@ -8,21 +8,19 @@ const {
   consultationItems = [],
   image = { source: "", alt: "" },
   backgroundColor = "#f0f0f0",
-  backgroundColorHex = "",
-  headingColor = "#2691CA",
-  borderColor = "#0A4172",
-  titleBackground = "#0A4172",
-  titleBackgroundHex = "",
+  headingColor = "var(--color-brand)",
+  borderColor = "var(--color-brand-secondary)",
+  titleBackground = "var(--color-brand-secondary)",
   titleColor = "#ffffff",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  `--ai-banner-bg: ${backgroundColorHex || backgroundColor}`,
+  `--ai-banner-bg: ${backgroundColor}`,
   `--ai-banner-heading: ${headingColor}`,
   `--ai-banner-border: ${borderColor}`,
-  `--ai-banner-title-bg: ${titleBackgroundHex || titleBackground}`,
+  `--ai-banner-title-bg: ${titleBackground}`,
   `--ai-banner-title-color: ${titleColor}`,
 ]
   .filter(Boolean)
@@ -97,7 +95,7 @@ const htmlAttributes = Object.fromEntries(
 
   .ai-implant-banner h1 {
     color: var(--ai-banner-heading);
-    font-family: "Caveat Brush", cursive;
+    font-family: var(--font-accent);
     font-size: 4.875rem;
     font-weight: 400;
     line-height: 1.05;
@@ -142,7 +140,7 @@ const htmlAttributes = Object.fromEntries(
     align-self: stretch;
   }
 
-  .ai-implant-banner figure .image{
+  .ai-implant-banner figure .image {
     height: 100%;
   }
 

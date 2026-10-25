@@ -21,10 +21,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 headingLine1:
   type: text
   comment: First line of the large left heading (e.g. "Count").
@@ -130,11 +126,3 @@ headingColor:
         name: Black
       - id: "var(--color-text-inverse)"
         name: White
-
-fontHeadings:
-  type: text
-  comment: Override the heading font family (e.g. "Georgia, serif"). Leave blank to use the site default.
-
-fontBody:
-  type: text
-  comment: Override the list font family (e.g. "Arial, sans-serif"). Leave blank to use the site default.

@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: text
   comment: Section heading displayed above the table. Supports <br> for line breaks.
@@ -115,11 +111,17 @@ otherColumnLabel:
   comment: Label for the "other practices" column in the table header.
 
 checkColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Color of the checkmark icon.
 
 crossColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Color of the cross text.
 
 checkIconName:

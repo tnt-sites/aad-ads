@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-ai-answers
 title: AI Answers Test
+pageTheme: ai-answers
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg
@@ -93,7 +94,7 @@ landingPageSections:
       alt: Patients smiling
     headingColor: var(--color-brand)
     borderColor: var(--color-brand-secondary)
-    starColor: '#febb21'
+    starColor: var(--color-star)
     reviews:
       - googleLogo:
           source: /src/assets/images/component-library/profile2.jpg
@@ -131,8 +132,8 @@ landingPageSections:
     headerColor: var(--color-brand)
     headerTextColor: var(--color-text-inverse)
     otherColumnLabel: Other Dental Practices
-    checkColor: '#2e7d32'
-    crossColor: '#c0392b'
+    checkColor: ''
+    crossColor: ''
     checkIconName: icon-ok-1
     crossText: ✕
     rows:
@@ -196,8 +197,6 @@ landingPageSections:
     buttonSections: []
     headingColor: var(--color-brand)
     headingFontFamily: ''
-    fontHeadings: ''
-    fontBody: ''
 head_scripts: []
 footer_scripts: []
 extraFonts: []

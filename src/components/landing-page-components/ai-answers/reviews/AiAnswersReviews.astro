@@ -13,16 +13,14 @@ const {
   reviews = [] as Review[],
   image = { source: "", alt: "" },
   backgroundColor = "none",
-  backgroundColorHex = "",
   headingColor = "var(--color-text)",
   borderColor = "var(--color-text)",
-  starColor = "#febb21",
+  starColor = "var(--color-star)",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   headingColor ? `--ai-reviews-heading: ${headingColor}` : "",
   borderColor ? `--ai-reviews-border: ${borderColor}` : "",
   starColor ? `--ai-reviews-star: ${starColor}` : "",
@@ -30,7 +28,6 @@ const inlineStyle = [
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -40,7 +37,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["ai-implant-reviews", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -128,7 +125,7 @@ const htmlAttributes = Object.fromEntries(
 
   .ai-implant-reviews .review-item {
     align-items: center;
-    border: 4px solid var(--ai-reviews-border, #0a4172);
+    border: 4px solid var(--ai-reviews-border, var(--color-brand-secondary));
     display: flex;
     flex: 0 1 420px;
     flex-direction: column;
@@ -153,7 +150,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .ai-implant-reviews .review-stars {
-    color: var(--ai-reviews-star, #febb21);
+    color: var(--ai-reviews-star, var(--color-star));
     font-size: 1.5rem;
     letter-spacing: 0.55rem;
     text-align: center;

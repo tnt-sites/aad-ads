@@ -7,25 +7,18 @@ const {
   ruleColor = "",
   headingColor = "",
   headingFontFamily = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   ruleColor ? `--cou-rule-color: ${ruleColor}` : "",
   headingColor ? `--cou-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--cou-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--cou-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -36,7 +29,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -81,7 +74,7 @@ const htmlAttributes = Object.fromEntries(
     align-items: center;
     color: var(--cou-heading-color, var(--color-text));
     display: flex;
-    font-family: var(--cou-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 3.4375rem;
     font-weight: 300;
     justify-content: center;
@@ -109,7 +102,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cou-insurance p {
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.25rem;
     line-height: 1.75;
     margin: 0.625rem auto;

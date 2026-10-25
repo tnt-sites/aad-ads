@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 blocks:
   type: array
   comment: Insurance text blocks. Each block has a heading and body text.
@@ -79,10 +75,9 @@ dividerColor:
       - id: "var(--color-text-inverse)"
         name: White
 
-fontHeadings:
-  type: text
-  comment: Override the heading font family (e.g. "Georgia, serif"). Leave blank to use the site default.
-
 headingFontFamily:
-  type: text
-  comment: Override the font family for the block headings. Leave blank to use the site default. Use any font family loaded by the page, including extra fonts.
+  type: select
+  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
+  options:
+    allow_empty: true
+    values: _select_data.fontRoles

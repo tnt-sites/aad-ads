@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-new-patient-split-banner
 title: New Patient Split Banner Landing Page
+pageTheme: ""
 landingStyle: new-patient-split-banner
 landingMainNav:
   - _component: navigation/landing/landing-header

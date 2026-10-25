@@ -100,8 +100,6 @@ landingPageSections:
       alt: Doctor photo
     figcaption: Dr. Lastname
     buttonSections: []
-    fontHeadings: ''
-    fontBody: ''
     borderColor: var(--color-brand)
 head_scripts: []
 footer_scripts: []

@@ -5,7 +5,6 @@ import Text from "@core-elements/text/Text.astro";
 const {
   text = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   blurbBackgroundColor = "none",
   editable = true,
@@ -20,8 +19,7 @@ const htmlAttributes = Object.fromEntries(
 <CustomSection
   class:list={["blurb", className]}
   colorScheme="default"
-  backgroundColor={backgroundColorHex ? "none" : backgroundColor}
-  style={backgroundColorHex ? `background-color: ${backgroundColorHex}` : undefined}
+  backgroundColor={backgroundColor}
   {...htmlAttributes}
 >
   <article

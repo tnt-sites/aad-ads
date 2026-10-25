@@ -10,19 +10,14 @@ const {
   services = [] as ServiceItem[],
   accentColor = "",
   backgroundColor = "accent",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
-  `--cos-accent-color: ${accentColor || "#af8c57"}`,
-]
+const inlineStyle = [`--cos-accent-color: ${accentColor || "var(--color-brand)"}`]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -34,7 +29,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="md"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle}
   {...htmlAttributes}
 >
@@ -77,9 +72,7 @@ const htmlAttributes = Object.fromEntries(
   /* links */
   .cos-service-list a {
     color: #fff;
-    font:
-      normal 20px figtree,
-      serif;
+    font: normal 20px var(--font-body);
     letter-spacing: 0.1em;
     text-decoration: none;
     text-transform: uppercase;
@@ -87,12 +80,12 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-service-list a:hover {
-    color: var(--cos-accent-color, #af8c57);
+    color: var(--cos-accent-color, var(--color-brand));
   }
 
   /* separator */
   .cos-service-list .sep {
-    color: var(--cos-accent-color, #af8c57);
+    color: var(--cos-accent-color, var(--color-brand));
     font-size: 2rem;
     line-height: 1;
   }

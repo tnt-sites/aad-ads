@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/new-patient-split-banner/split-section
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   headingPrefix: ""
   heading: Services We Offer
   listItems:
@@ -25,7 +24,5 @@ value:
   twoColumnList: false
   headingColor: "var(--color-text)"
   prefixColor: "var(--color-text)"
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-split-banner/split-section/split-section.cloudcannon.inputs.yml

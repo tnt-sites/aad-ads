@@ -12,15 +12,13 @@ const {
   reviewerName = "",
   sectionSpacingTop = "100px",
   formBackgroundColor = "var(--color-brand)",
-  formBackgroundColorHex = "",
   reviewBackgroundColor = "#fff",
-  reviewBackgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const resolvedFormBg = formBackgroundColorHex || formBackgroundColor;
-const resolvedReviewBg = reviewBackgroundColorHex || reviewBackgroundColor;
+const resolvedFormBg = formBackgroundColor;
+const resolvedReviewBg = reviewBackgroundColor;
 
 const styleVars = [
   `--invis-middle-margin: ${sectionSpacingTop}`,
@@ -102,7 +100,7 @@ const htmlAttributes = Object.fromEntries(
 
   .invis-middle-block form h3 {
     color: #fff;
-    font-family: the-seasons, var(--font-headings);
+    font-family: var(--font-headings);
     font-size: 55px;
     font-weight: 500;
     line-height: 1;
@@ -141,7 +139,7 @@ const htmlAttributes = Object.fromEntries(
     border: none;
     color: #000;
     display: block;
-    font-family: josefin-sans, var(--font-body);
+    font-family: var(--font-body);
     font-size: 17px;
     height: 44px;
     padding: 15px 10px;
@@ -157,7 +155,7 @@ const htmlAttributes = Object.fromEntries(
     background: var(--invis-form-bg, var(--color-brand));
     color: var(--color-text-on-brand);
     cursor: pointer;
-    font-family: josefin-sans, var(--font-body);
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -190,8 +188,8 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .invis-middle-block .review h3 {
-    color: #436a8b;
-    font-family: the-seasons, var(--font-headings);
+    color: var(--color-brand-secondary);
+    font-family: var(--font-headings);
     font-size: 45px;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -211,7 +209,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .invis-middle-block .star {
-    color: #febb21;
+    color: var(--color-star);
     display: inline-block;
     letter-spacing: 8.4px;
     margin-right: 0.5rem;

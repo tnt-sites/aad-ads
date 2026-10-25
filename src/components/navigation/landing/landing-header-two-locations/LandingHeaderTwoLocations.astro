@@ -13,9 +13,7 @@ const {
   mobileRequestLabel = "",
   mobileRequestHref = "",
   mobileCallBackgroundColor = "",
-  mobileCallBackgroundColorHex = "",
   mobileRequestBackgroundColor = "",
-  mobileRequestBackgroundColorHex = "",
   mobileCallTextColor = "",
   mobileCallSmallTextColor = "",
   mobileRequestTextColor = "",
@@ -37,9 +35,7 @@ const {
   mobileRequestLabel?: string;
   mobileRequestHref?: string;
   mobileCallBackgroundColor?: string;
-  mobileCallBackgroundColorHex?: string;
   mobileRequestBackgroundColor?: string;
-  mobileRequestBackgroundColorHex?: string;
   mobileCallTextColor?: string;
   mobileCallSmallTextColor?: string;
   mobileRequestTextColor?: string;
@@ -98,10 +94,8 @@ const mobileButtonLabelParts =
 const mobileButtonFirstLine = mobileButtonLabelParts.slice(0, 2).join(" ");
 const mobileButtonSecondLine = mobileButtonLabelParts.slice(2).join(" ");
 
-const resolvedMobileCallBg =
-  mobileCallBackgroundColorHex || colorTokenMap[mobileCallBackgroundColor] || "";
-const resolvedMobileRequestBg =
-  mobileRequestBackgroundColorHex || colorTokenMap[mobileRequestBackgroundColor] || "";
+const resolvedMobileCallBg = colorTokenMap[mobileCallBackgroundColor] || "";
+const resolvedMobileRequestBg = colorTokenMap[mobileRequestBackgroundColor] || "";
 const resolvedMobileCallTextColor = colorTokenMap[mobileCallTextColor] || "";
 const resolvedMobileCallSmallTextColor = colorTokenMap[mobileCallSmallTextColor] || "";
 const resolvedMobileRequestTextColor = colorTokenMap[mobileRequestTextColor] || "";

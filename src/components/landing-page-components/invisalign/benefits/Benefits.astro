@@ -11,15 +11,12 @@ const {
   centerImage = { source: "", alt: "" },
   backgroundImage = { source: "", alt: "" },
   backgroundColor = "var(--color-brand)",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const resolvedBg = backgroundColorHex || backgroundColor;
-
 const styleVars = [
-  resolvedBg ? `--invis-benefits-color: ${resolvedBg}` : "",
+  backgroundColor ? `--invis-benefits-color: ${backgroundColor}` : "",
   backgroundImage?.source ? `--invis-benefits-bg: url('${backgroundImage.source}')` : "",
 ]
   .filter(Boolean)
@@ -87,7 +84,7 @@ const htmlAttributes = Object.fromEntries(
 
   .invis-benefits h2 {
     color: #fff;
-    font-family: the-seasons, var(--font-headings);
+    font-family: var(--font-headings);
     font-size: 70px;
     margin-bottom: 50px;
     text-align: center;
@@ -107,7 +104,7 @@ const htmlAttributes = Object.fromEntries(
 
   .invis-benefits h3 {
     color: #fff;
-    font-family: the-seasons, var(--font-headings);
+    font-family: var(--font-headings);
     font-size: 45px;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -131,7 +128,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .invis-benefits li::before {
-    color: #4f95d0;
+    color: var(--color-brand);
     content: "✦";
     left: 0;
     position: absolute;

@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 subheading:
   type: text
   comment: Small uppercase text displayed above the main heading.
@@ -103,14 +99,6 @@ buttonSections:
   comment: Optional CTA button(s) displayed below the heading.
   options:
     structures: _structures.buttonSections
-
-fontHeadings:
-  type: text
-  comment: Override the heading font family (e.g. "Georgia, serif"). Leave blank to use the site default.
-
-fontBody:
-  type: text
-  comment: Override the body/subheading font family (e.g. "Arial, sans-serif"). Leave blank to use the site default.
 
 borderColor:
   type: select

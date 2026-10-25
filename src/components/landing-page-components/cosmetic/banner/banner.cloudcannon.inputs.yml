@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: textarea
   comment: Main H1 heading. Supports <br> for line breaks and <span> to apply accent color (e.g. "Cosmetic <span>Dentists</span>").
@@ -96,17 +92,15 @@ figcaptionLinks:
               comment: Link to the doctor's profile page.
 
 accentColor:
-  type: color
-  comment: Override the accent/brand color for this section (e.g. "#af8c57"). Leave blank to use the site default.
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+  comment: Override the accent/brand color for this section. Leave blank to use the site default.
 
 headingColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Override the heading text color. Leave blank to use the site default.
-
-fontHeadings:
-  type: text
-  comment: Override the heading font family. Leave blank to use the site default.
-
-fontBody:
-  type: text
-  comment: Override the body font family. Leave blank to use the site default.

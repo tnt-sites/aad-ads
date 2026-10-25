@@ -9,27 +9,20 @@ const {
   squareColor = "",
   boxBorderColor = "",
   headingColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   accentColor ? `--cou-accent-color: ${accentColor}` : "",
   squareColor ? `--cou-square-color: ${squareColor}` : "",
   boxBorderColor ? `--cou-box-border-color: ${boxBorderColor}` : "",
   headingColor ? `--cou-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--cou-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--cou-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -40,7 +33,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -145,7 +138,7 @@ const htmlAttributes = Object.fromEntries(
   /* ── Large left heading ──────────────────────────────────────────────────── */
   .cou-count .h2 {
     color: var(--cou-heading-color, var(--color-text));
-    font-family: var(--cou-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 5.625rem;
     font-weight: 600;
     line-height: 1;
@@ -168,7 +161,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cou-count ul {
     display: table;
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.875rem;
     line-height: 1.2;
     list-style-type: none;
@@ -185,7 +178,7 @@ const htmlAttributes = Object.fromEntries(
   .cou-count ul li::before {
     color: var(--cou-accent-color, var(--color-brand));
     content: "+";
-    font-family: var(--cou-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.875rem;
     left: 0;
     position: absolute;

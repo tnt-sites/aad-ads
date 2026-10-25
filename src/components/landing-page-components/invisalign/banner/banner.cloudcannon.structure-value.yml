@@ -20,7 +20,6 @@ value:
     source: ""
     alt: ""
   sectionBackground: "var(--color-brand)"
-  sectionBackgroundHex: ""
   borderBottomColor: "var(--color-brand)"
 _inputs_from_glob:
   - /src/components/landing-page-components/invisalign/banner/banner.cloudcannon.inputs.yml

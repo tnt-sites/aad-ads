@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-custom
 title: New Custom Landing Page
+pageTheme: ""
 landingStyle: custom
 landingMainNav:
   - _component: navigation/landing/landing-header

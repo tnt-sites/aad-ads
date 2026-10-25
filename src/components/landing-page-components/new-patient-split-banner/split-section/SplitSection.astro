@@ -9,29 +9,22 @@ const {
   checkImage = "",
   headingColor = "",
   prefixColor = "",
-  fontHeadings = "",
-  fontBody = "",
   image = { source: "", alt: "" },
   figcaption = "",
   reverse = false,
   twoColumnList = false,
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const fontStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
-  fontHeadings ? `--np-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--np-font-body: ${fontBody}` : "",
   headingColor ? `--np-heading-color: ${headingColor}` : "",
   prefixColor ? `--np-prefix-color: ${prefixColor}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -42,7 +35,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={fontStyle || undefined}
   {...htmlAttributes}
 >
@@ -131,7 +124,7 @@ const htmlAttributes = Object.fromEntries(
 
   .np-split-section h2 {
     color: var(--np-heading-color, var(--color-text));
-    font-family: var(--np-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 3.125rem;
     font-weight: 400;
     line-height: 1.1;
@@ -142,7 +135,7 @@ const htmlAttributes = Object.fromEntries(
   .np-split-section h2 .prefix {
     color: var(--np-prefix-color, var(--np-heading-color, var(--color-text)));
     display: block;
-    font-family: var(--np-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.3em;

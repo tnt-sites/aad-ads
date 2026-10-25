@@ -6,6 +6,9 @@
  * (see cloudcannon.config.yml). Editing the values here only changes what renders
  * when branding.json has no value set for that field; to change live branding,
  * edit branding.json / the CMS fields instead.
+ *
+ * --color-accent-1 / --color-accent-2 are spare slots for landing/PEP page themes
+ * (src/data/page-themes/*.json, via extraColors). They default to the brand colors.
  */
 :root,
 [data-theme="default"] {
@@ -16,6 +19,8 @@
   --color-brand-muted: green;
   --color-brand-subtle: var(--gray-7);
   --color-brand-on: var(--gray-0);
+  --color-accent-1: var(--color-brand);
+  --color-accent-2: var(--color-brand-secondary);
 
   --color-text: var(--gray-10);
   --color-text-strong: var(--gray-12);

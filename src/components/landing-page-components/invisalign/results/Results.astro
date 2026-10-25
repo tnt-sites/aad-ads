@@ -5,14 +5,13 @@ import Image from "@core-elements/image/Image.astro";
 const {
   heading = "Real Results. Real Smiles.",
   images = [],
-  backgroundColor = "",
-  backgroundColorHex = "var(--color-brand)",
+  backgroundColor = "var(--color-brand)",
   textColor = "#ffffff",
   class: className,
   ...rest
 } = Astro.props;
 
-const resolvedBackground = backgroundColorHex || backgroundColor;
+const resolvedBackground = backgroundColor;
 
 const styleVars = [
   `--invis-results-bg: ${resolvedBackground}`,
@@ -56,7 +55,7 @@ const htmlAttributes = Object.fromEntries(
 
 <style>
   .invis-results {
-    background: var(--invis-results-bg, #4f95d0);
+    background: var(--invis-results-bg, var(--color-brand));
     margin: 100px auto;
     max-width: 1260px;
     padding: 100px 20px;
@@ -65,7 +64,7 @@ const htmlAttributes = Object.fromEntries(
 
   .invis-results h2 {
     color: var(--invis-results-text, #fff);
-    font-family: the-seasons, var(--font-headings);
+    font-family: var(--font-headings);
     font-size: 55px;
     margin-top: 0;
     text-align: center;

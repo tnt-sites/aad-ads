@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/cosmetic/banner
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   heading: "Waco's Premier<br>Cosmetic <span>Dentists</span>"
   tagline: "◆ ◆ ◆"
   subheading: "We combine state-of-the-art technology, artistry, and concierge-level care to create smiles that change lives."
@@ -23,7 +22,5 @@ value:
   buttonSections: []
   accentColor: ""
   headingColor: ""
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/cosmetic/banner/banner.cloudcannon.inputs.yml

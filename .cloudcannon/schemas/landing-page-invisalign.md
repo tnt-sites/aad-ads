@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-invisalign
 title: New Invisalign Landing Page
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

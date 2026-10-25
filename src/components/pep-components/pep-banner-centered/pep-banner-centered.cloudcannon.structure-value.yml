@@ -5,7 +5,6 @@ value:
   _component: pep-components/pep-banner-centered
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   backgroundImage: ""
   backgroundPositionX: center
   backgroundPositionY: center
@@ -35,6 +34,5 @@ value:
   checkIconName: check-circle
   checkColor: ""
   checkmarkShadowColor: ""
-  checkmarkShadowColorHex: ""
 _inputs_from_glob:
   - /src/components/pep-components/pep-banner-centered/pep-banner-centered.cloudcannon.inputs.yml

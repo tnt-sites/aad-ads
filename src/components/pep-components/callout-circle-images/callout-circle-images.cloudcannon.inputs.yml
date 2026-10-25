@@ -18,10 +18,6 @@ backgroundColor:
       - id: black
         name: Black
 
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 headingColor:
   type: select
   comment: Color of the section heading.

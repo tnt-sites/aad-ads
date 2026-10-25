@@ -4,7 +4,7 @@ heading:
 
 headingBackgroundColor:
   type: select
-  comment: Background color for the heading. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color for the heading.
   options:
     values:
       - id: none
@@ -21,10 +21,6 @@ headingBackgroundColor:
         name: Dark
       - id: black
         name: Black
-
-headingBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the heading background color above. Leave blank to use the theme color.
 
 shadowColor:
   type: select
@@ -58,7 +54,7 @@ shadowColor:
 
 backgroundColor:
   type: select
-  comment: Background color of the section. Choose a theme color or use the hex override below for a custom color.
+  comment: Background color of the section.
   options:
     values:
       - id: none
@@ -75,10 +71,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the section background color above. Leave blank to use the theme color.
 
 items:
   type: array

@@ -66,9 +66,6 @@ landingPageSections:
     buttonSections: []
     accentColor: "var(--color-brand)"
     headingColor: "#ccc"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/service-callouts
     id: ""
     backgroundColor: base
@@ -100,9 +97,6 @@ landingPageSections:
         link: /all-on-4/
     headingColor: "var(--color-heading)"
     accentColor: "var(--color-brand)"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/split
     id: ""
     backgroundColor: surface
@@ -130,9 +124,6 @@ landingPageSections:
     imageNoShadow: false
     headingColor: "var(--color-heading)"
     accentColor: "var(--color-brand)"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/split
     id: ""
     backgroundColor: base
@@ -149,9 +140,6 @@ landingPageSections:
     imageNoShadow: false
     headingColor: "var(--color-heading)"
     accentColor: "var(--color-brand)"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/secondary-callouts
     id: ""
     backgroundColor: none
@@ -184,11 +172,8 @@ landingPageSections:
         iconColor: ""
         iconPosition: "middle"
         link: /financing/
-    sectionColor: "#000"
+    sectionColor: "#000000"
     accentColor: "var(--color-brand-secondary)"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/split
     id: ""
     backgroundColor: surface
@@ -205,9 +190,6 @@ landingPageSections:
     imageNoShadow: false
     headingColor: "var(--color-heading)"
     accentColor: "var(--color-brand)"
-    fontHeadings: ""
-    fontBody: ""
-
   - _component: landing-page-components/dental-implants/split
     id: ""
     backgroundColor: base
@@ -235,6 +217,4 @@ landingPageSections:
     imageNoShadow: false
     headingColor: "var(--color-heading)"
     accentColor: "var(--color-brand)"
-    fontHeadings: ""
-    fontBody: ""
 ---

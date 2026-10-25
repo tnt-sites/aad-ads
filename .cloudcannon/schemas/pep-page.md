@@ -1,6 +1,7 @@
 ---
 _schema: pep-page
 title: New PEP Page
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

@@ -11,11 +11,8 @@ const {
   iframeEmbed = "",
   bottomText = "",
   backgroundColor = "none",
-  backgroundColorHex = "",
   contentBackgroundColor = "",
-  contentBackgroundColorHex = "",
   callBackgroundColor = "",
-  callBackgroundColorHex = "",
   callTextColor = "",
   linkColor = "",
   class: className,
@@ -32,15 +29,10 @@ const getColorValue = (value: any) => {
   return normalized && normalized !== "none" ? normalized : "";
 };
 
-const resolvedContentBg =
-  contentBackgroundColorHex ||
-  getColorValue(contentBackgroundColor) ||
-  "var(--color-bg-surface, #f0f0f0)";
-const resolvedCallBg =
-  callBackgroundColorHex || getColorValue(callBackgroundColor) || "var(--color-bg-base, #fff)";
+const resolvedContentBg = getColorValue(contentBackgroundColor) || "var(--color-bg-surface)";
+const resolvedCallBg = getColorValue(callBackgroundColor) || "var(--color-bg-base)";
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   `--pfc-content-bg: ${resolvedContentBg}`,
   `--pfc-call-bg: ${resolvedCallBg}`,
   callTextColor ? `--pfc-call-text-color: ${callTextColor}` : "",
@@ -48,8 +40,6 @@ const inlineStyle = [
 ]
   .filter(Boolean)
   .join("; ");
-
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
@@ -61,7 +51,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -139,7 +129,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .pep-form-ctm__article p {
-    color: var(--pfc-call-text-color, var(--color-text, #000));
+    color: var(--pfc-call-text-color, var(--color-text));
     font-family: var(--font-body);
     font-size: clamp(1.75rem, 3.5vw, 2.8125rem);
     font-weight: 400;
@@ -176,7 +166,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .pep-form-ctm__bottom p {
-    color: var(--color-text-inverse, #fff);
+    color: var(--color-text-inverse);
     font-family: var(--font-body);
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 400;

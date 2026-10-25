@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-privacy-policy
 title: Privacy Policy
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

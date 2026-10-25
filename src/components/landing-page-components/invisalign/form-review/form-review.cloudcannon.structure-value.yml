@@ -14,8 +14,6 @@ value:
   reviewerName: Jonathan B.
   sectionSpacingTop: 100px
   formBackgroundColor: "var(--color-brand)"
-  formBackgroundColorHex: ""
   reviewBackgroundColor: "#fff"
-  reviewBackgroundColorHex: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/invisalign/form-review/form-review.cloudcannon.inputs.yml

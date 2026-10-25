@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-pediatric-waves
 title: Pediatric Wave Landing Page
+pageTheme: ""
 landingStyle: pediatric-waves
 landingMainNav:
   - _component: navigation/landing/landing-header-pediatric-waves

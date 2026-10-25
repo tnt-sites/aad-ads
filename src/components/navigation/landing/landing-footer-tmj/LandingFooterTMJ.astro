@@ -14,7 +14,6 @@ const {
   backgroundGradient = "",
   legalBlurb = "",
   backgroundColor = "",
-  backgroundColorHex = "",
   linkColor = "",
   linkHoverColor = "",
   addressLinkColor = "",
@@ -92,8 +91,8 @@ const footerBackgroundStyle = [
   `--lp-footer-form-button-bg: ${formButtonBackgroundColorValue}`,
   `--lp-footer-form-button-hover-bg: ${formButtonHoverBackgroundColorValue}`,
   `--lp-footer-form-button-hover-color: ${formButtonHoverTextColorValue}`,
-  (backgroundColorHex || getColorValue(backgroundColor))
-    ? `--lp-footer-tmj-bg-color: ${backgroundColorHex || getColorValue(backgroundColor)}`
+  getColorValue(backgroundColor)
+    ? `--lp-footer-tmj-bg-color: ${getColorValue(backgroundColor)}`
     : "",
   getColorValue(linkColor) ? `--footer-link-color: ${getColorValue(linkColor)}` : "",
   getColorValue(linkHoverColor)
@@ -417,7 +416,7 @@ const getOfficeHoursEntries = (office: any) => {
 
       overflow: hidden;
       background-color: var(--lp-footer-tmj-bg-color, #fff);
-      color: var(--color-text, #313131);
+      color: var(--color-text);
       position: relative;
       text-align: center;
 
@@ -468,7 +467,7 @@ const getOfficeHoursEntries = (office: any) => {
         background: #fff;
         border: 1px solid #d6d6d6;
         border-radius: 6px;
-        color: var(--color-text, #313131);
+        color: var(--color-text);
         font-size: 16px;
         line-height: 1.4;
         padding: 0.7rem 0.8rem;
@@ -502,7 +501,7 @@ const getOfficeHoursEntries = (office: any) => {
 
       /* Office Hours column */
       .lp-footer-tmj-section-title {
-        color: var(--color-text, #000);
+        color: var(--color-text);
         font-size: 22px;
         font-weight: 300;
         line-height: 1;
@@ -528,27 +527,27 @@ const getOfficeHoursEntries = (office: any) => {
         text-decoration: none;
 
         &:hover {
-          color: var(--footer-link-hover-color, var(--color-text-strong, #000));
+          color: var(--footer-link-hover-color, var(--color-text-strong));
         }
       }
 
       .lp-footer-tmj-phone {
-        color: var(--footer-phone-link-color, var(--color-text, #313131));
+        color: var(--footer-phone-link-color, var(--color-text));
 
         &:hover {
-          color: var(--footer-phone-link-hover-color, var(--color-text-strong, #000));
+          color: var(--footer-phone-link-hover-color, var(--color-text-strong));
         }
       }
 
       .lp-footer-tmj-address {
-        color: var(--footer-address-link-color, var(--color-text, #313131));
+        color: var(--footer-address-link-color, var(--color-text));
 
         &:hover {
-          color: var(--footer-address-link-hover-color, var(--color-text-strong, #000));
+          color: var(--footer-address-link-hover-color, var(--color-text-strong));
         }
 
         .lp-footer-tmj-icon {
-          color: var(--color-bg-brand, #1689a5);
+          color: var(--color-bg-brand);
           flex-shrink: 0;
           font-size: 18px;
           margin-top: 2px;
@@ -556,9 +555,9 @@ const getOfficeHoursEntries = (office: any) => {
       }
 
       .lp-footer-tmj-office-hours {
-        --office-hours-color: var(--color-text, #313131);
-        --office-hours-day-color: var(--color-text-strong, #000);
-        --office-hours-note-color: var(--color-text-muted, #666);
+        --office-hours-color: var(--color-text);
+        --office-hours-day-color: var(--color-text-strong);
+        --office-hours-note-color: var(--color-text-muted);
         margin-top: var(--spacing-sm, 0.75rem);
       }
 
@@ -570,7 +569,7 @@ const getOfficeHoursEntries = (office: any) => {
       }
 
       .lp-footer-tmj-started-title {
-        color: var(--color-text, #000);
+        color: var(--color-text);
         font-size: 45px;
         font-weight: 400;
         line-height: 1.17;
@@ -610,7 +609,7 @@ const getOfficeHoursEntries = (office: any) => {
         }
 
         a {
-          color: var(--footer-link-color, var(--color-bg-brand, #1689a5));
+          color: var(--footer-link-color, var(--color-bg-brand));
           text-decoration: none;
 
           &:hover {

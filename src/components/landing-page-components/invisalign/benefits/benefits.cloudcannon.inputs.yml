@@ -51,7 +51,7 @@ centerImage:
 
 backgroundColor:
   type: select
-  comment: Section background color. Choose a theme color or use the hex override below for a custom color.
+  comment: Section background color.
   options:
     values:
       - id: ""
@@ -66,10 +66,6 @@ backgroundColor:
         name: Brand (Secondary)
       - id: "var(--color-text)"
         name: Text
-
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
 
 backgroundImage:
   type: object

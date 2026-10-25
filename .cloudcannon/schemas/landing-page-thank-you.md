@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-thank-you
 title: Thank You
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

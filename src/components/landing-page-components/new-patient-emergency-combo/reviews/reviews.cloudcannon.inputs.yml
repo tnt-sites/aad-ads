@@ -15,9 +15,6 @@ backgroundColor:
         name: Highlight
       - id: dark
         name: Dark
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
 image:
   type: object
   comment: Google logo that goes above the desktop review text.
@@ -139,7 +136,10 @@ mobileTextColor:
       - id: "var(--color-text-inverse)"
         name: White
 starColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Color of the review stars.
 # Add your other component inputs here
 # Example:

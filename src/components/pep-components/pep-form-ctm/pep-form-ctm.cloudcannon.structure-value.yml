@@ -5,11 +5,8 @@ value:
   _component: pep-components/pep-form-ctm
   id: ""
   backgroundColor: none
-  backgroundColorHex: ""
   contentBackgroundColor: ""
-  contentBackgroundColorHex: ""
   callBackgroundColor: ""
-  callBackgroundColorHex: ""
   callTextColor: ""
   linkColor: ""
   image:

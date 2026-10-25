@@ -8,22 +8,14 @@ const {
   author = "",
   googleLogoImage = { source: "", alt: "Google Reviews" },
   backgroundImage = { source: "", alt: "" },
-  starColor = "#febb21",
-  fontHeadings = "",
+  starColor = "var(--color-star)",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const fontStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
-  fontHeadings ? `--np-font-headings: ${fontHeadings}` : "",
-]
-  .filter(Boolean)
-  .join("; ");
+const fontStyle = [].filter(Boolean).join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -35,7 +27,7 @@ const htmlAttributes = Object.fromEntries(
   paddingHorizontal="md"
   style={fontStyle || undefined}
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   backgroundImage={backgroundImage}
   {...htmlAttributes}
 >
@@ -83,7 +75,7 @@ const htmlAttributes = Object.fromEntries(
 
   .np-reviews h2 {
     color: #fff;
-    font-family: var(--np-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 3.125rem;
     font-weight: 400;
     margin: 0 auto 1.25rem;
@@ -119,7 +111,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .np-reviews .stars {
-    color: var(--star-color, #febb21);
+    color: var(--star-color, var(--color-star));
     font-size: 1.75rem;
     letter-spacing: 0.2em;
     line-height: 1;

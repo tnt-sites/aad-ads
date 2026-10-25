@@ -14,25 +14,18 @@ const {
   buttonSections = [],
   accentColor = "",
   headingColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   accentColor ? `--di-accent-color: ${accentColor}` : "",
   headingColor ? `--di-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--di-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--di-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -42,7 +35,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["di-banner", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -107,7 +100,7 @@ const htmlAttributes = Object.fromEntries(
 
   /* ── H1 ──────────────────────────────────────────────────────────────────── */
   .di-banner h1 {
-    font-family: var(--di-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     letter-spacing: 0.07em;
     line-height: 1.15;
     margin: 0 0 3.125rem;
@@ -122,7 +115,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .di-banner h1 .title {
-    color: var(--color-text-inverse, #fff);
+    color: var(--color-text-inverse);
     display: block;
     font-size: 4.5rem;
     font-weight: 500;
@@ -136,8 +129,8 @@ const htmlAttributes = Object.fromEntries(
     background-color: #000;
     border-bottom: 5px solid rgba(229, 237, 233, 0.5);
     border-top: 5px solid rgba(229, 237, 233, 0.5);
-    color: var(--color-text-inverse, #fff);
-    font-family: var(--di-font-body, var(--font-body));
+    color: var(--color-text-inverse);
+    font-family: var(--font-body);
     margin: 0 auto;
     max-width: 36.5625rem;
     padding: 0.3125rem 0;
@@ -187,7 +180,7 @@ const htmlAttributes = Object.fromEntries(
   .di-banner figcaption {
     background-color: rgba(0, 0, 0, 0.9);
     bottom: 0;
-    color: var(--color-text-inverse, #fff);
+    color: var(--color-text-inverse);
     font-size: 0.9375rem;
     font-weight: 400;
     left: 50%;

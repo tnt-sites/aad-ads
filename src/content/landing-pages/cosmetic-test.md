@@ -9,9 +9,7 @@ landingMainNav:
     mobileRequestLabel: Request an Appointment
     mobileRequestHref: ''
     mobileCallBackgroundColor: ''
-    mobileCallBackgroundColorHex: ''
     mobileRequestBackgroundColor: ''
-    mobileRequestBackgroundColorHex: ''
     mobileCallTextColor: ''
     mobileCallSmallTextColor: ''
     mobileRequestTextColor: ''
@@ -82,7 +80,6 @@ landingFooter:
       positionHorizontal: center
     backgroundGradient: ''
     backgroundColor: ''
-    backgroundColorHex: '#b42424'
     linkColor: ''
     linkHoverColor: ''
     addressLinkColor: ''
@@ -95,7 +92,6 @@ landingPageSections:
   - _component: landing-page-components/cosmetic/banner
     id: ''
     backgroundColor: base
-    backgroundColorHex: ''
     heading: Waco's Premier<br>Cosmetic <span>Dentists</span>
     tagline:
     subheading: >-
@@ -115,12 +111,9 @@ landingPageSections:
     buttonSections: []
     accentColor: ''
     headingColor: ''
-    fontHeadings: ''
-    fontBody: ''
   - _component: landing-page-components/cosmetic/consultation
     id: ''
     backgroundColor: black
-    backgroundColorHex: ''
     heading: Request a FREE Smile Makeover <span>Consultation</span>
     formAction: ''
     formBlocks:
@@ -167,13 +160,11 @@ landingPageSections:
         iconPosition: before
         hideText: false
         disabled: false
-    accentColor: '#ffbebe'
+    accentColor: ''
     headingColor: ''
-    fontHeadings: ''
   - _component: landing-page-components/cosmetic/service-list
     id: ''
     backgroundColor: dark
-    backgroundColorHex: ''
     services:
       - label: Veneers
         url: '#'
@@ -191,7 +182,6 @@ landingPageSections:
   - _component: landing-page-components/cosmetic/split
     id: ''
     backgroundColor: base
-    backgroundColorHex: ''
     heading: Nobody Cares <br><span>More</span>
     paragraphs:
       - >-
@@ -208,12 +198,9 @@ landingPageSections:
     reverse: false
     accentColor: ''
     headingColor: ''
-    fontHeadings: ''
-    fontBody: ''
   - _component: landing-page-components/cosmetic/reviews
     id: ''
     backgroundColor: base
-    backgroundColorHex: ''
     heading: Patients Love Us
     reviewText: >-
       Dr. Smith is so nice and does a great job. His assistant makes my visit
@@ -228,12 +215,11 @@ landingPageSections:
     afterImage:
       source: /src/assets/images/component-library/profile2.jpg
       alt: A beautiful smile after cosmetic work
-    starColor: '#fcd800'
+    starColor: var(--color-star)
     accentColor: ''
     headingColor: ''
     handleColor: dark
     handleArrowColor: white
-    fontHeadings: ''
     reviewsUrl: '#'
     reviewsButtonText: Read More Reviews
 head_scripts: []

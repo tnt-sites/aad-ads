@@ -13,25 +13,16 @@ const {
   image = { source: "", alt: "" },
   figcaption = "",
   buttonSections = [],
-  fontHeadings = "",
-  fontBody = "",
   borderColor = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
-const fontStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
-  fontHeadings ? `--np-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--np-font-body: ${fontBody}` : "",
-  borderColor ? `--np-border-color: ${borderColor}` : "",
-]
+const fontStyle = [borderColor ? `--np-border-color: ${borderColor}` : ""]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const articleStyle = textBackgroundImage?.source
   ? `--np-text-bg-image: url('${textBackgroundImage.source}')`
   : "";
@@ -45,7 +36,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["np-banner", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={fontStyle || undefined}
   {...htmlAttributes}
 >
@@ -121,7 +112,7 @@ const htmlAttributes = Object.fromEntries(
 
   .np-banner h1 {
     color: #000;
-    font-family: var(--np-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 5.375rem;
     font-weight: 400;
     letter-spacing: 0.175em;
@@ -132,7 +123,7 @@ const htmlAttributes = Object.fromEntries(
   .np-banner h1 small {
     color: #000;
     display: block;
-    font-family: var(--np-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1.375rem;
     font-weight: 400;
     letter-spacing: 0.2em;

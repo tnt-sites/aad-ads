@@ -13,25 +13,18 @@ const {
   buttonSections = [],
   accentColor = "",
   headingColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   accentColor ? `--cos-accent-color: ${accentColor}` : "",
   headingColor ? `--cos-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--cos-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--cos-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -42,7 +35,7 @@ const htmlAttributes = Object.fromEntries(
   class:list={["cos-banner", className]}
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -120,8 +113,8 @@ const htmlAttributes = Object.fromEntries(
 
   /* ── H1 ──────────────────────────────────────────────────────────────────── */
   .cos-banner h1 {
-    color: var(--cos-heading-color, var(--color-heading, #000));
-    font-family: var(--cos-font-headings, var(--font-headings));
+    color: var(--cos-heading-color, var(--color-heading));
+    font-family: var(--font-headings);
     font-size: clamp(2.2rem, 4vw, 2.7rem);
     font-weight: 600;
     letter-spacing: 0.07em;
@@ -132,12 +125,12 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-banner h1 :global(span) {
-    color: var(--cos-accent-color, var(--color-brand, #af8c57));
+    color: var(--cos-accent-color, var(--color-brand));
   }
 
   /* ── Tagline (diamond separator) ─────────────────────────────────────────── */
   .cos-banner .tagline {
-    color: var(--cos-accent-color, var(--color-brand, #af8c57));
+    color: var(--cos-accent-color, var(--color-brand));
     font-size: 1rem;
     letter-spacing: 0.475rem;
     margin: 0.25rem 0 1rem;
@@ -145,7 +138,7 @@ const htmlAttributes = Object.fromEntries(
 
   /* ── Body subheading ─────────────────────────────────────────────────────── */
   .cos-banner .subheading {
-    font-family: var(--cos-font-body, var(--font-body));
+    font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 0 1.5rem;

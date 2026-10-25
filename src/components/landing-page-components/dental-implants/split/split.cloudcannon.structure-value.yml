@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/dental-implants/split
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   heading: "True Expertise in Dental Implants"
   paragraphs:
     - "Our team has placed thousands of implants and is committed to delivering results that look, feel, and function like natural teeth."
@@ -20,7 +19,5 @@ value:
   headingColor: "var(--color-heading)"
   accentColor: "var(--color-brand)"
   headingFontFamily: ""
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/split/split.cloudcannon.inputs.yml

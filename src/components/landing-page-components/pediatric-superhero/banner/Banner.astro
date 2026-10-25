@@ -15,20 +15,17 @@ const {
   headingColor = "",
   accentColor = "",
   backgroundColor = "accent",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   headingColor ? `--ps-banner-heading: ${headingColor}` : "",
   accentColor ? `--ps-banner-accent: ${accentColor}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -39,7 +36,7 @@ const htmlAttributes = Object.fromEntries(
   paddingHorizontal="none"
   paddingVertical="none"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -122,23 +119,19 @@ const htmlAttributes = Object.fromEntries(
 
   .ps-banner h1 {
     color: var(--ps-banner-heading, #000);
-    font:
-      700 4.5rem/1.1 "Amatic SC",
-      sans-serif;
+    font: 700 4.5rem/1.1 var(--font-headings);
     margin: 0;
     text-transform: uppercase;
   }
 
   .ps-banner h1 small {
     display: block;
-    font:
-      400 1.5rem/1 Neuton,
-      serif;
+    font: 400 1.5rem/1 var(--font-body);
     text-transform: none;
   }
 
   .ps-banner h1 :global(span) {
-    color: var(--ps-banner-accent, #00aced);
+    color: var(--ps-banner-accent, var(--color-brand));
   }
 
   .ps-banner h1 em {
@@ -164,7 +157,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .ps-banner li::before {
-    color: var(--ps-banner-accent, #00aced);
+    color: var(--ps-banner-accent, var(--color-brand));
     content: "✓";
     font-weight: 700;
     left: 0;

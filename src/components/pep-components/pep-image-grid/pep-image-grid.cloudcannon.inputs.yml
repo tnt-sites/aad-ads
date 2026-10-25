@@ -18,10 +18,6 @@ backgroundColor:
       - id: black
         name: Black
 
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the section background color above.
-
 paddingVertical:
   type: select
   comment: Vertical spacing above and below the grid.
@@ -68,10 +64,6 @@ cardBackgroundColor:
       - id: "#000000"
         name: Black
 
-cardBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the tile background.
-
 captionBackgroundColor:
   type: select
   comment: Background color behind each figcaption.
@@ -97,10 +89,6 @@ captionBackgroundColor:
         name: White
       - id: "#000000"
         name: Black
-
-captionBackgroundColorHex:
-  type: color
-  comment: Optional custom hex color for the figcaption background.
 
 captionTextColor:
   type: select

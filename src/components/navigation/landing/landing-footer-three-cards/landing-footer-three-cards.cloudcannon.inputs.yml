@@ -58,16 +58,28 @@ formButtonBorderRadius:
   type: text
   comment: "Submit button border radius (e.g. 0px, 8px, 999px)."
 formButtonTextColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: "Submit button text color."
 formButtonBackgroundColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: "Submit button background color."
 formButtonHoverBackgroundColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: "Submit button hover background color."
 formButtonHoverTextColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: "Submit button hover text color."
 footerLinksBackgroundColor:
   type: select
@@ -107,14 +119,23 @@ mapEmbedUrl:
   type: text
   comment: "Map iframe embed URL for the contact card; replaced by logo on mobile (<=768px)."
 contactCardBackgroundColor:
-  type: text
+  type: select
   comment: "Optional CSS color value for the contact card background."
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
 servicesCardBackgroundColor:
-  type: text
+  type: select
   comment: "Optional CSS color value for the featured services card background."
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
 formCardBackgroundColor:
-  type: text
+  type: select
   comment: "Optional CSS color value for the form card background."
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
 legalLinks:
   type: array
   comment: "Legal links displayed in the footer legal row."
@@ -190,9 +211,6 @@ backgroundColor:
         name: Dark
       - id: "var(--color-bg-black)"
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
 linkColor:
   type: select
   comment: Color of phone number links.

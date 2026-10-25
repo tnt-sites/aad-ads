@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-pediatric-waves
 title: Pediatric Waves Test
+pageTheme: pediatric-waves
 landingStyle: pediatric-waves
 landingMainNav:
   - _component: navigation/landing/landing-header-pediatric-waves
@@ -40,8 +41,8 @@ landingMainNav:
     mobileRequestSmallTextColor: '#fff'
     mobileMapLabel: Map
     mobileMapHref: ''
-    mobileApptBackground: '#dbe45a'
-    mobileMapBackground: '#0d5f78'
+    mobileApptBackground: var(--color-accent-1)
+    mobileMapBackground: var(--color-accent-2)
 landingFooter:
   - _component: navigation/landing/landing-footer-pediatric-waves
     logoSource: /images/logo.svg
@@ -238,7 +239,7 @@ landingPageSections:
     reviewLogo:
       source: https://placehold.co/220x80
       alt: Google logo
-    badgeBackgroundColor: '#0f5e75'
+    badgeBackgroundColor: var(--color-accent-2)
     headingColor: ''
     waveTopImage:
       source: ''

@@ -6,10 +6,8 @@ value:
   heading: How We Can Help Transform Your Smile
   headingBackgroundColor: accent
   headingTextColor: "var(--color-text)"
-  headingBackgroundColorHex: ""
   itemHeadingColor: "var(--color-brand)"
   backgroundColor: base
-  backgroundColorHex: ""
   shadowColor: var(--color-text)
   items:
     - image:

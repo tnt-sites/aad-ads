@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 reviews:
   type: array
   comment: Review cards shown in a 3-up layout on desktop and stacked on mobile.
@@ -70,13 +66,22 @@ reviews:
                           comment: Alt text for accessibility.
 
 cardBackgroundColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Background color of each review card.
 
 textColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Text color used for review copy and author details.
 
 starColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Color used for the star rating.

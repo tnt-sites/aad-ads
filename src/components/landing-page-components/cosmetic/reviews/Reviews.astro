@@ -11,15 +11,13 @@ const {
   sliderSubheading = "Before & After",
   beforeImage = { source: "", alt: "Before" },
   afterImage = { source: "", alt: "After" },
-  starColor = "#fcd800",
+  starColor = "var(--color-star)",
   buttonSections = [],
   accentColor = "",
   headingColor = "",
   handleColor = "",
   handleArrowColor = "",
-  fontHeadings = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
@@ -49,10 +47,8 @@ const resolvedHandleColor = resolveColorValue(handleColor);
 const resolvedHandleArrowColor = resolveColorValue(handleArrowColor);
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   accentColor ? `--cos-accent-color: ${accentColor}` : "",
   headingColor ? `--cos-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--cos-font-headings: ${fontHeadings}` : "",
   starColor ? `--cos-star-color: ${starColor}` : "",
   resolvedHandleColor ? `--cos-handle-color: ${resolvedHandleColor}` : "",
   resolvedHandleArrowColor ? `--cos-handle-arrow-color: ${resolvedHandleArrowColor}` : "",
@@ -62,7 +58,6 @@ const inlineStyle = [
 
 const safeButtonSections = Array.isArray(buttonSections) ? buttonSections : [];
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -74,7 +69,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -181,8 +176,8 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .review-col h2 {
-    color: var(--cos-heading-color, var(--color-heading, #0f0d0d));
-    font-family: var(--cos-font-headings, var(--font-headings));
+    color: var(--cos-heading-color, var(--color-heading));
+    font-family: var(--font-headings);
     font-size: clamp(2rem, 4vw, 3.125rem);
     font-weight: 300;
     line-height: 1.1;
@@ -191,7 +186,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .stars {
-    color: var(--cos-star-color, #fcd800);
+    color: var(--cos-star-color, var(--color-star));
     font-size: 1.6rem;
     letter-spacing: 0.15em;
     margin: 0 0 0.75rem;
@@ -203,7 +198,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .author {
-    color: var(--cos-accent-color, var(--color-brand, #af8c57));
+    color: var(--cos-accent-color, var(--color-brand));
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -219,8 +214,8 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .slider-title {
-    color: var(--cos-heading-color, var(--color-heading, #0f0d0d));
-    font-family: var(--cos-font-headings, var(--font-headings));
+    color: var(--cos-heading-color, var(--color-heading));
+    font-family: var(--font-headings);
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 300;
     line-height: 1.2;
@@ -229,7 +224,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .slider-label {
-    color: var(--cos-accent-color, var(--color-brand, #af8c57));
+    color: var(--cos-accent-color, var(--color-brand));
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
@@ -294,7 +289,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .ba-handle::before {
-    background: var(--cos-handle-color, var(--cos-accent-color, var(--color-brand, #af8c57)));
+    background: var(--cos-handle-color, var(--cos-accent-color, var(--color-brand)));
     bottom: 0;
     content: "";
     left: 50%;
@@ -306,7 +301,7 @@ const htmlAttributes = Object.fromEntries(
 
   .cos-reviews .ba-handle-icon {
     align-items: center;
-    background: var(--cos-handle-color, var(--cos-accent-color, var(--color-brand, #af8c57)));
+    background: var(--cos-handle-color, var(--cos-accent-color, var(--color-brand)));
     border-radius: 0 0 999px 999px;
     bottom: -1.5rem;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
@@ -320,7 +315,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .cos-reviews .ba-arrow {
-    color: var(--cos-handle-arrow-color, var(--cos-accent-color, var(--color-brand, #af8c57)));
+    color: var(--cos-handle-arrow-color, var(--cos-accent-color, var(--color-brand)));
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 700;

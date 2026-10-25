@@ -17,10 +17,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 image:
   type: object
   comment: Image configuration for the hero section.
@@ -102,11 +98,3 @@ borderColor:
         name: Black
       - id: "var(--color-text-inverse)"
         name: White
-
-fontHeadings:
-  type: text
-  comment: Optional heading font family override (e.g. "Georgia, serif").
-
-fontBody:
-  type: text
-  comment: Optional body font family override (e.g. "Arial, sans-serif").

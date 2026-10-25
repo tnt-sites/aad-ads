@@ -86,8 +86,6 @@ landingPageSections:
     figcaption: ""
     buttonSections: []
     borderColor: "#000"
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/count-on-us/count
     id: ""
     backgroundColor: "var(--color-bg)"
@@ -102,8 +100,6 @@ landingPageSections:
     squareColor: var(--color-bg-surface)
     boxBorderColor: var(--color-bg-surface)
     headingColor: var(--color-text)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/count-on-us/split-section
     id: first-visit
     backgroundColor: "var(--color-bg)"
@@ -123,8 +119,6 @@ landingPageSections:
     squareColor: var(--color-bg-surface)
     headingColor: var(--color-text)
     prefixColor: var(--color-text-muted)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/count-on-us/insurance
     id: ""
     backgroundColor: "var(--color-bg)"
@@ -144,8 +138,6 @@ landingPageSections:
           deductibles. No surprises.
     ruleColor: var(--color-border)
     headingColor: var(--color-text)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/count-on-us/reviews
     id: ""
     backgroundColor: "var(--color-bg)"
@@ -160,11 +152,9 @@ landingPageSections:
     googleLogoImage:
       source: ""
       alt: Google Reviews
-    starColor: "#febb21"
+    starColor: var(--color-star)
     bracketColor: var(--color-brand-secondary)
     googlePanelColor: rgba(203, 116, 40, 0.06)
-    fontHeadings: ""
-    fontBody: ""
   - _component: landing-page-components/count-on-us/split-section
     id: about
     backgroundColor: "var(--color-bg)"
@@ -184,6 +174,4 @@ landingPageSections:
     squareColor: var(--color-bg-surface)
     headingColor: var(--color-text)
     prefixColor: var(--color-text-muted)
-    fontHeadings: ""
-    fontBody: ""
 ---

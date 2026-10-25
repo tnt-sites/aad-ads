@@ -5,7 +5,6 @@ value:
   _component: landing-page-components/count-on-us/insurance
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   blocks:
     - heading: Dental Insurance Welcome
       text: >-
@@ -16,7 +15,5 @@ value:
   ruleColor: "var(--color-border)"
   headingColor: "var(--color-text)"
   headingFontFamily: ""
-  fontHeadings: ""
-  fontBody: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/count-on-us/insurance/insurance.cloudcannon.inputs.yml

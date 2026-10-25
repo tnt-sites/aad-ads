@@ -5,7 +5,6 @@ value:
   _component: pep-components/pep-split-banner
   id: ""
   backgroundColor: base
-  backgroundColorHex: ""
   borderColor: ""
   headingColor: ""
   textColor: ""

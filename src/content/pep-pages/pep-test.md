@@ -1,6 +1,7 @@
 ---
 _schema: pep-page
 title: New PEP Page
+pageTheme: playful-script
 landingMainNav:
   - _component: navigation/landing/landing-header-circle-icons
     logoSource: /images/logo.svg
@@ -24,11 +25,8 @@ landingMainNav:
         uppercase: false
     offices: []
     backgroundColor: ""
-    backgroundColorHex: ""
     iconBackgroundColor: ""
-    iconBackgroundColorHex: ""
     linkColor: ""
-    linkColorHex: ""
     mobileCallSmallText: Call Today!
     mobileApptLabel: Request an Appointment
     mobileApptHref: ""
@@ -51,9 +49,7 @@ landingFooter:
         path: privacy-policy.html
     legalBlurb: ""
     backgroundColor: none
-    backgroundColorHex: ""
     headingColor: ""
-    headingColorHex: ""
 pepSections:
   - _component: landing-page-components/new-patient-split-banner/top-bar
     id: ""
@@ -65,7 +61,6 @@ pepSections:
   - _component: pep-components/pep-banner-centered
     id: ""
     backgroundColor: base
-    backgroundColorHex: ""
     backgroundImage: ""
     backgroundPositionX: center
     backgroundPositionY: center
@@ -105,19 +100,17 @@ pepSections:
     checkIconName: icon-ok-1
     checkColor: var(--color-brand)
     checkmarkShadowColor: var(--color-brand-secondary)
-    checkmarkShadowColorHex: ""
     checkmarkMode: fontello
     fontelloGlyph: e832
     checkmarkCharacter:
   - _component: pep-components/pep-split-banner
     id: ""
     backgroundColor: base
-    backgroundColorHex: ""
     borderColor: var(--color-brand)
     headingColor: var(--color-text)
     textColor: ""
     heading: Plan Ahead.<br />Save. Smile!
-    headingFontFamily: '"Playwrite AR Guides", cursive'
+    headingFontFamily: var(--font-accent)
     text: >-
       It seems like everything is more expensive these days. Dental care does
       not have to follow the trend. By starting now, we can work with you and
@@ -135,7 +128,6 @@ pepSections:
   - _component: pep-components/pep-banner-benefits-expire
     id: ""
     backgroundColor: base
-    backgroundColorHex: ""
     borderColor: var(--color-accent)
     headingColor: var(--color-text-inverse)
     textColor: var(--color-text)
@@ -173,12 +165,10 @@ pepSections:
     dividerColor: ""
     textColor: ""
     backgroundColor: ""
-    backgroundColorHex: ""
     borderColor: ""
   - _component: pep-components/callout-circle-images
     id: ""
     backgroundColor: base
-    backgroundColorHex: ""
     headingColor: var(--color-text)
     itemHeadingColor: ""
     circleBackgroundColor: ""
@@ -199,14 +189,10 @@ pepSections:
   - _component: pep-components/callout-squares
     id: ""
     backgroundColor: base
-    backgroundColorHex: ""
     headingBackgroundColor: ""
-    headingBackgroundColorHex: ""
     headingTextColor: ""
     oddItemBackgroundColor: ""
-    oddItemBackgroundColorHex: ""
     evenItemBackgroundColor: ""
-    evenItemBackgroundColorHex: ""
     itemHeadingColor: ""
     heading: Common Problems Covered by Insurance
     items:
@@ -230,11 +216,9 @@ pepSections:
     heading: How We Can Help Transform Your Smile
     headingBackgroundColor: accent
     headingTextColor: var(--color-text)
-    headingBackgroundColorHex: ""
     itemHeadingColor: var(--color-brand-secondary)
     backgroundColor: base
-    backgroundColorHex:
-    shadowColor: "#4b00ff"
+    shadowColor: var(--color-brand)
     items:
       - image:
           source: https://placehold.co/200x110?text=Icon+1
@@ -261,11 +245,8 @@ pepSections:
     heading: Hear From Our Patients
     paddingVertical: xl
     backgroundColor: base
-    backgroundColorHex: ""
     cardBackgroundColor: ""
-    cardBackgroundColorHex: ""
     captionBackgroundColor: ""
-    captionBackgroundColorHex: ""
     captionTextColor: ""
     items:
       - mediaType: youtube
@@ -292,11 +273,8 @@ pepSections:
   - _component: pep-components/pep-form-ctm
     id: ""
     backgroundColor: none
-    backgroundColorHex: ""
     contentBackgroundColor: ""
-    contentBackgroundColorHex: ""
     callBackgroundColor: ""
-    callBackgroundColorHex: ""
     callTextColor: ""
     linkColor: ""
     image:
@@ -314,14 +292,10 @@ pepSections:
   - _component: pep-components/pep-form-nctm
     id: main-form
     backgroundColor: none
-    backgroundColorHex: ""
     contentBackgroundColor: ""
-    contentBackgroundColorHex: ""
     callBackgroundColor: ""
-    callBackgroundColorHex: ""
     callTextColor: ""
     formBackgroundColor: ""
-    formBackgroundColorHex: ""
     linkColor: ""
     image:
       source: https://placehold.co/485x400
@@ -354,7 +328,6 @@ pepSections:
     bottomText: ""
 head_scripts: []
 footer_scripts: []
-extraFonts:
-  - https://fonts.googleapis.com/css2?family=Playwrite+AR+Guides&display=swap
+extraFonts: []
 landingPageSections: []
 ---

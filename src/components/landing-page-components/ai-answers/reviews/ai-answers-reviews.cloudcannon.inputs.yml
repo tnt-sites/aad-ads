@@ -21,10 +21,6 @@ backgroundColor:
         name: Dark
       - id: black
         name: Black
-backgroundColorHex:
-  type: color
-  comment: Optional custom hex color that overrides the background color above. Leave blank to use the theme color.
-
 heading:
   type: text
   comment: Section heading. Supports <br> for manual line breaks.
@@ -85,7 +81,10 @@ borderColor:
         name: White
 
 starColor:
-  type: color
+  type: select
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
   comment: Color of the star rating icons.
 
 reviews:

@@ -21,7 +21,6 @@ value:
     source: ""
     alt: Patient with braces and aligners
   backgroundColor: "var(--color-brand)"
-  backgroundColorHex: ""
   backgroundImage:
     source: ""
     alt: ""

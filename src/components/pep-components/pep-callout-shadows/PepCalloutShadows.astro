@@ -6,12 +6,10 @@ const {
   heading = "",
   items = [],
   headingBackgroundColor = "",
-  headingBackgroundColorHex = "",
   headingTextColor = "",
   shadowColor = "rgba(0,0,0,0.10)",
   itemHeadingColor = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
@@ -27,13 +25,11 @@ const headingBackgroundColorMap: Record<string, string> = {
 };
 
 const resolvedHeadingBg =
-  headingBackgroundColorHex ||
   headingBackgroundColorMap[headingBackgroundColor] ||
   "var(--color-brand-secondary, var(--color-brand))";
 // Removed even/odd backgrounds
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   `--csq-heading-bg: ${resolvedHeadingBg}`,
   headingTextColor ? `--csq-heading-text: ${headingTextColor}` : "",
   shadowColor ? `--csq-shadow-color: ${shadowColor}` : "",
@@ -41,8 +37,6 @@ const inlineStyle = [
 ]
   .filter(Boolean)
   .join("; ");
-
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
@@ -54,7 +48,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -103,7 +97,7 @@ const htmlAttributes = Object.fromEntries(
 
   .pep-callout-shadows__heading {
     background-color: var(--csq-heading-bg);
-    color: var(--csq-heading-text, var(--color-text-inverse, #fff));
+    color: var(--csq-heading-text, var(--color-text-inverse));
     font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 400;
     margin: 0;
@@ -150,7 +144,7 @@ const htmlAttributes = Object.fromEntries(
   }
 
   .pep-callout-shadows__item-heading {
-    color: var(--csq-item-heading-color, var(--color-text, #000));
+    color: var(--csq-item-heading-color, var(--color-text));
     font-size: 1.375rem;
     font-weight: 400;
     letter-spacing: 0.1em;

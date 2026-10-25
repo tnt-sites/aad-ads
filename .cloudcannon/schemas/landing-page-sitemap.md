@@ -1,6 +1,7 @@
 ---
 _schema: landing-page-sitemap
 title: Sitemap
+pageTheme: ""
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg

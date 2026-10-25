@@ -236,14 +236,14 @@ const cssVars = [
       }
 
       .phone {
-        color: var(--pw-header-phone-link-color, #0d5f78);
+        color: var(--pw-header-phone-link-color, var(--color-accent-2));
         font-size: clamp(1.35rem, 2.2vw, 2.2rem);
         font-weight: var(--font-weight-semibold);
         line-height: 1.05;
 
         &:hover,
         &:focus-visible {
-          color: var(--pw-header-phone-link-hover-color, #0d5f78);
+          color: var(--pw-header-phone-link-hover-color, var(--color-accent-2));
         }
       }
 
@@ -306,7 +306,7 @@ const cssVars = [
       }
 
       .mobile-request {
-        background: var(--pw-header-mobile-request-bg, #dbe45a);
+        background: var(--pw-header-mobile-request-bg, var(--color-accent-1));
         color: var(--pw-header-mobile-request-text-color, #000);
 
         .mobile-small {

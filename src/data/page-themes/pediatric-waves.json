@@ -1,0 +1,7 @@
+{
+  "name": "Pediatric Waves",
+  "extraColors": [
+    { "variable": "--color-accent-1", "value": "#dbe45a" },
+    { "variable": "--color-accent-2", "value": "#0d5f78" }
+  ]
+}

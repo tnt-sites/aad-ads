@@ -15,25 +15,18 @@ const {
   buttonSections = [],
   accentColor = "",
   headingColor = "",
-  fontHeadings = "",
-  fontBody = "",
   backgroundColor = "base",
-  backgroundColorHex = "",
   class: className,
   ...rest
 } = Astro.props;
 
 const inlineStyle = [
-  backgroundColorHex ? `background-color: ${backgroundColorHex}` : "",
   accentColor ? `--ai-accent-color: ${accentColor}` : "",
   headingColor ? `--ai-heading-color: ${headingColor}` : "",
-  fontHeadings ? `--ai-font-headings: ${fontHeadings}` : "",
-  fontBody ? `--ai-font-body: ${fontBody}` : "",
 ]
   .filter(Boolean)
   .join("; ");
 
-const resolvedBg = backgroundColorHex ? "none" : backgroundColor;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -44,7 +37,7 @@ const htmlAttributes = Object.fromEntries(
   paddingVertical="4xl"
   paddingHorizontal="md"
   colorScheme="default"
-  backgroundColor={resolvedBg}
+  backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
@@ -58,7 +51,7 @@ const htmlAttributes = Object.fromEntries(
           data-prop="heading"
           editable={true}
         />
-        <Text text={text} fontFamily={fontBody} data-prop="text" editable={true} />
+        <Text text={text} data-prop="text" editable={true} />
 
         {buttonSections.length > 0 && <ButtonGroup buttonSections={buttonSections} />}
       </div>
@@ -102,7 +95,7 @@ const htmlAttributes = Object.fromEntries(
 
   .ai-split h2 {
     color: var(--nptc-heading-color, var(--color-brand));
-    font-family: var(--nptc-font-headings, var(--font-headings));
+    font-family: var(--font-headings);
     font-size: 3.4375rem;
     font-weight: 500;
     line-height: 1.1;

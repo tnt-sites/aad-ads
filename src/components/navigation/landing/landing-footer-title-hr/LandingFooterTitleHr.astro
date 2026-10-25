@@ -15,9 +15,7 @@ const {
   legalLinks = [],
   legalBlurb = "",
   backgroundColor = "",
-  backgroundColorHex = "",
   headingColor: headingColorProp = "",
-  headingColorHex = "",
   linkColor = "",
   linkHoverColor = "",
   addressLinkColor = "",
@@ -73,8 +71,8 @@ const getColorValue = (value: any) => {
   return normalized && normalized !== "none" ? normalized : "";
 };
 
-const bgColor = backgroundColorHex || getColorValue(backgroundColor) || "";
-const resolvedHeadingColor = headingColorHex || getColorValue(headingColorProp) || "";
+const bgColor = getColorValue(backgroundColor) || "";
+const resolvedHeadingColor = getColorValue(headingColorProp) || "";
 const resolvedOfficeHoursAlignment = officeHoursAlignment === "left" ? "left" : "right";
 
 const cssVars = [
@@ -254,7 +252,7 @@ const blurb = typeof legalBlurb === "string" ? legalBlurb.trim() : "";
 
       .lfth-heading {
         color: var(--lfth-heading-color, #121618);
-        font-family: var(--font-heading, sans-serif);
+        font-family: var(--font-headings);
         font-size: clamp(1.75rem, 3vw, 2.8rem);
         font-weight: 400;
         margin-block: 10px 0;
@@ -315,21 +313,21 @@ const blurb = typeof legalBlurb === "string" ? legalBlurb.trim() : "";
       }
 
       .lfth-office-hours {
-        --office-hours-color: var(--color-text, #121212);
-        --office-hours-day-color: var(--color-text, #121212);
-        --office-hours-note-color: var(--color-text-muted, #6f6f6f);
+        --office-hours-color: var(--color-text);
+        --office-hours-day-color: var(--color-text);
+        --office-hours-note-color: var(--color-text-muted);
         margin: 3.75rem auto 1.875rem;
         max-width: 310px;
       }
 
       .lfth-office-hours .office-hours-day,
       .lfth-office-hours .office-hours-time {
-        font-family: var(--font-heading, sans-serif);
+        font-family: var(--font-headings);
         font-size: 1.1875rem;
       }
 
       .lfth-hours-note {
-        font-family: var(--font-heading, sans-serif);
+        font-family: var(--font-headings);
         font-size: 1.1875rem;
         margin-inline: auto;
         max-width: 310px;
@@ -337,7 +335,7 @@ const blurb = typeof legalBlurb === "string" ? legalBlurb.trim() : "";
       }
 
       .copy {
-        color: var(--color-text, #000);
+        color: var(--color-text);
         font-size: var(--font-size-sm);
         letter-spacing: 0.1em;
         line-height: 1.5;
