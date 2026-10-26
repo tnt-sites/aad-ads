@@ -178,6 +178,8 @@ const globalModals = [
 
     <SEO
       title={formattedTitle}
+      noindex={!!seoData.noindex}
+      nofollow={!!seoData.noindex}
       description={pageDescription}
       openGraph={{
         basic: {

@@ -1,0 +1,75 @@
+backgroundColor:
+  type: select
+  comment: Background color of the section.
+  options:
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
+
+items:
+  type: array
+  comment: Icon callouts shown in a row on desktop and stacked on phones. Four fits best.
+  options:
+    structures:
+      values:
+        - label: Callout
+          icon: star
+          value:
+            image:
+              source: ""
+              alt: ""
+            text: ""
+          _inputs:
+            image:
+              type: object
+              comment: Icon or illustration above the label.
+              options:
+                structures:
+                  values:
+                    - label: Callout Icon
+                      icon: image
+                      value:
+                        source: ""
+                        alt: ""
+                      _inputs:
+                        source:
+                          type: image
+                          comment: Path or URL to the icon.
+                          options:
+                            paths:
+                              uploads: src/assets/images
+                              static: ""
+                        alt:
+                          type: text
+                          comment: Alt text for accessibility (can be blank for decorative icons).
+            text:
+              type: text
+              comment: Label below the icon. Supports <br> for line breaks.
+
+textColor:
+  type: select
+  comment: Color of the callout labels. Defaults to the brand color.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Font for the callout labels. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

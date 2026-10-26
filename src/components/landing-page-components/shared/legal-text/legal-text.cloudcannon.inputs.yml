@@ -1,0 +1,43 @@
+backgroundColor:
+  type: select
+  comment: Background color of the section.
+  options:
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
+
+heading:
+  type: text
+  comment: Page heading (h1), e.g. "Privacy Policy".
+
+text:
+  type: markdown
+  comment: The page text. Use headings and bullet lists for structure.
+
+headingColor:
+  type: select
+  comment: Color of the heading. Defaults to the brand color.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

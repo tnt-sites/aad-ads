@@ -19,7 +19,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://ads.tedudney.com",
+  // Ads-only site: the root sends visitors to the landing page.
+  redirects: {
+    "/": "/landing/new-patient-special/",
+  },
   build: {
     inlineStylesheets: "always",
   },

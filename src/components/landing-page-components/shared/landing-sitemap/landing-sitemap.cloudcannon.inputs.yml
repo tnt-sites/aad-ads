@@ -1,0 +1,51 @@
+backgroundColor:
+  type: select
+  comment: Background color of the section.
+  options:
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
+
+heading:
+  type: text
+  comment: Page heading (h1).
+
+hiddenPages:
+  type: array
+  comment: >-
+    Landing pages to leave off the sitemap, by file name without .md (e.g. thanks).
+    Every other page in src/content/landing-pages is listed automatically.
+  options:
+    structures:
+      values:
+        - label: Page ID
+          icon: visibility_off
+          value: ""
+
+headingColor:
+  type: select
+  comment: Color of the heading. Defaults to the brand color.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

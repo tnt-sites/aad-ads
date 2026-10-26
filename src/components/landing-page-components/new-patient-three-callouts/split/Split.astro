@@ -4,9 +4,15 @@ import Heading from "@core-elements/heading/Heading.astro";
 import Image from "@core-elements/image/Image.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
 
+interface Group {
+  subheading: string;
+  listItems: string[];
+}
+
 const {
   heading = "",
   listItems = [],
+  groups = [] as Group[],
   image = { source: "", alt: "" },
   figcaption = "",
   reverse = false,
@@ -31,29 +37,46 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 <CustomSection
-  class:list={["nptc-split", reverse && "alt", className]}
-  paddingVertical="4xl"
+  class:list={["nptc-split", className]}
+  paddingVertical="none"
   paddingHorizontal="md"
   colorScheme="default"
   backgroundColor={backgroundColor}
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
-  <div class="flex-ed">
+  <div
+    class:list={[
+      "flex-ed block lg:flex justify-between items-center",
+      reverse && "lg:flex-row-reverse",
+    ]}
+  >
     <article>
-      <div class="content">
-        <Heading text={heading} level="h2" data-prop="heading" editable={true} />
-        {
-          listItems.length > 0 && (
-            <ul>
-              {listItems.map((item: string) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          )
-        }
-        {buttonSections.length > 0 && <ButtonGroup buttonSections={buttonSections} />}
-      </div>
+      <Heading text={heading} level="h2" data-prop="heading" editable={true} />
+      {
+        listItems.length > 0 && (
+          <ul>
+            {listItems.map((item: string) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )
+      }
+      {
+        groups.map((group: Group) => (
+          <>
+            {group.subheading && <h3>{group.subheading}</h3>}
+            {group.listItems?.length > 0 && (
+              <ul>
+                {group.listItems.map((item: string) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+          </>
+        ))
+      }
+      {buttonSections.length > 0 && <ButtonGroup buttonSections={buttonSections} />}
     </article>
     <figure>
       <Image
@@ -73,106 +96,139 @@ const htmlAttributes = Object.fromEntries(
 
 <style>
   .nptc-split .flex-ed {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1150px;
+    padding: 50px 10px;
   }
 
-  /* "alt" variant: image on the left */
-  .nptc-split.alt figure {
-    order: -1;
-  }
-
-  /* ── Article ────────────────────────────────────────────────────────────── */
   .nptc-split article {
-    flex: 0 1 540px;
-    text-align: left;
+    text-align: center;
   }
 
-  .nptc-split h2 {
+  .nptc-split article :global(.heading) {
     color: var(--nptc-heading-color, var(--color-brand));
     font-family: var(--font-headings);
-    font-size: 3.4375rem;
+    font-size: 46px;
     font-weight: 500;
-    line-height: 1.1;
-    margin: 0.3125rem auto 0.9375rem;
-    text-align: left;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    text-align: inherit;
   }
 
-  /* ── List ───────────────────────────────────────────────────────────────── */
+  .nptc-split h3 {
+    color: var(--nptc-heading-color, var(--color-brand));
+    font-family: var(--font-headings);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 30px 0 0;
+  }
+
+  .nptc-split article :global(.heading) + h3 {
+    margin-top: 0;
+  }
+
+  /* List: centered as a block on mobile, items stay left-aligned */
   .nptc-split ul {
+    display: table;
     font-family: var(--font-body);
     list-style: none;
+    margin: 0 auto;
     padding: 0;
     text-align: left;
   }
 
   .nptc-split ul li {
-    font-size: 1.875rem;
-    margin: 0.9375rem auto;
-    padding-left: 2.1875rem;
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 15px 0;
+    padding-left: 30px;
     position: relative;
   }
 
   .nptc-split ul li::before {
     color: var(--nptc-accent-color, var(--color-brand));
     content: "+";
-    font-size: 1.875rem;
+    font-size: 28px;
+    font-weight: 700;
     left: 0;
+    line-height: 1;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
   }
 
-  /* ── Figure ─────────────────────────────────────────────────────────────── */
+  .nptc-split article :global(.button-group) {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
   .nptc-split figure {
-    flex: 0 1 480px;
+    margin: 40px auto 0;
+    max-width: 525px;
   }
 
   .nptc-split figure :global(img) {
+    border-radius: 40px;
+    display: block;
     width: 100%;
   }
 
   .nptc-split figcaption {
+    color: #1a1a1a;
     display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    margin-top: 0.9375rem;
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    line-height: 1.25;
+    margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
   }
 
-  /* ── Responsive ─────────────────────────────────────────────────────────── */
-  @media (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .nptc-split .flex-ed {
-      display: block;
+      gap: 50px;
     }
 
     .nptc-split article {
-      flex: none;
+      flex: 0 1 575px;
+      text-align: left;
     }
 
-    .nptc-split.alt figure {
-      order: unset;
+    .nptc-split article :global(.heading) {
+      font-size: 55px;
     }
 
-    .nptc-split h2 {
-      text-align: center;
+    .nptc-split h3 {
+      font-size: 40px;
     }
 
     .nptc-split ul {
-      display: table;
-      margin: 0 auto;
+      display: block;
+    }
+
+    .nptc-split ul li {
+      font-size: 28px;
+      margin: 20px 0;
+    }
+
+    .nptc-split ul li::before {
+      font-size: 34px;
+      top: 2px;
+    }
+
+    .nptc-split article :global(.button-group) {
+      justify-content: flex-start;
     }
 
     .nptc-split figure {
-      flex: none;
-      margin: 1.25rem auto 0;
-      max-width: 500px;
-      width: 100%;
+      flex: 0 1 525px;
+      margin: 0;
+    }
+
+    .nptc-split figcaption {
+      font-size: 21px;
     }
   }
 </style>

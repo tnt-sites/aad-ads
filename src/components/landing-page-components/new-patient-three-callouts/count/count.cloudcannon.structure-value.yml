@@ -32,6 +32,9 @@ value:
         - Chipped or Fractured Tooth
         - Lost or Loose Crown
         - Bleeding or Swollen Gums
+  badgeImage:
+    source: ""
+    alt: ""
   primaryCardColor: ""
   accentCardColor: ""
   accentCardTextColor: ""

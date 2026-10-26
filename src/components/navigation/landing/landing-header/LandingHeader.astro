@@ -182,6 +182,7 @@ const cssVars = [
           <ButtonGroup
             direction="row"
             align="center"
+            width="content"
             class="landing-header-button-group"
             buttonSections={normalizedPageButtons}
             editable={false}
@@ -263,11 +264,38 @@ const cssVars = [
       }
 
       .landing-header-phone {
-        font-weight: var(--font-weight-semibold);
+        font-weight: 700;
       }
 
       .landing-header-address {
-        margin-top: var(--spacing-2xs);
+        margin-top: 5px;
+      }
+
+      .landing-header-logo img {
+        height: auto;
+        width: 123px;
+      }
+
+      @media (min-width: 1024px) {
+        .landing-header-inner {
+          min-height: 100px;
+        }
+
+        .landing-header-contact {
+          justify-self: end;
+          margin-right: 30px;
+          text-align: right;
+        }
+
+        .landing-header-phone {
+          font-size: 40px;
+          letter-spacing: 6px;
+          line-height: 1.1;
+        }
+
+        .landing-header-address {
+          font-size: 20px;
+        }
       }
 
       .landing-header-buttons {

@@ -18,6 +18,31 @@ listItems:
           icon: add
           value: ""
 
+groups:
+  type: array
+  comment: Optional subheaded lists shown after the main list (e.g. one per dentist). Each group has its own h3 and bullet list.
+  options:
+    structures:
+      values:
+        - label: List Group
+          icon: format_list_bulleted
+          value:
+            subheading: ""
+            listItems: []
+          _inputs:
+            subheading:
+              type: text
+              comment: Subheading (h3) above this list, e.g. a doctor's name.
+            listItems:
+              type: array
+              comment: Bullet list items for this group.
+              options:
+                structures:
+                  values:
+                    - label: List Item
+                      icon: add
+                      value: ""
+
 image:
   type: object
   comment: Photo displayed on the opposite side of the content.
@@ -47,7 +72,7 @@ figcaption:
 
 reverse:
   type: checkbox
-  comment: When enabled, the photo appears on the left and content on the right.
+  comment: When enabled, the photo appears on the left and content on the right (desktop). On phones the photo always sits below the text.
 
 buttonSections:
   type: array

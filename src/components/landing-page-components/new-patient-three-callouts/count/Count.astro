@@ -10,6 +10,7 @@ interface Card {
 
 const {
   cards = [] as Card[],
+  badgeImage = { source: "", alt: "" },
   primaryCardColor = "",
   accentCardColor = "",
   accentCardTextColor = "",
@@ -33,10 +34,12 @@ const inlineStyle = [
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
+
+const hasBadge = !!badgeImage?.source;
 ---
 
 <CustomSection
-  class:list={["nptc-count", overlapBanner && "overlap-banner", className]}
+  class:list={["nptc-count", overlapBanner && "overlap-banner", hasBadge && "has-badge", className]}
   paddingHorizontal="md"
   paddingVertical="none"
   colorScheme="default"
@@ -44,10 +47,23 @@ const htmlAttributes = Object.fromEntries(
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
-  <div class="cards">
+  <div class="cards block lg:flex justify-center items-stretch">
     {
-      cards.map((card: Card) => (
+      cards.map((card: Card, index: number) => (
         <div class="card">
+          {index === 1 && hasBadge && (
+            <span class="badge hidden lg:block">
+              <Image
+                source={badgeImage.source}
+                alt={badgeImage.alt || ""}
+                rounded={false}
+                editable={false}
+                aspectRatio="none"
+                sizes="auto"
+                widths={[]}
+              />
+            </span>
+          )}
           {card.image?.source && (
             <span class="img">
               <Image
@@ -76,71 +92,80 @@ const htmlAttributes = Object.fromEntries(
 </CustomSection>
 
 <style>
-  .nptc-count .content {
-    padding: 0;
-  }
-
-  /*  Cards row  */
+  /* Spacing is padding: CustomSection zeroes its first/last child's margins */
   .nptc-count .cards {
-    display: flex;
-    gap: 0;
-    justify-content: center;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 600px;
+    padding: 100px 0;
   }
 
   .nptc-count .card {
     align-items: center;
-    background-color: var(--nptc-card-color, #ebebeb);
-    box-shadow: 3px 3px 16px 0 rgba(0, 0, 0, 0.36);
+    background-color: var(--nptc-card-color, var(--color-bg-surface));
+    box-shadow: 3px 3px 16px 0 rgba(0, 0, 0, 0.16);
     display: flex;
-    flex: 0 1 396px;
     flex-direction: column;
     justify-content: center;
-    margin: 1.25rem 0;
-    min-height: 382px;
-    padding: 1.5rem 1.25rem;
+    margin: 0 auto 10px;
+    overflow: visible; /* the global .card rule clips; the badge sits above the card */
+    padding: 35px 25px;
+    position: relative;
   }
 
   .nptc-count .card:first-child {
-    border-radius: 2.8125rem 0 0 2.8125rem;
+    border-radius: 40px 40px 0 0;
   }
 
   .nptc-count .card:last-child {
-    border-radius: 0 2.8125rem 2.8125rem 0;
+    border-radius: 0 0 40px 40px;
   }
 
   /* Middle card */
   .nptc-count .card:nth-child(2) {
     background-color: var(--nptc-accent-card-color, var(--color-bg-brand));
     color: var(--nptc-accent-card-text-color, var(--color-text-inverse));
+    padding: 65px 25px;
+    z-index: 2;
   }
 
   .nptc-count .card:nth-child(2) .text {
     color: var(--nptc-accent-card-text-color, var(--color-text-inverse));
   }
 
+  /* Badge over the middle card (desktop only) */
+  .nptc-count .badge {
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    top: -105px;
+    transform: translateX(-50%);
+    width: 248px;
+    z-index: 6;
+  }
+
   /*  Icon image  */
   .nptc-count .img {
     align-items: center;
     display: flex;
-    height: 5rem;
+    height: 75px;
     justify-content: center;
-    margin: 0 auto 0.625rem;
-    width: 5rem;
+    margin: 0 auto 10px;
+    width: 90px;
   }
 
   .nptc-count .img :global(img) {
-    max-height: 5rem;
+    max-height: 75px;
     width: auto;
   }
 
   /*  Card text  */
   .nptc-count .text {
     display: block;
-    font-family: var(--font-headings);
-    font-size: 2rem;
-    line-height: 1.2;
+    font-family: var(--font-body);
+    font-size: 34px;
+    letter-spacing: 3.4px;
+    line-height: 1.05;
+    margin-bottom: 10px;
     text-align: center;
   }
 
@@ -148,59 +173,78 @@ const htmlAttributes = Object.fromEntries(
   .nptc-count ul {
     font-family: var(--font-body);
     list-style: none;
-    margin: 0.75rem 0 0;
-    padding: 0.5rem 0.625rem;
+    margin: 10px 0 0;
+    padding: 0;
     text-align: left;
   }
 
   .nptc-count ul li {
-    font-size: 1.25rem;
-    margin: 0.375rem 0;
-    padding-left: 1.25rem;
+    font-size: 19px;
+    line-height: 1.2;
+    margin: 10px auto;
+    padding-left: 22px;
     position: relative;
   }
 
   .nptc-count ul li::before {
-    color: var(--nptc-bullet-color, var(--color-brand));
+    color: var(--nptc-bullet-color, var(--color-text));
     content: "+";
-    font-size: 1.25rem;
+    font-size: 20px;
     left: 0;
+    line-height: 1;
     position: absolute;
-    top: 0;
+    top: 1px;
   }
 
-  /*  Responsive  */
+  @media (min-width: 1024px) {
+    .nptc-count .cards {
+      gap: 10px;
+      max-width: 1150px;
+    }
 
-  @media (min-width: 1025px) {
     .nptc-count.overlap-banner {
       margin-top: -100px;
-      position: relative;
       z-index: 20;
     }
-  }
 
-  @media (max-width: 1024px) {
-    .nptc-count .cards {
-      display: block;
+    .nptc-count.overlap-banner .cards {
+      padding-top: 0;
     }
 
     .nptc-count .card {
-      flex: none;
-      margin: 0.625rem auto;
-      max-width: 480px;
-      width: 100%;
+      flex: 1 1 367px;
+      margin: 0;
+      min-height: 380px;
     }
 
     .nptc-count .card:first-child {
-      border-radius: 2.8125rem 2.8125rem 0 0;
+      border-radius: 40px 0 0 40px;
     }
 
     .nptc-count .card:last-child {
-      border-radius: 0 0 2.8125rem 2.8125rem;
+      border-radius: 0 40px 40px 0;
     }
 
     .nptc-count .card:nth-child(2) {
-      border-radius: 0;
+      flex-basis: 396px;
+    }
+
+    .nptc-count.has-badge .card:nth-child(2) {
+      padding-top: 150px;
+    }
+
+    /* The badge replaces the middle card's icon on desktop */
+    .nptc-count.has-badge .card:nth-child(2) .img {
+      display: none;
+    }
+
+    .nptc-count .text {
+      font-size: 32px;
+      letter-spacing: 3px;
+    }
+
+    .nptc-count ul li {
+      font-size: 20px;
     }
   }
 </style>

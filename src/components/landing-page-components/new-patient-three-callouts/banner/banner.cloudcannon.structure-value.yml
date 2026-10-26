@@ -7,14 +7,19 @@ value:
   fontBody: ""
   id: ""
   backgroundColor: base
+  backgroundGradient: ""
   subheading: "Reston's"
   heading: "Family-Friendly<br>Dentist"
   badgeImage:
     source: ""
     alt: ""
+  badgeMobileOnly: false
   image:
     source: https://placehold.co/800x700
     alt: Doctor photo
+  mobileImage:
+    source: ""
+    alt: ""
   figcaption: ""
   buttonSections: []
   accentColor: "var(--color-brand)"

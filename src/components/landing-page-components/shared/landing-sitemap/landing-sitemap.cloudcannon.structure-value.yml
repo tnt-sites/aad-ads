@@ -1,0 +1,16 @@
+label: Landing Sitemap
+icon: account_tree
+description: Lists every landing page on the site automatically. Hide thank-you pages with "Hidden Pages".
+value:
+  _component: landing-page-components/shared/landing-sitemap
+  fontHeadings: ""
+  fontBody: ""
+  id: ""
+  backgroundColor: base
+  heading: Sitemap
+  hiddenPages:
+    - thanks
+    - sitemap
+  headingColor: ""
+_inputs_from_glob:
+  - /src/components/landing-page-components/shared/landing-sitemap/landing-sitemap.cloudcannon.inputs.yml

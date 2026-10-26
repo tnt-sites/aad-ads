@@ -39,7 +39,7 @@ const fieldId = htmlAttributes.id || `select-${crypto.randomUUID()}`;
   >
     {
       placeholder && (
-        <option value="" disabled>
+        <option value="" disabled selected={!value} hidden>
           {placeholder}
         </option>
       )

@@ -1,72 +1,51 @@
 {
-  "siteName": "Dental Studio",
-  "socials": [
-    {
-      "label": "Facebook",
-      "icon": "social/facebook",
-      "link": "https://facebook.com"
-    },
-    {
-      "label": "Instagram",
-      "icon": "social/instagram",
-      "link": "https://instagram.com"
-    },
-    {
-      "label": "LinkedIn",
-      "icon": "social/linkedin",
-      "link": "https://linkedin.com"
-    }
-  ],
+  "siteName": "Alabaster Aesthetic Dentistry",
+  "socials": [],
   "offices": [
     {
       "name": null,
       "addresses": [
         {
-          "lines": ["123 Main Street", "Suite 200"],
-          "city": "City",
-          "state": "ST",
-          "postalCode": "12345",
+          "lines": ["Dental arts building", "122 7th Ave NE"],
+          "city": "Alabaster",
+          "state": "AL",
+          "postalCode": "35007",
           "country": null,
-          "mapUrl": "https://maps.app.goo.gl/mwYFRCsLFsKPbFYQA"
+          "mapUrl": "https://maps.app.goo.gl/U7qqqkBHWFuD8oHk8"
         }
       ],
       "phones": [
         {
           "type": "phone",
-          "display": "(123) 456-7890",
-          "href": "tel:+11234567890"
+          "display": "(205) 557-9298",
+          "href": "tel:+12055579298"
         }
       ],
-      "emails": [
-        {
-          "display": "info@dentalstudio.com",
-          "href": "mailto:info@dentalstudio.com"
-        }
-      ],
+      "emails": [],
       "officeHours": [
         {
           "day": "Monday",
-          "hours": "8:00 am - 5:00 pm",
+          "hours": "8:00 am – 5:00 pm",
           "note": ""
         },
         {
           "day": "Tuesday",
-          "hours": "8:00 am - 5:00 pm",
+          "hours": "8:00 am – 3:00 pm",
           "note": ""
         },
         {
           "day": "Wednesday",
-          "hours": "8:00 am - 5:00 pm",
+          "hours": "8:00 am – 3:00 pm",
           "note": ""
         },
         {
           "day": "Thursday",
-          "hours": "8:00 am - 5:00 pm",
+          "hours": "8:00 am – 12:00 pm",
           "note": ""
         },
         {
           "day": "Friday",
-          "hours": "8:00 am - 2:00 pm",
+          "hours": "Closed",
           "note": ""
         }
       ],
@@ -74,8 +53,8 @@
     }
   ],
   "modals": [],
-  "head_scripts": ["/* test header script */"],
-  "footer_scripts": ["/* Test Footer Script */"],
-  "mapEmbedUrl": "",
+  "head_scripts": [],
+  "footer_scripts": [],
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d704577.612860078!2d-86.813741!3d33.250916!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888925da87b2e3e9%3A0x30e23cbd96c22cf5!2sAlabaster%20Aesthetic%20Dentistry-%20Dr.%20Thomas%20Dudney%20%26%20Dr.%20Bethanie%20Swanson!5e1!3m2!1sen!2sin!4v1792984026937!5m2!1sen!2sin",
   "recaptchaSiteKey": ""
 }

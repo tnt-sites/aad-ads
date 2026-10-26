@@ -1,0 +1,76 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import Text from "@core-elements/text/Text.astro";
+
+const {
+  heading = "",
+  text = "",
+  headingColor = "",
+  backgroundColor = "base",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const inlineStyle = [headingColor ? `--legal-heading-color: ${headingColor}` : ""]
+  .filter(Boolean)
+  .join("; ");
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(rest).filter(([key]) => key !== "_component")
+);
+---
+
+<CustomSection
+  class:list={["legal-text", className]}
+  paddingVertical="none"
+  paddingHorizontal="md"
+  colorScheme="default"
+  backgroundColor={backgroundColor}
+  style={inlineStyle || undefined}
+  {...htmlAttributes}
+>
+  <div class="block">
+    <article>
+      {heading && <Heading text={heading} level="h1" alignX="center" data-prop="heading" />}
+      <Text text={text} data-prop="text" />
+    </article>
+  </div>
+</CustomSection>
+
+<style>
+  .legal-text article {
+    margin: 0 auto;
+    max-width: 850px;
+    padding: 60px 0 50px;
+  }
+
+  .legal-text article :global(.heading) {
+    color: var(--legal-heading-color, var(--color-brand));
+    font-family: var(--font-headings);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 30px;
+  }
+
+  .legal-text article :global(.text) {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .legal-text article :global(.text h3) {
+    font-size: 24px;
+    margin: 30px 0 10px;
+  }
+
+  @media (min-width: 1024px) {
+    .legal-text article {
+      padding: 120px 0 80px;
+    }
+
+    .legal-text article :global(.heading) {
+      font-size: 55px;
+    }
+  }
+</style>

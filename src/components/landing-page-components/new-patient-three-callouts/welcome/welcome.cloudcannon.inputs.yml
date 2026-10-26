@@ -4,6 +4,11 @@ backgroundColor:
   options:
     allow_empty: true
     values: _select_data.sectionBackgrounds
+
+heading:
+  type: text
+  comment: Optional centered heading (h2) above the paragraphs. Supports <br> for line breaks.
+
 paragraphs:
   type: array
   comment: Each item is one paragraph. The "emphasis" text is displayed in the accent color at the start.
@@ -26,6 +31,13 @@ paragraphs:
 accentColor:
   type: select
   comment: Color of the emphasized phrase at the start of each paragraph.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+headingColor:
+  type: select
+  comment: Color of the heading. Defaults to the brand color.
   options:
     allow_empty: true
     values: _select_data.brandColors

@@ -58,6 +58,29 @@ cards:
                       icon: add
                       value: ""
 
+badgeImage:
+  type: object
+  comment: Optional badge (e.g. Google reviews seal) shown over the middle card on desktop, replacing that card's icon. On phones the card shows its icon instead.
+  options:
+    structures:
+      values:
+        - label: Badge Image
+          icon: workspace_premium
+          value:
+            source: ""
+            alt: ""
+          _inputs:
+            source:
+              type: image
+              comment: Path or URL to the badge image.
+              options:
+                paths:
+                  uploads: src/assets/images
+                  static: ""
+            alt:
+              type: textarea
+              comment: Alt text for accessibility.
+
 primaryCardColor:
   type: select
   comment: Background color for the first and last cards.

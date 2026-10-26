@@ -1,0 +1,14 @@
+label: Legal Text
+icon: policy
+description: Plain text page section with a heading, for the landing site's Privacy Policy or similar legal pages.
+value:
+  _component: landing-page-components/shared/legal-text
+  fontHeadings: ""
+  fontBody: ""
+  id: ""
+  backgroundColor: base
+  heading: Privacy Policy
+  text: ""
+  headingColor: ""
+_inputs_from_glob:
+  - /src/components/landing-page-components/shared/legal-text/legal-text.cloudcannon.inputs.yml

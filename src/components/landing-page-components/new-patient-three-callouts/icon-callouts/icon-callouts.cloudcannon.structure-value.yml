@@ -1,0 +1,29 @@
+label: NPTC Icon Callouts
+icon: star
+description: A row of icons with short labels (e.g. Top-Rated Practice, Same-Day Treatment). Stacks on phones.
+value:
+  _component: landing-page-components/new-patient-three-callouts/icon-callouts
+  fontHeadings: ""
+  fontBody: ""
+  id: ""
+  backgroundColor: base
+  items:
+    - image:
+        source: https://placehold.co/125x125
+        alt: ""
+      text: "Top-Rated<br>Dental Practice"
+    - image:
+        source: https://placehold.co/125x125
+        alt: ""
+      text: "Same-Day<br>Treatment"
+    - image:
+        source: https://placehold.co/125x125
+        alt: ""
+      text: "Locally Owned<br>&amp; Operated"
+    - image:
+        source: https://placehold.co/125x125
+        alt: ""
+      text: "Dental Insurance<br>Welcome"
+  textColor: ""
+_inputs_from_glob:
+  - /src/components/landing-page-components/new-patient-three-callouts/icon-callouts/icon-callouts.cloudcannon.inputs.yml

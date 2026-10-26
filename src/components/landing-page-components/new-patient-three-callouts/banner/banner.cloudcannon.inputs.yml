@@ -4,6 +4,11 @@ backgroundColor:
   options:
     allow_empty: true
     values: _select_data.sectionBackgrounds
+
+backgroundGradient:
+  type: text
+  comment: Optional CSS gradient layered over the background color (e.g. a soft white glow behind the photo). Leave blank for a flat color.
+
 subheading:
   type: text
   comment: Small uppercase text displayed above the main heading (e.g. "Reston's").
@@ -35,6 +40,10 @@ badgeImage:
               type: textarea
               comment: Alt text for accessibility.
 
+badgeMobileOnly:
+  type: checkbox
+  comment: Show the badge here on phones and tablets only. Turn on when the desktop badge sits on the Three Callouts cards instead.
+
 image:
   type: object
   comment: Full-height photo displayed on the right side of the banner.
@@ -58,9 +67,32 @@ image:
               type: textarea
               comment: Alt text for accessibility.
 
+mobileImage:
+  type: object
+  comment: Optional photo used below 1024px instead of the banner photo (e.g. a tighter crop). Leave blank to use the banner photo everywhere.
+  options:
+    structures:
+      values:
+        - label: Mobile Photo
+          icon: smartphone
+          value:
+            source: ""
+            alt: ""
+          _inputs:
+            source:
+              type: image
+              comment: Path or URL to the mobile photo.
+              options:
+                paths:
+                  uploads: src/assets/images
+                  static: ""
+            alt:
+              type: textarea
+              comment: Alt text for accessibility. Leave blank to reuse the banner photo's alt text.
+
 figcaption:
   type: text
-  comment: Optional caption overlaid at the bottom of the banner photo (e.g. doctor name, office name).
+  comment: Optional caption overlaid on the banner photo (e.g. doctor names). Supports <br> for line breaks.
 
 buttonSections:
   type: array

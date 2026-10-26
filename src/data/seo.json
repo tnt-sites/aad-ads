@@ -1,8 +1,9 @@
 {
-  "name": "Astro Component Starter",
-  "url": "https://example.com",
-  "description": "",
-  "logoSource": "/images/logo.svg",
-  "titleFormat": "{title} | Astro Component Starter",
-  "twitterHandle": "@yourusername"
+  "name": "Alabaster Aesthetic Dentistry",
+  "url": "https://ads.tedudney.com",
+  "description": "Alabaster Aesthetic Dentistry welcomes new patients of all ages to our comfortable practice in Alabaster, AL.",
+  "logoSource": "/images/aad/lp-np-logo.png",
+  "titleFormat": "{title} | Alabaster Aesthetic Dentistry",
+  "twitterHandle": "",
+  "noindex": true
 }

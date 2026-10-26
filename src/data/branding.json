@@ -1,13 +1,18 @@
 {
-  "colorBrand": "green",
-  "colorBrandSecondary": "yellow",
-  "colorBrandTertiary": "#ff00ff",
+  "colorBrand": "#2d4a64",
+  "colorBrandSecondary": "#60b2c5",
+  "colorBrandTertiary": "#60b2c5",
   "colorBrandSubtle": "",
   "colorBrandOn": "",
   "colorTextOnBrand": "#ffffff",
-  "colorLink": "blue",
-  "colorLinkHover": "darkblue",
-  "extraColors": [],
+  "colorLink": "#60b2c5",
+  "colorLinkHover": "#2d4a64",
+  "extraColors": [
+    { "variable": "--color-text", "value": "#000000" },
+    { "variable": "--color-bg-accent", "value": "#d1e8ee" },
+    { "variable": "--color-bg-surface", "value": "#f2f2f2" },
+    { "variable": "--color-bg-dark", "value": "#2d4a64" }
+  ],
   "bodyFont": {
     "fontFamily": "\"Roboto\", sans-serif"
   },
@@ -15,6 +20,6 @@
     "fontFamily": "\"Playfair Display\", serif"
   },
   "fontLinks": [
-    "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@400;700&display=swap"
   ]
 }

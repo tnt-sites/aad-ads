@@ -34,5 +34,11 @@
     "name": "Playwrite AR Guides",
     "family": "\"Playwrite AR Guides\", cursive",
     "url": "https://fonts.googleapis.com/css2?family=Playwrite+AR+Guides&display=swap"
+  },
+  {
+    "id": "europa",
+    "name": "Europa",
+    "family": "europa, \"Roboto\", sans-serif",
+    "url": "https://use.typekit.net/gbu0gzd.css"
   }
 ]

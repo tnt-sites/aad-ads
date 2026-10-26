@@ -1,0 +1,96 @@
+backgroundColor:
+  type: select
+  comment: Background color of the review band. Defaults to Dark.
+  options:
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
+
+reviewText:
+  type: textarea
+  comment: The review quote.
+
+author:
+  type: text
+  comment: Reviewer name shown under the stars (e.g. "René L.").
+
+googleLogoImage:
+  type: object
+  comment: Round Google logo shown next to the stars.
+  options:
+    structures:
+      values:
+        - label: Google Logo
+          icon: image
+          value:
+            source: ""
+            alt: Google review
+          _inputs:
+            source:
+              type: image
+              comment: Path or URL to the logo.
+              options:
+                paths:
+                  uploads: src/assets/images
+                  static: ""
+            alt:
+              type: text
+              comment: Alt text for accessibility.
+
+quoteImage:
+  type: object
+  comment: Optional large quote mark shown faintly in the bottom-right corner on desktop.
+  options:
+    structures:
+      values:
+        - label: Quote Mark
+          icon: format_quote
+          value:
+            source: ""
+            alt: ""
+          _inputs:
+            source:
+              type: image
+              comment: Path or URL to the quote mark image.
+              options:
+                paths:
+                  uploads: src/assets/images
+                  static: ""
+            alt:
+              type: text
+              comment: Leave blank; the quote mark is decorative.
+
+starColor:
+  type: select
+  comment: Color of the five stars. Defaults to the star gold.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+textColor:
+  type: select
+  comment: Color of the review text and name. Defaults to white.
+  options:
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

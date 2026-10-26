@@ -1,0 +1,106 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Image from "@core-elements/image/Image.astro";
+
+interface Item {
+  image: { source: string; alt: string };
+  text: string;
+}
+
+const {
+  items = [] as Item[],
+  textColor = "",
+  backgroundColor = "base",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const inlineStyle = [textColor ? `--nptc-callout-text-color: ${textColor}` : ""]
+  .filter(Boolean)
+  .join("; ");
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(rest).filter(([key]) => key !== "_component")
+);
+---
+
+<CustomSection
+  class:list={["nptc-icon-callouts", className]}
+  paddingVertical="none"
+  paddingHorizontal="md"
+  colorScheme="default"
+  backgroundColor={backgroundColor}
+  style={inlineStyle || undefined}
+  {...htmlAttributes}
+>
+  <div class="flex-ed block text-center lg:flex justify-center items-start">
+    {
+      items.map((item: Item) => (
+        <figure>
+          {item.image?.source && (
+            <span class="img">
+              <Image
+                source={item.image.source}
+                alt={item.image.alt || ""}
+                rounded={false}
+                editable={false}
+                aspectRatio="none"
+                sizes="auto"
+                widths={[]}
+              />
+            </span>
+          )}
+          <figcaption set:html={item.text} />
+        </figure>
+      ))
+    }
+  </div>
+</CustomSection>
+
+<style>
+  .nptc-icon-callouts .flex-ed {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 30px 0 50px;
+  }
+
+  .nptc-icon-callouts figure {
+    margin: 0 auto 40px;
+    padding: 10px;
+  }
+
+  .nptc-icon-callouts .img {
+    align-items: flex-end;
+    display: flex;
+    height: 125px;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .nptc-icon-callouts .img :global(img) {
+    max-height: 125px;
+    width: auto;
+  }
+
+  .nptc-icon-callouts figcaption {
+    color: var(--nptc-callout-text-color, var(--color-brand));
+    font-family: var(--font-body);
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  @media (min-width: 1024px) {
+    .nptc-icon-callouts .flex-ed {
+      gap: 20px;
+    }
+
+    .nptc-icon-callouts figure {
+      flex: 0 1 240px;
+      margin: 0;
+    }
+
+    .nptc-icon-callouts figcaption {
+      font-size: 28px;
+    }
+  }
+</style>

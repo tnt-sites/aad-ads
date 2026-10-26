@@ -1,0 +1,109 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import { getCollection } from "astro:content";
+
+const {
+  heading = "Sitemap",
+  hiddenPages = [] as string[],
+  headingColor = "",
+  backgroundColor = "base",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const inlineStyle = [headingColor ? `--sitemap-heading-color: ${headingColor}` : ""]
+  .filter(Boolean)
+  .join("; ");
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(rest).filter(([key]) => key !== "_component")
+);
+
+// Every landing page on this site, minus the ones editors chose to hide
+// (thank-you pages and the sitemap itself, typically).
+const hidden = hiddenPages.map((id: string) => id.toLowerCase());
+const pages = (await getCollection("landing-pages"))
+  .filter((page) => !hidden.includes(page.id.toLowerCase()))
+  .sort((a, b) => a.id.localeCompare(b.id));
+---
+
+<CustomSection
+  class:list={["landing-sitemap", className]}
+  paddingVertical="none"
+  paddingHorizontal="md"
+  colorScheme="default"
+  backgroundColor={backgroundColor}
+  style={inlineStyle || undefined}
+  {...htmlAttributes}
+>
+  <div class="block text-center">
+    <article>
+      {heading && <Heading text={heading} level="h1" alignX="center" data-prop="heading" />}
+      <ul>
+        {
+          pages.map((page) => (
+            <li>
+              <a href={`/landing/${page.id}/`}>{page.data.title || page.id}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+  </div>
+</CustomSection>
+
+<style>
+  .landing-sitemap article {
+    margin: 0 auto;
+    max-width: 850px;
+    padding: 60px 0 50px;
+  }
+
+  .landing-sitemap article :global(.heading) {
+    color: var(--sitemap-heading-color, var(--color-brand));
+    font-family: var(--font-headings);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 30px;
+    text-align: inherit;
+  }
+
+  .landing-sitemap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .landing-sitemap li {
+    font-size: 20px;
+    margin: 15px 0;
+    padding: 0;
+  }
+
+  /* Drop the global `main ul li` bullet */
+  .landing-sitemap li::before {
+    content: none;
+  }
+
+  .landing-sitemap a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .landing-sitemap a:hover {
+    color: var(--color-link-hover);
+  }
+
+  @media (min-width: 1024px) {
+    .landing-sitemap article {
+      padding: 120px 0 80px;
+    }
+
+    .landing-sitemap article :global(.heading) {
+      font-size: 55px;
+    }
+  }
+</style>

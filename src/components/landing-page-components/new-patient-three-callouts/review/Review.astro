@@ -1,0 +1,154 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Image from "@core-elements/image/Image.astro";
+
+const {
+  reviewText = "",
+  author = "",
+  googleLogoImage = { source: "", alt: "Google review" },
+  quoteImage = { source: "", alt: "" },
+  starColor = "",
+  textColor = "",
+  backgroundColor = "dark",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const inlineStyle = [
+  starColor ? `--nptc-star-color: ${starColor}` : "",
+  textColor ? `--nptc-review-text-color: ${textColor}` : "",
+]
+  .filter(Boolean)
+  .join("; ");
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(rest).filter(([key]) => key !== "_component")
+);
+---
+
+<CustomSection
+  class:list={["nptc-review", className]}
+  paddingVertical="none"
+  paddingHorizontal="md"
+  colorScheme="default"
+  backgroundColor={backgroundColor}
+  style={inlineStyle || undefined}
+  {...htmlAttributes}
+>
+  <div class="content block text-center">
+    {
+      quoteImage?.source && (
+        <span class="quote">
+          <Image
+            source={quoteImage.source}
+            alt=""
+            rounded={false}
+            editable={false}
+            aspectRatio="none"
+            sizes="auto"
+            widths={[]}
+          />
+        </span>
+      )
+    }
+    {reviewText && <p data-prop="reviewText">{reviewText}</p>}
+    <div class="author">
+      {
+        googleLogoImage?.source && (
+          <span class="google-logo">
+            <Image
+              source={googleLogoImage.source}
+              alt={googleLogoImage.alt || "Google review"}
+              rounded={false}
+              editable={false}
+              aspectRatio="none"
+              sizes="auto"
+              widths={[]}
+            />
+          </span>
+        )
+      }
+      <span>
+        <span class="stars" aria-label="5 stars">★★★★★</span>
+        {author && <span class="name">- {author}</span>}
+      </span>
+    </div>
+  </div>
+</CustomSection>
+
+<style>
+  .nptc-review .content {
+    color: var(--nptc-review-text-color, var(--color-text-inverse));
+    margin: 0 auto;
+    max-width: 1130px;
+    padding: 95px 5px 85px;
+    position: relative;
+  }
+
+  .nptc-review .quote {
+    bottom: 50px;
+    display: none;
+    opacity: 0.45;
+    position: absolute;
+    right: 0;
+  }
+
+  .nptc-review p {
+    color: inherit;
+    font-family: var(--font-body);
+    font-size: 30px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .nptc-review .author {
+    align-items: center;
+    display: flex;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: 3.2px;
+    line-height: 1.5;
+    margin: 35px auto 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .nptc-review .google-logo {
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    flex: 0 0 50px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+
+  .nptc-review .stars {
+    color: var(--nptc-star-color, var(--color-star));
+    display: block;
+    font-size: 28px;
+    letter-spacing: 4px;
+    line-height: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .nptc-review {
+      margin: 0 10px;
+    }
+
+    .nptc-review .content {
+      padding: 115px 0 95px;
+    }
+
+    .nptc-review .quote {
+      bottom: 0;
+      display: block;
+      transform: translateY(-50%);
+    }
+
+    .nptc-review p {
+      font-size: 35px;
+      line-height: 1.3;
+    }
+  }
+</style>
