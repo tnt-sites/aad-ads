@@ -19,8 +19,8 @@ value:
     - name: Privacy Policy
       path: privacy-policy.html
   legalBlurb: ""
-  linkColor: brand
-  linkHoverColor: brand-secondary
+  linkColor: var(--color-brand)
+  linkHoverColor: var(--color-brand-secondary)
   addressLinkColor: ""
   addressLinkHoverColor: ""
   phoneLinkColor: ""

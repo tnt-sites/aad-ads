@@ -3,10 +3,11 @@ icon: view_column
 description: Row of linked cards with portrait images for each implant service option.
 value:
   _component: landing-page-components/dental-implants/service-callouts
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: "Your Implant Options"
-  headingFontFamily: ""
   items:
     - heading: "Dental Implants"
       image:
@@ -32,7 +33,7 @@ value:
         alt: All-on-4 Implants
       text: "A full arch of teeth supported by just four implants — same-day results."
       link: /all-on-4/
-  headingColor: "var(--color-heading)"
+  headingColor: ""
   accentColor: "var(--color-brand)"
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/service-callouts/service-callouts.cloudcannon.inputs.yml

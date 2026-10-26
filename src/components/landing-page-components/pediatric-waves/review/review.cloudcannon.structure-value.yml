@@ -3,6 +3,8 @@ icon: reviews
 description: Testimonial section with review badge, stars, and layered wave decorations.
 value:
   _component: landing-page-components/pediatric-waves/review
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   badgeHeading: "Mom & Dad<br>Approved<br>Dentists"
@@ -13,7 +15,7 @@ value:
   reviewLogo:
     source: https://placehold.co/220x80
     alt: Google logo
-  badgeBackgroundColor: "#000"
+  badgeBackgroundColor: var(--color-bg-black)
   headingColor: ""
   waveTopImage:
     source: ""

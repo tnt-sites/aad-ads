@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-pediatric-superhero
 title: Pediatric Superhero Test
-pageTheme: pediatric-superhero
 landingStyle: pediatric-superhero
 landingMainNav:
   - _component: navigation/landing/landing-header-split
@@ -138,7 +137,7 @@ landingPageSections:
     id: friendly-expertise
     backgroundColor: base
     heading: "Friendly <span>Expertise</span>"
-    headingFontFamily: ""
+    fontHeadings: ""
     paragraphs:
       - body: >-
           We want kids to love visiting the dentist. That is why our team at
@@ -203,7 +202,7 @@ landingPageSections:
     id: one-stop-convenience
     backgroundColor: accent
     heading: One-Stop Convenience
-    headingFontFamily: ""
+    fontHeadings: ""
     paragraphs:
       - body: >-
           We get it. Life is busy – especially when you have kids. That is
@@ -248,7 +247,7 @@ landingPageSections:
     id: flexible-affordable
     backgroundColor: base
     heading: "Flexible & <span>Affordable</span>"
-    headingFontFamily: ""
+    fontHeadings: ""
     paragraphs:
       - body: >-
           We know how important making the most of insurance benefits is to

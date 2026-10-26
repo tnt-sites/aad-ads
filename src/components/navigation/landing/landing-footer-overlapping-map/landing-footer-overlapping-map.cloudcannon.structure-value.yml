@@ -7,7 +7,7 @@ value:
   logoAlt: Logo
   siteName: Dental Studio
   contactTitle: Schedule Your Visit Today!
-  cardBackgroundColor: "#343434"
+  cardBackgroundColor: var(--color-bg-dark)
   pageButtons:
     - _component: building-blocks/core-elements/button
       text: Request an Appointment

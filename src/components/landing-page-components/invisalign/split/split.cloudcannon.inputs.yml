@@ -41,3 +41,25 @@ figcaption:
 reverse:
   type: checkbox
   comment: Place image on the left when enabled.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

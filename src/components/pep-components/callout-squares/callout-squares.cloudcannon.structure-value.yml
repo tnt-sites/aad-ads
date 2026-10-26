@@ -3,6 +3,8 @@ icon: grid_view
 description: A colored heading banner above a grid of equal-width icon+label squares with alternating odd/even background colors.
 value:
   _component: pep-components/callout-squares
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   headingBackgroundColor: ""

@@ -3,6 +3,8 @@ icon: reviews
 description: Testimonial section with a Google review badge, star rating, and quote.
 value:
   _component: landing-page-components/pediatric-superhero/reviews
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: accent
   stars: 5

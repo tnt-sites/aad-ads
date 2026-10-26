@@ -3,6 +3,8 @@ icon: edit_note
 description: Call-to-action section with a doctor photo, phone number link, and a built-in appointment form (Name, Phone, Email, preferred times checkboxes, comments textarea, and submit).
 value:
   _component: pep-components/pep-form-nctm
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   contentBackgroundColor: ""

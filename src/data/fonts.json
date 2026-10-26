@@ -1,0 +1,38 @@
+[
+  {
+    "id": "amatic-sc",
+    "name": "Amatic SC",
+    "family": "\"Amatic SC\", sans-serif",
+    "url": "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+  },
+  {
+    "id": "caveat-brush",
+    "name": "Caveat Brush",
+    "family": "\"Caveat Brush\", cursive",
+    "url": "https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap"
+  },
+  {
+    "id": "josefin-sans",
+    "name": "Josefin Sans",
+    "family": "\"Josefin Sans\", sans-serif",
+    "url": "https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+  },
+  {
+    "id": "neuton",
+    "name": "Neuton",
+    "family": "Neuton, serif",
+    "url": "https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap"
+  },
+  {
+    "id": "open-sans",
+    "name": "Open Sans",
+    "family": "\"Open Sans\", sans-serif",
+    "url": "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+  },
+  {
+    "id": "playwrite-ar-guides",
+    "name": "Playwrite AR Guides",
+    "family": "\"Playwrite AR Guides\", cursive",
+    "url": "https://fonts.googleapis.com/css2?family=Playwrite+AR+Guides&display=swap"
+  }
+]

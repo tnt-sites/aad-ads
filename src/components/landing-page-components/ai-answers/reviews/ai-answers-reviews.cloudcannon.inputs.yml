@@ -2,25 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the reviews section.
   options:
-    values:
-      - id: brand
-        name: Brand (Primary)
-      - id: brand-secondary
-        name: Brand (Secondary)
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 heading:
   type: text
   comment: Section heading. Supports <br> for manual line breaks.
@@ -52,33 +35,15 @@ headingColor:
   type: select
   comment: Color of the section heading.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "#0A4172"
-        name: Navy
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 borderColor:
   type: select
   comment: Border color for each review card.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "#0A4172"
-        name: Navy
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 starColor:
   type: select
@@ -130,3 +95,25 @@ reviews:
             author:
               type: text
               comment: Author attribution, e.g. "- Jane D."
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

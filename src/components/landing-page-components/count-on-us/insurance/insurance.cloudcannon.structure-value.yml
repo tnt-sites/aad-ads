@@ -3,6 +3,8 @@ icon: health_and_safety
 description: Centered text blocks with ruled-line headings (line — heading — line). Add two blocks for "Insurance Welcome" and "No Insurance? No Worries!".
 value:
   _component: landing-page-components/count-on-us/insurance
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   blocks:
@@ -14,6 +16,5 @@ value:
         If you do not have dental insurance, give us a call. We are proud to offer our In-House Dental Membership Plan. For a low, monthly fee, individuals and families can receive routine, preventive care along with significant discounts on other services. No limits. No deductibles. No surprises.
   ruleColor: "var(--color-border)"
   headingColor: "var(--color-text)"
-  headingFontFamily: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/count-on-us/insurance/insurance.cloudcannon.inputs.yml

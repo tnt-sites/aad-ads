@@ -3,6 +3,8 @@ icon: dashboard
 description: Centered PEP intro banner with a large heading, optional divider, and stacked paragraph copy.
 value:
   _component: pep-components/pep-banner-centered
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   backgroundImage: ""
@@ -16,7 +18,6 @@ value:
   textColor: "var(--color-text)"
   paddingVertical: md
   heading: Resolve to Smile More in 2025
-  headingFontFamily: ""
   contentStyle: paragraph
   showDivider: true
   text: |

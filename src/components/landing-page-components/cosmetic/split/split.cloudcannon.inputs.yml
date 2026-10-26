@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the split section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 heading:
   type: textarea
   comment: Section heading (h2). Supports <br> and <span> to apply accent color (e.g. "Nobody Cares <br><span>More</span>").
@@ -76,3 +63,25 @@ headingColor:
     allow_empty: true
     values: _select_data.brandColors
   comment: Override heading text color. Leave blank to use the site default.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

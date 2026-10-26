@@ -2,125 +2,43 @@ backgroundColor:
   type: select
   comment: Background color of the outer section (behind the card grid).
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 
 headingBackgroundColor:
   type: select
   comment: Background color of the h2 heading banner. Defaults to brand secondary.
   options:
-    values:
-      - id: ""
-        name: Default (Brand Secondary)
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "#000000"
-        name: Black
-      - id: "#ffffff"
-        name: White
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 headingTextColor:
   type: select
   comment: Text color of the h2 heading.
   options:
-    values:
-      - id: ""
-        name: Default (White)
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 oddItemBackgroundColor:
   type: select
   comment: Background color for odd-numbered callout items (1st, 3rd, 5th…). Defaults to a subtle tint.
   options:
-    values:
-      - id: ""
-        name: Default (Subtle Tint)
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-brand)"
-        name: Brand
-      - id: "var(--color-bg-brand-secondary)"
-        name: Brand Secondary
-      - id: "#ffffff"
-        name: White
-      - id: "transparent"
-        name: Transparent
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 evenItemBackgroundColor:
   type: select
   comment: Background color for even-numbered callout items (2nd, 4th, 6th…). Defaults to white.
   options:
-    values:
-      - id: ""
-        name: Default (White)
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-brand)"
-        name: Brand
-      - id: "var(--color-bg-brand-secondary)"
-        name: Brand Secondary
-      - id: "#ffffff"
-        name: White
-      - id: "transparent"
-        name: Transparent
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 itemHeadingColor:
   type: select
   comment: Color of each item's h3 label text.
   options:
-    values:
-      - id: ""
-        name: Default (Dark)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 heading:
   type: text
@@ -150,3 +68,25 @@ items[*].image.alt:
 items[*].heading:
   type: text
   comment: Short label displayed below the image. Supports <br> for line breaks.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

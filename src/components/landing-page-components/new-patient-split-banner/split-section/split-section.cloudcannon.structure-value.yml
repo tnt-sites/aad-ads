@@ -3,6 +3,8 @@ icon: view_column
 description: Two-column split section with a heading, checklist, and photo. Use "reverse" to flip the image to the left.
 value:
   _component: landing-page-components/new-patient-split-banner/split-section
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   headingPrefix: ""

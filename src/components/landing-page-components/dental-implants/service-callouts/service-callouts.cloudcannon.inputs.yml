@@ -2,31 +2,11 @@ backgroundColor:
   type: select
   comment: Background color of the section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 heading:
   type: text
   comment: Optional section heading above the cards (e.g. "Your Implant Options"). Supports <br>.
-
-headingFontFamily:
-  type: select
-  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
-  options:
-    allow_empty: true
-    values: _select_data.fontRoles
 
 items:
   type: array
@@ -77,28 +57,34 @@ headingColor:
   type: select
   comment: Color of the section heading and card h3 titles.
   options:
-    values:
-      - id: "var(--color-heading)"
-        name: Default Heading
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
-      - id: "#324248"
-        name: Dark Teal
+    allow_empty: true
+    values: _select_data.brandColors
 
 accentColor:
   type: select
   comment: Hover accent color for card portrait borders and headings.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
-      - id: "#15A1DC"
-        name: Implants Blue
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

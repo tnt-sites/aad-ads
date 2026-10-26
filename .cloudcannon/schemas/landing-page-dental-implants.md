@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-dental-implants
 title: New Dental Implants Landing Page
-pageTheme: ""
 landingStyle: dental-implants
 landingMainNav:
   - _component: navigation/landing/landing-header

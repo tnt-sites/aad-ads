@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 const { page } = Astro.props as Props;
 const { Content } = await render(page);
 
-// If a parentLandingPage is set, inherit its landingMainNav / landingFooter / scripts / theme.
+// If a parentLandingPage is set, inherit its landingMainNav / landingFooter.
 const parentId = page.data.parentLandingPage;
 let parentPage: CollectionEntry<"pep-pages"> | undefined;
 if (parentId) {
@@ -40,9 +40,6 @@ const frontmatter = parentPage
       landingFooter: parentPage.data.landingFooter ?? page.data.landingFooter,
       head_scripts: parentPage.data.head_scripts ?? page.data.head_scripts,
       footer_scripts: parentPage.data.footer_scripts ?? page.data.footer_scripts,
-      // Blank on the sub-page means "use the parent's theme/fonts".
-      pageTheme: page.data.pageTheme || parentPage.data.pageTheme,
-      extraFonts: page.data.extraFonts?.length ? page.data.extraFonts : parentPage.data.extraFonts,
     }
   : page.data;
 ---

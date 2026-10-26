@@ -65,6 +65,8 @@ const buttons = (Array.isArray(pageButtons) ? pageButtons : []).map((button: any
   text: typeof button?.text === "string" ? button.text : "",
 }));
 
+// Legacy keyword values from before the shared color dropdowns; CSS values
+// (_select_data.brandColors / backgroundColors) pass straight through.
 const colorTokenMap: Record<string, string> = {
   brand: "var(--color-brand)",
   "brand-secondary": "var(--color-brand-secondary)",
@@ -94,16 +96,24 @@ const mobileButtonLabelParts =
 const mobileButtonFirstLine = mobileButtonLabelParts.slice(0, 2).join(" ");
 const mobileButtonSecondLine = mobileButtonLabelParts.slice(2).join(" ");
 
-const resolvedMobileCallBg = colorTokenMap[mobileCallBackgroundColor] || "";
-const resolvedMobileRequestBg = colorTokenMap[mobileRequestBackgroundColor] || "";
-const resolvedMobileCallTextColor = colorTokenMap[mobileCallTextColor] || "";
-const resolvedMobileCallSmallTextColor = colorTokenMap[mobileCallSmallTextColor] || "";
-const resolvedMobileRequestTextColor = colorTokenMap[mobileRequestTextColor] || "";
-const resolvedMobileRequestSmallTextColor = colorTokenMap[mobileRequestSmallTextColor] || "";
-const resolvedAddressLinkColor = colorTokenMap[addressLinkColor] || "";
-const resolvedAddressLinkHoverColor = colorTokenMap[addressLinkHoverColor] || "";
-const resolvedPhoneLinkColor = colorTokenMap[phoneLinkColor] || "";
-const resolvedPhoneLinkHoverColor = colorTokenMap[phoneLinkHoverColor] || "";
+const resolvedMobileCallBg =
+  (colorTokenMap[mobileCallBackgroundColor] ?? mobileCallBackgroundColor) || "";
+const resolvedMobileRequestBg =
+  (colorTokenMap[mobileRequestBackgroundColor] ?? mobileRequestBackgroundColor) || "";
+const resolvedMobileCallTextColor =
+  (colorTokenMap[mobileCallTextColor] ?? mobileCallTextColor) || "";
+const resolvedMobileCallSmallTextColor =
+  (colorTokenMap[mobileCallSmallTextColor] ?? mobileCallSmallTextColor) || "";
+const resolvedMobileRequestTextColor =
+  (colorTokenMap[mobileRequestTextColor] ?? mobileRequestTextColor) || "";
+const resolvedMobileRequestSmallTextColor =
+  (colorTokenMap[mobileRequestSmallTextColor] ?? mobileRequestSmallTextColor) || "";
+const resolvedAddressLinkColor = (colorTokenMap[addressLinkColor] ?? addressLinkColor) || "";
+const resolvedAddressLinkHoverColor =
+  (colorTokenMap[addressLinkHoverColor] ?? addressLinkHoverColor) || "";
+const resolvedPhoneLinkColor = (colorTokenMap[phoneLinkColor] ?? phoneLinkColor) || "";
+const resolvedPhoneLinkHoverColor =
+  (colorTokenMap[phoneLinkHoverColor] ?? phoneLinkHoverColor) || "";
 
 const cssVars = [
   resolvedMobileCallBg && `--lhtl-mobile-call-bg: ${resolvedMobileCallBg}`,

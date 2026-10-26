@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-ai-answers
 title: AI Answers Test
-pageTheme: ai-answers
 landingMainNav:
   - _component: navigation/landing/landing-header
     logoSource: /images/logo.svg
@@ -70,7 +69,7 @@ landingFooter:
     offices: []
 landingPageSections:
   - _component: landing-page-components/ai-answers/banner/ai-answers-banner
-    backgroundColor: surface
+    backgroundColor: var(--color-bg-surface)
     heading: Want a new smile?<br>Confused?<br>Need Answers?
     consultationTitle: Request a Free Consultation<br>with Our Doctors
     consultationItems:
@@ -82,7 +81,7 @@ landingPageSections:
       source: https://placehold.co/680x666
       alt: AI consultation banner image
     borderColor: var(--color-brand)
-    titleBackground: brand
+    titleBackground: var(--color-bg-brand)
     titleColor: var(--color-text-inverse)
     id: ''
   - _component: landing-page-components/ai-answers/reviews/ai-answers-reviews
@@ -129,7 +128,7 @@ landingPageSections:
     logo:
       source: ''
       alt: ''
-    headerColor: var(--color-brand)
+    headerColor: var(--color-bg-brand)
     headerTextColor: var(--color-text-inverse)
     otherColumnLabel: Other Dental Practices
     checkColor: ''
@@ -196,7 +195,7 @@ landingPageSections:
     reverse: true
     buttonSections: []
     headingColor: var(--color-brand)
-    headingFontFamily: ''
+    fontHeadings: ''
 head_scripts: []
 footer_scripts: []
 extraFonts: []

@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the banner section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 subheading:
   type: text
   comment: Small uppercase text displayed above the main heading (e.g. "Reston's").
@@ -85,30 +72,34 @@ accentColor:
   type: select
   comment: Color of the left bracket decoration on the banner.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 headingColor:
   type: select
   comment: Color of the main H1 heading.
   options:
-    values:
-      - id: "var(--color-text)"
-        name: Body Text
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

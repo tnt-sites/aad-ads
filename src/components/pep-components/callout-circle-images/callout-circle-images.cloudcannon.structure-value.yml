@@ -3,6 +3,8 @@ icon: view_module
 description: A row of circular images with short headings below — ideal for highlighting key benefits or service categories.
 value:
   _component: pep-components/callout-circle-images
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   headingColor: ""

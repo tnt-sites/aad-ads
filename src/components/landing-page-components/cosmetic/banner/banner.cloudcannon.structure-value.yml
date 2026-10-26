@@ -3,6 +3,8 @@ icon: dashboard
 description: Hero banner with heading, tagline, subheading, doctor photo, and optional figcaption links.
 value:
   _component: landing-page-components/cosmetic/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: "Waco's Premier<br>Cosmetic <span>Dentists</span>"

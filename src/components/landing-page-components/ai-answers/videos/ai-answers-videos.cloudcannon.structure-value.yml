@@ -3,6 +3,8 @@ icon: video_library
 description: Three embedded YouTube or Vimeo videos with the AI Answers heading style.
 value:
   _component: landing-page-components/ai-answers/videos/ai-answers-videos
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   heading: "Hear More From<br>Some of Our Actual Patients"

@@ -3,10 +3,12 @@ icon: add
 description: Blurb section with the We Understand text.
 value:
   _component: landing-page-components/new-patient-emergency-combo/blurb
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   text:
   backgroundColor: none
   textColor: "#000"
-  blurbBackgroundColor: none
+  blurbBackgroundColor: "transparent"
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-emergency-combo/blurb/blurb.cloudcannon.inputs.yml

@@ -3,6 +3,8 @@ icon: dashboard
 description: Hero banner with heading and badge on the left, full-bleed photo on the right.
 value:
   _component: landing-page-components/new-patient-split-banner/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   subheading: "City's"

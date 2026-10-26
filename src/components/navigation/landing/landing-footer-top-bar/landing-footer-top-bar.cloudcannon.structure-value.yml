@@ -15,8 +15,8 @@ value:
     - name: Sitemap
       path: sitemap.html
   legalBlurb: ""
-  linkColor: brand
-  linkHoverColor: brand-secondary
+  linkColor: var(--color-brand)
+  linkHoverColor: var(--color-brand-secondary)
   addressLinkColor: ""
   addressLinkHoverColor: ""
   phoneLinkColor: ""
@@ -26,7 +26,7 @@ value:
     source: ""
     alt: ""
   backgroundColor: ""
-  accentColor: "#4f95d0"
+  accentColor: var(--color-brand)
 preview:
   text:
     - Landing Footer - Top Bar

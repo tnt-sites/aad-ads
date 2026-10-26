@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the testimonial section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 reviewLogo:
   type: object
   comment: Optional review platform logo shown in the badge (e.g. Google).
@@ -57,20 +44,33 @@ badgeBackgroundColor:
   comment: Background color for the badge column (CSS color value).
   options:
     allow_empty: true
-    values: _select_data.brandColors
+    values: _select_data.backgroundColors
 
 headingColor:
   type: select
   comment: Optional badge text color override.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-text)"
-        name: Body Text
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

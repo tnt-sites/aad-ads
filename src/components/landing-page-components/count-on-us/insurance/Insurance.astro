@@ -6,7 +6,6 @@ const {
   blocks = [],
   ruleColor = "",
   headingColor = "",
-  headingFontFamily = "",
   backgroundColor = "base",
   class: className,
   ...rest
@@ -39,7 +38,6 @@ const htmlAttributes = Object.fromEntries(
         <Heading
           text={block.heading}
           level="h2"
-          fontFamily={headingFontFamily}
           data-prop={`$.blocks[${i}].heading`}
           editable={true}
         />

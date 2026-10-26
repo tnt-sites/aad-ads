@@ -3,8 +3,10 @@ icon: image
 description: Hero section with a board-certified badge, checkmark bullet list, and full-bleed image.
 value:
   _component: landing-page-components/pediatric-superhero/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
-  backgroundColor: accent
+  backgroundColor: "accent"
   subheading: Board-Certified
   heading: "Pediatric <span>Dental Care</span>"
   tagline: for Your Little Superhero

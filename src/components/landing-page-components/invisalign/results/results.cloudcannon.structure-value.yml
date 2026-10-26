@@ -3,6 +3,8 @@ icon: image_search
 description: Real results image pair section with bold colored background.
 value:
   _component: landing-page-components/invisalign/results
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: Real Results. Real Smiles.
   images:

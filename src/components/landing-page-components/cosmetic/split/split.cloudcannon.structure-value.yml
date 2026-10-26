@@ -3,6 +3,8 @@ icon: view_agenda
 description: Two-column split with heading, body paragraphs, optional button, and photo. Toggle reverse to swap image/text sides.
 value:
   _component: landing-page-components/cosmetic/split
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: "Nobody Cares <br><span>More</span>"

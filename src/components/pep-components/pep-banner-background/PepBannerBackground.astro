@@ -1,4 +1,5 @@
 ---
+import { sectionFonts } from "@components/utils/sectionFonts";
 import Image from "@core-elements/image/Image.astro";
 
 const {
@@ -14,10 +15,13 @@ const {
   textColor = "",
   HeadingSpanColor = "",
   AccentWordColor = "",
+  fontHeadings = "",
+  fontBody = "",
   class: className,
   ...rest
 } = Astro.props;
 
+const fonts = sectionFonts(fontHeadings, fontBody);
 const inlineStyle = [
   borderColor ? `--pep-banner-border-color: ${borderColor}` : "",
   headingColor ? `--pep-banner-heading-color: ${headingColor}` : "",
@@ -25,6 +29,7 @@ const inlineStyle = [
   dividerColor ? `--pep-banner-divider-color: ${dividerColor}` : "",
   HeadingSpanColor ? `--pep-banner-span-color: ${HeadingSpanColor}` : "",
   AccentWordColor ? `--pep-banner-accent-word-color: ${AccentWordColor}` : "",
+  fonts.style,
 ]
   .filter(Boolean)
   .join("; ");
@@ -34,6 +39,7 @@ const htmlAttributes = Object.fromEntries(
 );
 ---
 
+{fonts.stylesheets.map((href) => <link rel="stylesheet" href={href} />)}
 <section
   id="banner"
   class:list={["pep-banner-background", className]}

@@ -3,6 +3,8 @@ icon: dashboard
 description: Full-width banner hero with a floating card at the bottom, matching the lp-np-combo banner style.
 value:
   _component: landing-page-components/new-patient-emergency-combo/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   image:
     source: https://placehold.co/1440x700

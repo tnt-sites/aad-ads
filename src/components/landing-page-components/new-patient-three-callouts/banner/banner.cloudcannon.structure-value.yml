@@ -3,6 +3,8 @@ icon: dashboard
 description: Hero banner — heading with a three-sided bracket decoration and optional badge on the left, full-height photo on the right.
 value:
   _component: landing-page-components/new-patient-three-callouts/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   subheading: "Reston's"

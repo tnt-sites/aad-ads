@@ -3,6 +3,8 @@ icon: list
 description: Horizontal bar of cosmetic service links separated by bullet points.
 value:
   _component: landing-page-components/cosmetic/service-list
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: accent
   services:

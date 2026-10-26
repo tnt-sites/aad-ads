@@ -3,6 +3,8 @@ icon: table_chart
 description: Comparison table showing your practice versus other dental practices.
 value:
   _component: landing-page-components/ai-answers/table/ai-answers-table
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   heading: "How {siteName} is<br>Different From Other Dental Practices"
@@ -11,11 +13,11 @@ value:
   logo:
     source: ""
     alt: ""
-  headerColor: "#0091AB"
+  headerColor: var(--color-bg-brand)
   headerTextColor: "#ffffff"
   otherColumnLabel: "Other Dental Practices"
-  checkColor: "#2e7d32"
-  crossColor: "#c0392b"
+  checkColor: ""
+  crossColor: ""
   checkIconName: icon-ok-1
   crossText: "✕"
   rows:

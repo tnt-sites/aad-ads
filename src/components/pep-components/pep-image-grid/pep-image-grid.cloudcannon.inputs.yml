@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the outer section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 
 paddingVertical:
   type: select
@@ -42,71 +29,22 @@ cardBackgroundColor:
   type: select
   comment: Background color behind each image or video tile.
   options:
-    values:
-      - id: ""
-        name: Default (White)
-      - id: "var(--color-bg-base)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "#ffffff"
-        name: White
-      - id: "#000000"
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 captionBackgroundColor:
   type: select
   comment: Background color behind each figcaption.
   options:
-    values:
-      - id: ""
-        name: Default (White)
-      - id: "var(--color-bg-base)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "#ffffff"
-        name: White
-      - id: "#000000"
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 captionTextColor:
   type: select
   comment: Text color of each figcaption.
   options:
-    values:
-      - id: ""
-        name: Default (Dark)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 heading:
   type: text
@@ -158,3 +96,25 @@ items[*].youtubeTitle:
 items[*].caption:
   type: text
   comment: Centered uppercase figcaption shown below the media.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

@@ -98,7 +98,7 @@ pepSections:
     textColor: var(--color-text)
     paddingVertical: md
     heading: Resolve to Smile More in 2025
-    headingFontFamily: ''
+    fontHeadings: ''
     contentStyle: paragraph
     showDivider: true
     text: >

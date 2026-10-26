@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the testimonial section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 badgeHeading:
   type: text
   comment: Heading text shown in the left testimonial badge card. Supports <br> line breaks.
@@ -65,22 +52,13 @@ badgeBackgroundColor:
   comment: Background color for the left badge card.
   options:
     allow_empty: true
-    values: _select_data.brandColors
+    values: _select_data.backgroundColors
 headingColor:
   type: select
   comment: Optional heading color override.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-text)"
-        name: Body Text
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
+    allow_empty: true
+    values: _select_data.brandColors
 
 waveTopImage:
   type: object
@@ -150,3 +128,25 @@ waveBottomImage:
             alt:
               type: text
               comment: Alt text for accessibility.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

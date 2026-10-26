@@ -23,7 +23,6 @@ export interface Props {
   footerScripts?: string[];
   footer_scripts?: string[];
   extraFontLinks?: string[];
-  pageTheme?: string;
 }
 
 const props = Astro.props;
@@ -41,38 +40,6 @@ const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 // sure this rule wins regardless of stylesheet ordering. [data-theme="contrast"]
 // sections are deliberately left alone — they use neutral grays, not brand hues.
 // To change live branding, edit branding.json / the CMS fields — not _default.pcss.
-//
-// Landing/PEP pages can pick a `pageTheme` (dropdown in CloudCannon). Its file in
-// src/data/page-themes/ has the same shape as branding.json and is merged over it
-// here, so a theme only needs the keys it changes. See src/data/page-themes/README.md.
-const pageThemeFiles = import.meta.glob<Record<string, any>>("/src/data/page-themes/*.json", {
-  eager: true,
-  import: "default",
-});
-const pageThemeId = props.pageTheme?.trim();
-const pageTheme = pageThemeId
-  ? pageThemeFiles[`/src/data/page-themes/${pageThemeId}.json`]
-  : undefined;
-if (pageThemeId && !pageTheme) {
-  console.warn(`[BaseLayout] pageTheme "${pageThemeId}" has no file in src/data/page-themes/`);
-}
-
-const hasText = (value: unknown) => typeof value === "string" && value.trim().length > 0;
-const pickFont = (key: string) =>
-  hasText(pageTheme?.[key]?.fontFamily) ? pageTheme![key] : (brandingData as any)[key];
-
-const branding: Record<string, any> = pageTheme
-  ? {
-      ...brandingData,
-      // Theme strings (colors) win; blank/missing keys keep the site value.
-      ...Object.fromEntries(Object.entries(pageTheme).filter(([, value]) => hasText(value))),
-      extraColors: [...brandingData.extraColors, ...(pageTheme.extraColors ?? [])],
-      bodyFont: pickFont("bodyFont"),
-      headingsFont: pickFont("headingsFont"),
-      accentFont: pickFont("accentFont"),
-      fontLinks: [...brandingData.fontLinks, ...(pageTheme.fontLinks ?? [])],
-    }
-  : brandingData;
 
 // --- Branding: core color fields mapped to their CSS custom properties ---
 const sanitizeCssValue = (value: string) => value.split(/[<>{}]|;/)[0].trim();
@@ -89,7 +56,7 @@ const brandingColorVars: Record<string, string> = {
 };
 const brandingColorsCss = Object.entries(brandingColorVars)
   .map(([key, variable]) => {
-    const value = branding[key];
+    const value = (brandingData as any)[key];
     return typeof value === "string" && value.trim()
       ? `${variable}: ${sanitizeCssValue(value)} !important;`
       : "";
@@ -98,7 +65,7 @@ const brandingColorsCss = Object.entries(brandingColorVars)
   .join(" ");
 
 // --- Branding: extraColors runtime overrides (arbitrary user-defined CSS vars) ---
-const brandingExtraColors = Array.isArray(branding.extraColors) ? branding.extraColors : [];
+const brandingExtraColors = Array.isArray(brandingData.extraColors) ? brandingData.extraColors : [];
 const extraColorsCss = (brandingExtraColors as any[])
   .filter((e: any) => e?.variable?.trim() && e?.value?.trim())
   .map((e: any) => `${sanitizeCssValue(e.variable)}: ${sanitizeCssValue(e.value)} !important;`)
@@ -106,11 +73,10 @@ const extraColorsCss = (brandingExtraColors as any[])
 
 // --- Branding: font family fields mapped to their CSS custom properties ---
 const brandingFontVars: Record<string, string | undefined> = {
-  "--font-body": branding.bodyFont?.fontFamily,
-  "--font-headings": branding.headingsFont?.fontFamily,
-  "--font-sans": branding.bodyFont?.fontFamily,
-  "--font-serif": branding.headingsFont?.fontFamily,
-  "--font-accent": branding.accentFont?.fontFamily,
+  "--font-body": brandingData.bodyFont?.fontFamily,
+  "--font-headings": brandingData.headingsFont?.fontFamily,
+  "--font-sans": brandingData.bodyFont?.fontFamily,
+  "--font-serif": brandingData.headingsFont?.fontFamily,
 };
 const brandingFontsCss = Object.entries(brandingFontVars)
   .map(([variable, value]) =>
@@ -126,14 +92,14 @@ const brandingCssRule = brandingCss ? `:root, [data-theme="default"] { ${brandin
 
 // --- Branding: font link URLs ---
 const legacyBrandingFontUrls = [
-  branding.bodyFont?.linkUrl?.trim() ?? "",
-  branding.headingsFont?.linkUrl?.trim() ?? "",
-  ...(((branding.extraFonts as any[]) ?? []) as any[])
+  brandingData.bodyFont?.linkUrl?.trim() ?? "",
+  brandingData.headingsFont?.linkUrl?.trim() ?? "",
+  ...(((brandingData.extraFonts as any[]) ?? []) as any[])
     .map((f: any) => (typeof f === "string" ? f : (f?.linkUrl ?? "")))
     .filter(Boolean),
 ];
-const brandingFontUrls = Array.isArray(branding.fontLinks)
-  ? branding.fontLinks
+const brandingFontUrls = Array.isArray(brandingData.fontLinks)
+  ? brandingData.fontLinks
       .map((url: any) => (typeof url === "string" ? url.trim() : ""))
       .filter(Boolean)
   : legacyBrandingFontUrls;
@@ -193,7 +159,7 @@ const globalModals = [
 ---
 
 <!doctype html>
-<html lang="en" data-theme="default" data-page-theme={pageTheme ? pageThemeId : undefined}>
+<html lang="en" data-theme="default">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />

@@ -3,6 +3,8 @@ icon: view_column
 description: Two-column section with an H2 heading and bullet list on one side and a photo on the other. Use "reverse" to flip the image to the left.
 value:
   _component: landing-page-components/ai-answers/split
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: "How Dr. Lastname's<br> Expertise Benefits You"
@@ -14,6 +16,5 @@ value:
   reverse: false
   buttonSections: []
   headingColor: "var(--color-brand)"
-  headingFontFamily: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/ai-answers/split/split.cloudcannon.inputs.yml

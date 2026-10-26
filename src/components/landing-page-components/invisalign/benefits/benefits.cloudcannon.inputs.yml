@@ -53,19 +53,8 @@ backgroundColor:
   type: select
   comment: Section background color.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "#fff"
-        name: White
-      - id: "#000"
-        name: Black
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 backgroundImage:
   type: object
@@ -87,3 +76,25 @@ backgroundImage:
                   static: ""
             alt:
               type: text
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

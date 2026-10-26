@@ -2,31 +2,11 @@ backgroundColor:
   type: select
   comment: Background color of the section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 heading:
   type: text
   comment: Main section heading. Supports <br> line breaks.
-
-headingFontFamily:
-  type: select
-  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
-  options:
-    allow_empty: true
-    values: _select_data.fontRoles
 
 paragraphs:
   type: array
@@ -84,31 +64,15 @@ headingColor:
   type: select
   comment: Optional heading color override.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-text)"
-        name: Body Text
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
+    allow_empty: true
+    values: _select_data.brandColors
 
 accentColor:
   type: select
   comment: Accent color used for emphasized inline text.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
+    allow_empty: true
+    values: _select_data.brandColors
 
 waveImage:
   type: object
@@ -132,3 +96,25 @@ waveImage:
             alt:
               type: text
               comment: Alt text for accessibility.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

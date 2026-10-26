@@ -2,25 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the banner section.
   options:
-    values:
-      - id: brand
-        name: Brand (Primary)
-      - id: brand-secondary
-        name: Brand (Secondary)
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 subheading:
   type: text
   comment: Small uppercase text displayed above the main heading (e.g. city name like "San Jose's").
@@ -89,14 +72,27 @@ borderColor:
   type: select
   comment: Color of the decorative bottom border on the banner.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

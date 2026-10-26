@@ -10,7 +10,6 @@ interface Paragraph {
 
 const {
   heading = "",
-  headingFontFamily = "",
   paragraphs = [] as Paragraph[],
   image = { source: "", alt: "" },
   figcaption = "",
@@ -84,13 +83,7 @@ const htmlAttributes = Object.fromEntries(
     </figure>
 
     <article>
-      <Heading
-        text={heading}
-        level="h2"
-        fontFamily={headingFontFamily}
-        data-prop="heading"
-        editable={true}
-      />
+      <Heading text={heading} level="h2" data-prop="heading" editable={true} />
       {paragraphs.map((paragraph: Paragraph) => <p set:html={paragraph.body} />)}
       {buttonSections.length > 0 && <ButtonGroup buttonSections={buttonSections} />}
     </article>

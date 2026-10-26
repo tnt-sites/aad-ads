@@ -123,7 +123,7 @@ landingPageSections:
     headingColor: var(--color-brand)
   - _component: landing-page-components/new-patient-three-callouts/split
     id: no-insurance
-    backgroundColor: "var(--color-bg-surface)"
+    backgroundColor: surface
     heading: No Insurance?<br>No Worries!
     listItems:
       - Low-Monthly Payments

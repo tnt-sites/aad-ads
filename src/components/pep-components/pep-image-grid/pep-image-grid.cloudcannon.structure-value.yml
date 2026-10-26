@@ -3,6 +3,8 @@ icon: grid_view
 description: Grid of two or more square image or YouTube tiles with centered uppercase figcaptions.
 value:
   _component: pep-components/pep-image-grid
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: "Hear From Our Patients"
   paddingVertical: xl

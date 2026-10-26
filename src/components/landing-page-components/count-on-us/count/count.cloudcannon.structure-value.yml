@@ -3,6 +3,8 @@ icon: format_list_numbered
 description: Decorative card with a large "Count On Us" heading on the left and a checklist on the right. Features configurable corner bracket borders and background squares.
 value:
   _component: landing-page-components/count-on-us/count
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   headingLine1: Count
@@ -14,7 +16,7 @@ value:
     - Flexible Payment Options
   accentColor: "var(--color-brand)"
   squareColor: "var(--color-bg-surface)"
-  boxBorderColor: "var(--color-bg-surface)"
+  boxBorderColor: var(--color-border)
   headingColor: "var(--color-text)"
 _inputs_from_glob:
   - /src/components/landing-page-components/count-on-us/count/count.cloudcannon.inputs.yml

@@ -7,18 +7,18 @@ value:
   logoAlt: Logo
   contactTitle: Contact Us
   offices: []
-  phoneLinkColor: brand
-  phoneLinkHoverColor: brand-secondary
-  addressLinkColor: brand
-  addressLinkHoverColor: brand-secondary
+  phoneLinkColor: var(--color-brand)
+  phoneLinkHoverColor: var(--color-brand-secondary)
+  addressLinkColor: var(--color-brand)
+  addressLinkHoverColor: var(--color-brand-secondary)
   legalLinks:
     - name: Privacy Policy
       path: /privacy-policy/
     - name: Sitemap
       path: /sitemap/
   legalBlurb: ""
-  linkColor: brand
-  linkHoverColor: brand-secondary
+  linkColor: var(--color-brand)
+  linkHoverColor: var(--color-brand-secondary)
   formHeading: Ask a Question
   formAction: ""
   formBlocks:

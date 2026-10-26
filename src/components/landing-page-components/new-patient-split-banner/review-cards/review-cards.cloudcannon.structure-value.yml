@@ -3,6 +3,8 @@ icon: reviews
 description: 3-up review cards layout that matches the legacy new-patient split banner landing page.
 value:
   _component: landing-page-components/new-patient-split-banner/review-cards
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   reviews:
@@ -24,8 +26,8 @@ value:
       googleLogoImage:
         source: ""
         alt: Google logo
-  cardBackgroundColor: "#484846"
+  cardBackgroundColor: var(--color-bg-dark)
   textColor: "#ffffff"
-  starColor: "#febb21"
+  starColor: var(--color-star)
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-split-banner/review-cards/review-cards.cloudcannon.inputs.yml

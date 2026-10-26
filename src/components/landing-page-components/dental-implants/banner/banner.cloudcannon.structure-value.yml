@@ -3,6 +3,8 @@ icon: dashboard
 description: Hero banner with city/state name, large heading, consultation offer box, and doctor photo.
 value:
   _component: landing-page-components/dental-implants/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   cityState: "Vermont's"
@@ -16,6 +18,6 @@ value:
   figcaption: "Dr. Jane Smith | Dr. John Doe"
   buttonSections: []
   accentColor: "var(--color-brand)"
-  headingColor: "#ccc"
+  headingColor: ""
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/banner/banner.cloudcannon.inputs.yml

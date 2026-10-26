@@ -6,7 +6,6 @@ import Icon from "@core-elements/icon/Icon.astro";
 
 const {
   heading = "",
-  headingFontFamily = "",
   contentStyle = "paragraph",
   text = "",
   listItems = [],
@@ -70,7 +69,6 @@ const htmlAttributes = Object.fromEntries(
       text={heading}
       level="h1"
       class="pep-banner-centered__heading"
-      fontFamily={headingFontFamily}
       data-prop="heading"
       editable={true}
     />

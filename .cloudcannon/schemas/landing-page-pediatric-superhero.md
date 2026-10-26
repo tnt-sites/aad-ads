@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-pediatric-superhero
 title: Pediatric Superhero Landing Page
-pageTheme: ""
 landingStyle: pediatric-superhero
 landingMainNav:
   - _component: navigation/landing/landing-header-split

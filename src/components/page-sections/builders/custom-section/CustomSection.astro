@@ -1,6 +1,7 @@
 ---
 import Component from "@components/utils/renderBlock.astro";
 import { backgroundImageCss } from "@core-elements/image/backgroundImageCss";
+import { sectionFonts } from "@components/utils/sectionFonts";
 
 const {
   label,
@@ -15,18 +16,26 @@ const {
   rounded = false,
   class: className,
   style: styleProp,
+  fontHeadings,
+  fontBody,
   _component,
   ...htmlAttributes
 } = Astro.props;
 
 const bgImage = await backgroundImageCss(backgroundImage);
+const fonts = sectionFonts(fontHeadings, fontBody);
 
 // `styleProp` is merged rather than spread over: callers such as the pep
 // components and LocationSection pass their own custom properties, and before
 // this merge a caller-supplied `style` silently replaced the gradient/image
 // custom properties this component sets.
 const sectionStyle =
-  [backgroundGradient && `--section-bg-gradient: ${backgroundGradient}`, bgImage.style, styleProp]
+  [
+    backgroundGradient && `--section-bg-gradient: ${backgroundGradient}`,
+    bgImage.style,
+    fonts.style,
+    styleProp,
+  ]
     .filter(Boolean)
     .join("; ") || undefined;
 
@@ -52,6 +61,7 @@ if (!htmlAttributes.id && label) {
     />
   )
 }
+{fonts.stylesheets.map((href) => <link rel="stylesheet" href={href} />)}
 <section
   class:list={[
     "custom-section",

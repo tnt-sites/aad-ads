@@ -339,13 +339,6 @@ collections_config:
         type: textarea
         comment: A single script tag or snippet for the footer.
         cascade: true
-      pageTheme:
-        type: select
-        comment: Optional page theme with its own colors/fonts. Leave blank to use the site branding. Sub-pages inherit their parent's theme when blank.
-        cascade: true
-        options:
-          allow_empty: true
-          values: _select_data.pageThemes
       extraFonts:
         type: array
         comment: Extra font stylesheets for this landing page only (e.g. a Google or Adobe Fonts URL). Does not affect the rest of the site.
@@ -734,13 +727,6 @@ collections_config:
         type: textarea
         comment: A single script tag or snippet for the footer.
         cascade: true
-      pageTheme:
-        type: select
-        comment: Optional page theme with its own colors/fonts. Leave blank to use the site branding. Sub-pages inherit their parent's theme when blank.
-        cascade: true
-        options:
-          allow_empty: true
-          values: _select_data.pageThemes
       extraFonts:
         type: array
         comment: Extra font stylesheets for this PEP page only (e.g. a Google or Adobe Fonts URL). Does not affect the rest of the site.
@@ -923,11 +909,18 @@ _inputs:
     type: image
     comment: The logo image for the top navigation.
     cascade: true
+# Data files exposed to inputs. `fonts` feeds the per-section fontHeadings /
+# fontBody dropdowns on landing and PEP sections (see src/components/utils/sectionFonts.ts).
+data_config:
+  fonts:
+    path: src/data/fonts.json
 _select_data:
-  # Shared color-role options for the location, landing and PEP sections — keeps their
-  # palette tied to the site's branding tokens (src/data/branding.json /
-  # src/styles/themes/_default.pcss) plus black and white, instead of letting
-  # editors pick arbitrary hex values.
+  # Shared color dropdowns. Every color field on location, landing and PEP
+  # sections uses one of these three lists, so editors always see the same
+  # options and colors stay tied to the branding tokens (src/data/branding.json /
+  # src/styles/themes/_default.pcss) instead of one-off hex values.
+  #
+  # brandColors: text, border, icon and accent colors (CSS values).
   brandColors:
     - id: var(--color-brand)
       name: Brand
@@ -937,46 +930,77 @@ _select_data:
       name: Brand Tertiary
     - id: var(--color-brand-subtle)
       name: Brand Subtle
+    - id: var(--color-text)
+      name: Text
+    - id: var(--color-text-strong)
+      name: Text Strong
+    - id: var(--color-text-muted)
+      name: Text Muted
     - id: var(--color-text-on-brand)
       name: Text On Brand
+    - id: var(--color-text-inverse)
+      name: Text Inverse
     - id: var(--color-link)
       name: Link
     - id: var(--color-link-hover)
       name: Link Hover
-    - id: var(--color-accent-1)
-      name: Accent 1
-    - id: var(--color-accent-2)
-      name: Accent 2
     - id: var(--color-star)
       name: Star
+    - id: var(--color-border)
+      name: Border
     - id: var(--color-bg-dark)
       name: Dark
     - id: "#000000"
       name: Black
     - id: "#ffffff"
       name: White
-  # Font roles for heading-font dropdowns on landing/PEP sections. The actual
-  # families come from branding.json or the page theme (src/data/page-themes/).
-  fontRoles:
-    - id: var(--font-headings)
-      name: Headings
-    - id: var(--font-body)
-      name: Body
-    - id: var(--font-accent)
-      name: Accent (page theme)
-  # Landing/PEP page themes. Each id is a file in src/data/page-themes/{id}.json —
-  # add an entry here when you add a theme file (see that folder's README.md).
-  pageThemes:
-    - id: ai-answers
-      name: AI Answers
-    - id: invisalign
-      name: Invisalign
-    - id: pediatric-superhero
-      name: Pediatric Superhero
-    - id: pediatric-waves
-      name: Pediatric Waves
-    - id: playful-script
-      name: Playful Script
+  # backgroundColors: backgrounds set directly as CSS (cards, buttons, bars).
+  backgroundColors:
+    - id: transparent
+      name: None
+    - id: var(--color-bg)
+      name: Base
+    - id: var(--color-bg-surface)
+      name: Surface
+    - id: var(--color-bg-muted)
+      name: Muted
+    - id: var(--color-bg-accent)
+      name: Accent
+    - id: var(--color-bg-highlight)
+      name: Highlight
+    - id: var(--color-bg-brand)
+      name: Brand
+    - id: var(--color-bg-brand-secondary)
+      name: Brand Secondary
+    - id: var(--color-bg-brand-muted)
+      name: Brand Tertiary
+    - id: var(--color-bg-dark)
+      name: Dark
+    - id: var(--color-bg-black)
+      name: Black
+    - id: "#ffffff"
+      name: White
+  # sectionBackgrounds: the `backgroundColor` prop of CustomSection, which maps
+  # each id to a bg-{id} class (see CustomSection.astro).
+  sectionBackgrounds:
+    - id: none
+      name: None
+    - id: base
+      name: Base
+    - id: surface
+      name: Surface
+    - id: accent
+      name: Accent
+    - id: highlight
+      name: Highlight
+    - id: brand
+      name: Brand
+    - id: brand-secondary
+      name: Brand Secondary
+    - id: dark
+      name: Dark
+    - id: black
+      name: Black
   icons:
     - id: academic-cap
       name: Academic Cap

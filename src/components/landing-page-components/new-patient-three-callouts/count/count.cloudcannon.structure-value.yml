@@ -3,6 +3,8 @@ icon: view_module
 description: Three callout cards displayed in a pill-shaped row. First and last cards have rounded ends; the middle card gets an accent color. Can overlap the banner above.
 value:
   _component: landing-page-components/new-patient-three-callouts/count
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   overlapBanner: true

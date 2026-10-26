@@ -2,103 +2,36 @@ backgroundColor:
   type: select
   comment: Background color of the outer section (the band behind the content card).
   options:
-    values:
-      - id: ""
-        name: None
-      - id: "var(--color-bg)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-dark)"
-        name: Dark
-      - id: "var(--color-bg-black)"
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 
 contentBackgroundColor:
   type: select
   comment: Background color of the inner content card (behind the form).
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: ""
-        name: None (Transparent)
-      - id: "var(--color-bg)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-dark)"
-        name: Dark
-      - id: "var(--color-bg-black)"
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 callBackgroundColor:
   type: select
   comment: Background color of the call-to-action row (photo + call text).
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: ""
-        name: None (Transparent)
-      - id: "var(--color-bg)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-dark)"
-        name: Dark
-      - id: "var(--color-bg-black)"
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 callTextColor:
   type: select
   comment: Color of the call text.
   options:
-    values:
-      - id: ""
-        name: Default (Dark)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 linkColor:
   type: select
   comment: Color of the phone number link.
   options:
-    values:
-      - id: ""
-        name: Default (Brand)
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "#95982d"
-        name: Olive Green
+    allow_empty: true
+    values: _select_data.brandColors
 
 image:
   type: object
@@ -127,3 +60,25 @@ iframeEmbed:
 bottomText:
   type: markdown
   comment: Optional paragraph displayed below the form in the outer section background color. Supports HTML.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

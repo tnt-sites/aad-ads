@@ -3,6 +3,8 @@ icon: image
 description: Hero section with bullet list, CTA buttons, and layered wave decorations.
 value:
   _component: landing-page-components/pediatric-waves/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   subheading: Board-Certified

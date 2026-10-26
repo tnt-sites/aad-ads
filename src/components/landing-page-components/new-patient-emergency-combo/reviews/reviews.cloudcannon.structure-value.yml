@@ -4,6 +4,8 @@ description: A Review section for PPC landing pages, with background image.
 
 value:
   _component: landing-page-components/new-patient-emergency-combo/reviews
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   image:
@@ -16,9 +18,9 @@ value:
     source: https://placehold.co/1200x1200
   reviewText: "lorem ipsum"
   author: "First Last"
-  textColor: "#fff"
-  mobileTextColor: "#000"
+  textColor: "#ffffff"
+  mobileTextColor: "#000000"
   authorAlignX: left
-  starColor: "#febb21"
+  starColor: var(--color-star)
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-emergency-combo/reviews/reviews.cloudcannon.inputs.yml

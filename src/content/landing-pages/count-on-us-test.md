@@ -65,14 +65,14 @@ landingFooter:
 landingPageSections:
   - _component: landing-page-components/new-patient-split-banner/top-bar
     id: ""
-    backgroundColor: "var(--color-bg-brand)"
+    backgroundColor: brand
     textColor: var(--color-text-inverse)
     items:
       - New Patients Welcome
       - Same-Day Appointments Available
   - _component: landing-page-components/count-on-us/banner
     id: ""
-    backgroundColor: "var(--color-bg-surface)"
+    backgroundColor: surface
     subheading: San Jose's
     heading: Top-Rated<br>Dental Expert
     badgeImages:
@@ -85,10 +85,10 @@ landingPageSections:
       alt: Doctor photo
     figcaption: ""
     buttonSections: []
-    borderColor: "#000"
+    borderColor: "#000000"
   - _component: landing-page-components/count-on-us/count
     id: ""
-    backgroundColor: "var(--color-bg)"
+    backgroundColor: base
     headingLine1: Count
     headingLine2: On Us
     listItems:
@@ -98,11 +98,11 @@ landingPageSections:
       - Flexible Payment Options
     accentColor: var(--color-brand)
     squareColor: var(--color-bg-surface)
-    boxBorderColor: var(--color-bg-surface)
+    boxBorderColor: var(--color-border)
     headingColor: var(--color-text)
   - _component: landing-page-components/count-on-us/split-section
     id: first-visit
-    backgroundColor: "var(--color-bg)"
+    backgroundColor: base
     headingPrefix: What happens during
     heading: Your First Visit
     listItems:
@@ -121,7 +121,7 @@ landingPageSections:
     prefixColor: var(--color-text-muted)
   - _component: landing-page-components/count-on-us/insurance
     id: ""
-    backgroundColor: "var(--color-bg)"
+    backgroundColor: base
     blocks:
       - heading: Dental Insurance Welcome
         text: >-
@@ -140,7 +140,7 @@ landingPageSections:
     headingColor: var(--color-text)
   - _component: landing-page-components/count-on-us/reviews
     id: ""
-    backgroundColor: "var(--color-bg)"
+    backgroundColor: base
     backgroundImage:
       source: ""
       alt: ""
@@ -154,10 +154,10 @@ landingPageSections:
       alt: Google Reviews
     starColor: var(--color-star)
     bracketColor: var(--color-brand-secondary)
-    googlePanelColor: rgba(203, 116, 40, 0.06)
+    googlePanelColor: var(--color-bg-surface)
   - _component: landing-page-components/count-on-us/split-section
     id: about
-    backgroundColor: "var(--color-bg)"
+    backgroundColor: base
     headingPrefix: Learn More About
     heading: Our Practice
     listItems:

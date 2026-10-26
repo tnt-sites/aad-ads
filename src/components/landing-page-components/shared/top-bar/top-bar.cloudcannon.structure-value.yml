@@ -3,6 +3,8 @@ icon: campaign
 description: A thin announcement bar displayed below the header with bullet-separated text items.
 value:
   _component: landing-page-components/shared/top-bar
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: brand
   textColor: "var(--color-text-inverse)"

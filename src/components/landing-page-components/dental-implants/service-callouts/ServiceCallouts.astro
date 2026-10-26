@@ -12,7 +12,6 @@ interface Item {
 
 const {
   heading = "",
-  headingFontFamily = "",
   items = [] as Item[],
   headingColor = "",
   accentColor = "",
@@ -42,17 +41,7 @@ const htmlAttributes = Object.fromEntries(
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
-  {
-    heading && (
-      <Heading
-        text={heading}
-        level="h2"
-        fontFamily={headingFontFamily}
-        data-prop="heading"
-        editable={true}
-      />
-    )
-  }
+  {heading && <Heading text={heading} level="h2" data-prop="heading" editable={true} />}
   <div class="options">
     {
       items.map((item: Item, i: number) => (

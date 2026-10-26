@@ -62,8 +62,8 @@ landingFooter:
     formButtonBackgroundColor: ''
     formButtonHoverBackgroundColor: ''
     formButtonHoverTextColor: ''
-    footerLinksBackgroundColor: brand
-    footerLinksHoverBackgroundColor: brand-secondary
+    footerLinksBackgroundColor: var(--color-bg-brand)
+    footerLinksHoverBackgroundColor: var(--color-bg-brand-secondary)
     mapEmbedUrl: ''
     contactCardBackgroundColor: ''
     servicesCardBackgroundColor: ''
@@ -218,8 +218,8 @@ landingPageSections:
     starColor: var(--color-star)
     accentColor: ''
     headingColor: ''
-    handleColor: dark
-    handleArrowColor: white
+    handleColor: var(--color-text)
+    handleArrowColor: "#ffffff"
     reviewsUrl: '#'
     reviewsButtonText: Read More Reviews
 head_scripts: []

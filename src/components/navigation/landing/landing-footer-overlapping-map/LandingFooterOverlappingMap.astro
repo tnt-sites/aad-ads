@@ -40,6 +40,8 @@ const embedSrc = typeof mapEmbedUrl === "string" ? mapEmbedUrl.trim() : "";
 const bgImage = await backgroundImageCss(backgroundImage);
 const backgroundGradientValue =
   typeof backgroundGradient === "string" ? backgroundGradient.trim() : "";
+// Legacy keyword values from before the shared color dropdowns; CSS values
+// (_select_data.brandColors / backgroundColors) pass straight through.
 const bgColorMap: Record<string, string> = {
   base: "var(--color-bg)",
   surface: "var(--color-bg-surface)",
@@ -51,7 +53,12 @@ const bgColorMap: Record<string, string> = {
   black: "var(--color-bg-black)",
 };
 const resolvedBgColor =
-  (backgroundColor && backgroundColor !== "none" && bgColorMap[backgroundColor]) || "";
+  (backgroundColor &&
+    backgroundColor !== "none" &&
+    (bgColorMap[backgroundColor] ?? backgroundColor)) ||
+  "";
+// Legacy keyword values from before the shared color dropdowns; CSS values
+// (_select_data.brandColors / backgroundColors) pass straight through.
 const linkColorMap: Record<string, string> = {
   white: "#fff",
   brand: "var(--color-brand)",
@@ -60,20 +67,32 @@ const linkColorMap: Record<string, string> = {
   "text-strong": "var(--color-text-strong)",
   "text-inverse": "var(--color-text-inverse)",
 };
-const resolvedLinkColor = (linkColor && linkColor !== "none" && linkColorMap[linkColor]) || "";
+const resolvedLinkColor =
+  (linkColor && linkColor !== "none" && (linkColorMap[linkColor] ?? linkColor)) || "";
 const resolvedLinkHoverColor =
-  (linkHoverColor && linkHoverColor !== "none" && linkColorMap[linkHoverColor]) || "";
+  (linkHoverColor &&
+    linkHoverColor !== "none" &&
+    (linkColorMap[linkHoverColor] ?? linkHoverColor)) ||
+  "";
 const resolvedAddressLinkColor =
-  (addressLinkColor && addressLinkColor !== "none" && linkColorMap[addressLinkColor]) || "";
+  (addressLinkColor &&
+    addressLinkColor !== "none" &&
+    (linkColorMap[addressLinkColor] ?? addressLinkColor)) ||
+  "";
 const resolvedAddressLinkHoverColor =
   (addressLinkHoverColor &&
     addressLinkHoverColor !== "none" &&
-    linkColorMap[addressLinkHoverColor]) ||
+    (linkColorMap[addressLinkHoverColor] ?? addressLinkHoverColor)) ||
   "";
 const resolvedPhoneLinkColor =
-  (phoneLinkColor && phoneLinkColor !== "none" && linkColorMap[phoneLinkColor]) || "";
+  (phoneLinkColor &&
+    phoneLinkColor !== "none" &&
+    (linkColorMap[phoneLinkColor] ?? phoneLinkColor)) ||
+  "";
 const resolvedPhoneLinkHoverColor =
-  (phoneLinkHoverColor && phoneLinkHoverColor !== "none" && linkColorMap[phoneLinkHoverColor]) ||
+  (phoneLinkHoverColor &&
+    phoneLinkHoverColor !== "none" &&
+    (linkColorMap[phoneLinkHoverColor] ?? phoneLinkHoverColor)) ||
   "";
 const resolvedOfficeHoursAlignment = officeHoursAlignment === "left" ? "left" : "right";
 const footerBackgroundStyle = [

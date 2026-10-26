@@ -14,6 +14,8 @@ const {
   ...rest
 } = Astro.props;
 
+// Legacy keyword values from before the shared color dropdowns; CSS values
+// (_select_data.brandColors / backgroundColors) pass straight through.
 const headingBackgroundColorMap: Record<string, string> = {
   none: "transparent",
   base: "var(--color-bg)",
@@ -25,7 +27,7 @@ const headingBackgroundColorMap: Record<string, string> = {
 };
 
 const resolvedHeadingBg =
-  headingBackgroundColorMap[headingBackgroundColor] ||
+  (headingBackgroundColorMap[headingBackgroundColor] ?? headingBackgroundColor) ||
   "var(--color-brand-secondary, var(--color-brand))";
 // Removed even/odd backgrounds
 

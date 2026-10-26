@@ -3,10 +3,11 @@ icon: view_column
 description: Two-column content section with image, CTA support, and side wave decoration.
 value:
   _component: landing-page-components/pediatric-waves/split
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: Friendly <span>Expertise</span>
-  headingFontFamily: ""
   paragraphs:
     - body: We want kids to love visiting the dentist. Our team provides one-on-one attention to every child.
     - body: We have completed advanced training specific to pediatric dentistry.

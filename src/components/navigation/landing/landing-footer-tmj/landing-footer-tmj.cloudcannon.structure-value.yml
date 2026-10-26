@@ -30,8 +30,8 @@ value:
   backgroundGradient: ""
   backgroundColor: ""
   officeHoursAlignment: right
-  linkColor: brand
-  linkHoverColor: brand-secondary
+  linkColor: var(--color-brand)
+  linkHoverColor: var(--color-brand-secondary)
   addressLinkColor: ""
   addressLinkHoverColor: ""
   phoneLinkColor: ""

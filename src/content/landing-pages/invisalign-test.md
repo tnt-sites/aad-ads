@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-invisalign
 title: Invisalign Test
-pageTheme: invisalign
 landingMainNav:
   - _component: navigation/landing/landing-header-four-col
     logoSource: /images/logo.svg
@@ -100,8 +99,8 @@ landingFooter:
       - name: Sitemap
         path: /sitemap/
     legalBlurb: ''
-    linkColor: brand
-    linkHoverColor: brand-secondary
+    linkColor: var(--color-brand)
+    linkHoverColor: var(--color-brand-secondary)
     addressLinkColor: ''
     addressLinkHoverColor: ''
     phoneLinkColor: ''
@@ -110,7 +109,7 @@ landingFooter:
     backgroundImage:
       source: ''
       alt: ''
-    backgroundColor: brand-secondary
+    backgroundColor: var(--color-bg-brand-secondary)
     accentColor: var(--color-brand)
 landingPageSections:
   - _component: landing-page-components/shared/top-bar
@@ -137,7 +136,7 @@ landingPageSections:
     textPanelBackgroundImage:
       source: ''
       alt: ''
-    sectionBackground: '#000'
+    sectionBackground: var(--color-bg-black)
     borderBottomColor: var(--color-brand)
   - _component: landing-page-components/invisalign/form-review
     id: ''
@@ -153,8 +152,8 @@ landingPageSections:
       Invisalign and her teeth look amazing.
     reviewerName: Jonathan B.
     sectionSpacingTop: 100px
-    formBackgroundColor: var(--color-brand)
-    reviewBackgroundColor: '#fff'
+    formBackgroundColor: var(--color-bg-brand)
+    reviewBackgroundColor: "#ffffff"
   - _component: landing-page-components/invisalign/results
     id: ''
     heading: Real Results. Real Smiles.
@@ -163,7 +162,7 @@ landingPageSections:
         alt: Result 1
       - source: https://placehold.co/460x330
         alt: Result 2
-    backgroundColor: var(--color-brand)
+    backgroundColor: var(--color-bg-brand)
     textColor: '#ffffff'
   - _component: landing-page-components/invisalign/benefits
     id: ''
@@ -183,7 +182,7 @@ landingPageSections:
     centerImage:
       source: https://placehold.co/500x600
       alt: Woman with Invisalign and braces
-    backgroundColor: var(--color-brand)
+    backgroundColor: var(--color-bg-brand)
     backgroundImage:
       source: ''
       alt: ''

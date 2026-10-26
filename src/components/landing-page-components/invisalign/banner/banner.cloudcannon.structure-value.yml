@@ -3,6 +3,8 @@ icon: dashboard
 description: Hero section with large heading, coupons, and right-side doctor image.
 value:
   _component: landing-page-components/invisalign/banner
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: Invisalign Day
   preHeading: Join Us For
@@ -19,7 +21,7 @@ value:
   textPanelBackgroundImage:
     source: ""
     alt: ""
-  sectionBackground: "var(--color-brand)"
+  sectionBackground: var(--color-bg-brand)
   borderBottomColor: "var(--color-brand)"
 _inputs_from_glob:
   - /src/components/landing-page-components/invisalign/banner/banner.cloudcannon.inputs.yml

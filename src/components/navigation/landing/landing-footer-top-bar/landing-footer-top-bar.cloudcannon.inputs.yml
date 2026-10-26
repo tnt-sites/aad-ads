@@ -49,41 +49,15 @@ linkColor:
   type: select
   comment: Color of copyright row links.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors
 
 linkHoverColor:
   type: select
   comment: Color of copyright row links on hover.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors
 
 backgroundImage:
   type: object
@@ -110,25 +84,8 @@ backgroundColor:
   type: select
   comment: Footer background color fallback when no image is provided.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-bg)"
-        name: Base
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg-highlight)"
-        name: Highlight
-      - id: "var(--color-bg-brand)"
-        name: Brand
-      - id: "var(--color-bg-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-bg-dark)"
-        name: Dark
-      - id: "var(--color-bg-black)"
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 officeHoursAlignment:
   type: select
   comment: Align hours text within each office-hours row while keeping the day and time columns aligned.
@@ -149,75 +106,23 @@ addressLinkColor:
   type: select
   comment: Color of address links.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors
 addressLinkHoverColor:
   type: select
   comment: Color of address links on hover.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors
 phoneLinkColor:
   type: select
   comment: Color of phone links.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors
 phoneLinkHoverColor:
   type: select
   comment: Color of phone links on hover.
   options:
-    values:
-      - id: ""
-        name: None (default)
-      - id: "#fff"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-strong)"
-        name: Text (Strong)
-      - id: "var(--color-text-inverse)"
-        name: Text (Inverse)
+    allow_empty: true
+    values: _select_data.brandColors

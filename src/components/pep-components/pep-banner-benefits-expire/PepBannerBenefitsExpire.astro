@@ -6,7 +6,6 @@ import Image from "@core-elements/image/Image.astro";
 
 const {
   heading = "",
-  headingFontFamily = "",
   text = "",
   image = { source: "", alt: "" },
   stampImage = { source: "", alt: "" },
@@ -45,7 +44,6 @@ const htmlAttributes = Object.fromEntries(
         text={heading}
         level="h1"
         class="pep-banner-benefits-expire__heading"
-        fontFamily={headingFontFamily}
         data-prop="heading"
         editable={true}
       />

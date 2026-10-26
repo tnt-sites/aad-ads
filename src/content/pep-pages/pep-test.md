@@ -1,7 +1,6 @@
 ---
 _schema: pep-page
 title: New PEP Page
-pageTheme: playful-script
 landingMainNav:
   - _component: navigation/landing/landing-header-circle-icons
     logoSource: /images/logo.svg
@@ -48,7 +47,7 @@ landingFooter:
       - name: Privacy Policy
         path: privacy-policy.html
     legalBlurb: ""
-    backgroundColor: none
+    backgroundColor: "transparent"
     headingColor: ""
 pepSections:
   - _component: landing-page-components/new-patient-split-banner/top-bar
@@ -72,7 +71,7 @@ pepSections:
     textColor: var(--color-text)
     paddingVertical: xl
     heading: Resolve to Smile More in 2025
-    headingFontFamily: ""
+    fontHeadings: ""
     contentStyle: checklist
     showDivider: true
     text: >
@@ -110,7 +109,7 @@ pepSections:
     headingColor: var(--color-text)
     textColor: ""
     heading: Plan Ahead.<br />Save. Smile!
-    headingFontFamily: var(--font-accent)
+    fontHeadings: playwrite-ar-guides
     text: >-
       It seems like everything is more expensive these days. Dental care does
       not have to follow the trend. By starting now, we can work with you and
@@ -128,11 +127,11 @@ pepSections:
   - _component: pep-components/pep-banner-benefits-expire
     id: ""
     backgroundColor: base
-    borderColor: var(--color-accent)
+    borderColor: ""
     headingColor: var(--color-text-inverse)
     textColor: var(--color-text)
     heading: Let Your <br />Insurance <br />Help You Save
-    headingFontFamily:
+    fontHeadings:
     text: >
       We get it. Things are expensive. At the same time, millions of Americans
       pay for dental benefits they never use. We do not want that to happen to
@@ -158,7 +157,7 @@ pepSections:
     image:
       source: https://placehold.co/1920x900
       alt: Piggy bank banner image
-    headingFontFamily: ""
+    fontHeadings: ""
     headingColor: ""
     HeadingSpanColor: var(--color-brand-secondary)
     AccentWordColor: var(--color-brand)
@@ -214,7 +213,7 @@ pepSections:
         heading: Callout<br>Heading Four
   - _component: pep-components/pep-callout-shadows
     heading: How We Can Help Transform Your Smile
-    headingBackgroundColor: accent
+    headingBackgroundColor: var(--color-bg-accent)
     headingTextColor: var(--color-text)
     itemHeadingColor: var(--color-brand-secondary)
     backgroundColor: base

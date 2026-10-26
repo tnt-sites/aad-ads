@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the table section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 heading:
   type: text
   comment: Section heading displayed above the table. Supports <br> for line breaks.
@@ -25,17 +12,8 @@ headingLineColor:
   type: select
   comment: Color of the decorative horizontal lines flanking the heading.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "#0A4172"
-        name: Navy
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 siteName:
   type: text
@@ -68,43 +46,15 @@ headerColor:
   type: select
   comment: Background color of the table header row.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 headerTextColor:
   type: select
   comment: Text color of the table header row.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "#0A4172"
-        name: Navy
-      - id: "#000"
-        name: Black
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 otherColumnLabel:
   type: text
@@ -178,3 +128,25 @@ rows:
                     name: "✓ Check"
                   - id: cross
                     name: "✗ Cross"
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

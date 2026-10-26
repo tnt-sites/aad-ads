@@ -78,7 +78,7 @@ landingFooter:
       positionVertical: top
       positionHorizontal: center
     backgroundGradient:
-    backgroundColor: dark
+    backgroundColor: var(--color-bg-dark)
     officeHoursAlignment: right
     linkColor: ''
     linkHoverColor: ''
@@ -159,9 +159,9 @@ landingPageSections:
       is welcome. We offer same-day appointments, the latest technology and a
       relaxing atmosphere.</p><p><span class="big-text">We want you to
       love</span> visiting Dental Site.</p>
-    backgroundColor: white
+    backgroundColor: base
     textColor: black
-    blurbBackgroundColor: white
+    blurbBackgroundColor: "#ffffff"
   - _component: landing-page-components/new-patient-emergency-combo/split-section
     id: ''
     backgroundColor: base
@@ -202,7 +202,7 @@ landingPageSections:
     reviewText: lorem ipsum
     author: First Last
     textColor: var(--color-text-inverse)
-    mobileTextColor: '#000'
+    mobileTextColor: "#000000"
     authorAlignX: left
     starColor: var(--color-star)
   - _component: landing-page-components/new-patient-emergency-combo/insurance-text

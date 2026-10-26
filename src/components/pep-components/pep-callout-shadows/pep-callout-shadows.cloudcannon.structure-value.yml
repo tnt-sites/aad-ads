@@ -3,8 +3,10 @@ icon: dashboard
 description: Callout grid with shadowed cards for PEP landing pages.
 value:
   _component: pep-components/pep-callout-shadows
+  fontHeadings: ""
+  fontBody: ""
   heading: How We Can Help Transform Your Smile
-  headingBackgroundColor: accent
+  headingBackgroundColor: var(--color-bg-accent)
   headingTextColor: "var(--color-text)"
   itemHeadingColor: "var(--color-brand)"
   backgroundColor: base

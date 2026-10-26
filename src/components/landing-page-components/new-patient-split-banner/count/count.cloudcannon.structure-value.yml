@@ -3,6 +3,8 @@ icon: bar_chart
 description: A row of icon + label items highlighting key practice differentiators.
 value:
   _component: landing-page-components/new-patient-split-banner/count
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   items:

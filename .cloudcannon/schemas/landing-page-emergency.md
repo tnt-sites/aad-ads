@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-emergency
 title: New Emergency Landing Page
-pageTheme: ""
 landingStyle: emergency
 landingMainNav:
   - _component: navigation/landing/landing-header

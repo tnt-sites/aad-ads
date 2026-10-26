@@ -3,6 +3,8 @@ icon: view_column
 description: Text and image split section matching the Invisalign LP style.
 value:
   _component: landing-page-components/invisalign/split
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: New Smile, New You
   body: Congratulations! You are about to make a decision that will change your life.

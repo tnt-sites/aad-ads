@@ -3,6 +3,8 @@ icon: reviews
 description: Full-width review quote section with a background image, star rating, and author attribution.
 value:
   _component: landing-page-components/new-patient-split-banner/reviews
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   backgroundImage:
@@ -15,6 +17,6 @@ value:
   googleLogoImage:
     source: ""
     alt: Google Reviews
-  starColor: "#febb21"
+  starColor: var(--color-star)
 _inputs_from_glob:
   - /src/components/landing-page-components/new-patient-split-banner/reviews/reviews.cloudcannon.inputs.yml

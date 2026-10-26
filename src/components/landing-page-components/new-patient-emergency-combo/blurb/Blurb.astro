@@ -6,11 +6,19 @@ const {
   text = "",
   backgroundColor = "base",
   class: className,
-  blurbBackgroundColor = "none",
+  blurbBackgroundColor = "",
   editable = true,
   ...rest
 } = Astro.props;
 
+// CSS value from _select_data.backgroundColors; bare keywords (e.g. "accent")
+// are legacy values and map to the matching --color-bg-* token.
+const blurbBg =
+  !blurbBackgroundColor || blurbBackgroundColor === "none"
+    ? ""
+    : /^(var\(|#|transparent)/.test(blurbBackgroundColor)
+      ? blurbBackgroundColor
+      : `var(--color-bg-${blurbBackgroundColor})`;
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
@@ -22,12 +30,7 @@ const htmlAttributes = Object.fromEntries(
   backgroundColor={backgroundColor}
   {...htmlAttributes}
 >
-  <article
-    class="looking"
-    style={blurbBackgroundColor !== "none"
-      ? `background-color: var(--color-bg-${blurbBackgroundColor});`
-      : undefined}
-  >
+  <article class="looking" style={blurbBg ? `background-color: ${blurbBg}` : undefined}>
     <Text size="lg" alignX="center">
       <Fragment set:html={text} />
     </Text>

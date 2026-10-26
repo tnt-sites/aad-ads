@@ -21,7 +21,6 @@ type Props = {
     head_scripts?: string[];
     footer_scripts?: string[];
     extraFonts?: string[];
-    pageTheme?: string;
   };
   title?: string;
   description?: string;
@@ -154,7 +153,6 @@ const resolvedFooter = {
   head_scripts={headScripts}
   footer_scripts={footerScripts}
   extraFontLinks={extraFontLinks}
-  pageTheme={frontmatter?.pageTheme}
 >
   <Components contentSections={[resolvedHeader]} propName="landingMainNav" editable={false} />
   <main data-pagefind-body>

@@ -6,71 +6,22 @@ headingBackgroundColor:
   type: select
   comment: Background color for the heading.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 shadowColor:
   type: select
   comment: Color of the card shadow. Uses the same color tokens as headings. Choose a theme color or use a preset.
   options:
-    values:
-      - id: var(--color-text)
-        name: Text (Default)
-      - id: var(--color-text-inverse)
-        name: Text Inverse (White)
-      - id: var(--color-brand)
-        name: Brand (Primary)
-      - id: var(--color-brand-secondary)
-        name: Brand (Secondary)
-      - id: var(--color-brand-muted)
-        name: Brand (Tertiary)
-      - id: var(--color-accent)
-        name: Accent
-      - id: var(--color-bg-base)
-        name: Base
-      - id: var(--color-bg-surface)
-        name: Surface
-      - id: var(--color-bg-accent)
-        name: Accent BG
-      - id: var(--color-bg-highlight)
-        name: Highlight BG
-      - id: var(--color-bg-dark)
-        name: Dark BG
-      - id: var(--color-bg-inverse)
-        name: Black
+    allow_empty: true
+    values: _select_data.brandColors
 
 backgroundColor:
   type: select
   comment: Background color of the section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 
 items:
   type: array
@@ -94,3 +45,25 @@ items:
     heading:
       type: text
       comment: Heading for the callout item.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

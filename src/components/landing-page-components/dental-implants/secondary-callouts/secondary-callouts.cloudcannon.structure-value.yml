@@ -3,6 +3,8 @@ icon: view_column
 description: Dark background strip with portrait-style callout cards — map, reviews, booking, payments.
 value:
   _component: landing-page-components/dental-implants/secondary-callouts
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   items:
@@ -34,7 +36,7 @@ value:
       iconColor: ""
       iconPosition: "middle"
       link: /financing/
-  sectionColor: "#000"
+  sectionColor: var(--color-bg-black)
   accentColor: "var(--color-brand-secondary)"
 _inputs_from_glob:
   - /src/components/landing-page-components/dental-implants/secondary-callouts/secondary-callouts.cloudcannon.inputs.yml

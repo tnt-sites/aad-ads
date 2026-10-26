@@ -3,6 +3,8 @@ icon: add
 description: Description for Landing Page Form component.
 value:
   _component: landing-page-components/shared/landing-page-form
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: Landing Page Form <span class="heading-color">Heading</span>
   formAction: ""

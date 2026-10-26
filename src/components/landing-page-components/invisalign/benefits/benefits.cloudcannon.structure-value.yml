@@ -3,6 +3,8 @@ icon: checklist
 description: Side-by-side Braces vs Invisalign benefits with center image.
 value:
   _component: landing-page-components/invisalign/benefits
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: Benefits of Braces & Invisalign
   leftTitle: Braces
@@ -20,7 +22,7 @@ value:
   centerImage:
     source: ""
     alt: Patient with braces and aligners
-  backgroundColor: "var(--color-brand)"
+  backgroundColor: var(--color-bg-brand)
   backgroundImage:
     source: ""
     alt: ""

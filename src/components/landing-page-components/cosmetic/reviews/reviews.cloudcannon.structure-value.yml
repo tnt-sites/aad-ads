@@ -3,6 +3,8 @@ icon: star_rate
 description: Two-column section with a patient review quote on the left and an interactive before/after image comparison slider on the right.
 value:
   _component: landing-page-components/cosmetic/reviews
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   heading: "Patients Love Us"

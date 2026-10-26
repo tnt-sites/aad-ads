@@ -3,6 +3,8 @@ icon: add
 description: Description for Insurance Text component.
 value:
   _component: landing-page-components/new-patient-emergency-combo/insurance-text
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   heading: "Insurance Text Heading"
   text: "Insurance Text"

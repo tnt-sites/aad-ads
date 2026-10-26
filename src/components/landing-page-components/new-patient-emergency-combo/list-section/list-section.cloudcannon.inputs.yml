@@ -2,76 +2,28 @@ backgroundColor:
   type: select
   comment: Background color used behind the grid.
   options:
-    values:
-      - id: none
-        name: None
-      - id: brand
-        name: Brand (Primary)
-      - id: brand-secondary
-        name: Brand (Secondary)
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 headingColor:
   type: select
   comment: Color of the list section headings.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-inverse)"
-        name: Inverse (White)
-      - id: "#ffffff"
-        name: White
-      - id: "#000000"
-        name: Black
+    allow_empty: true
+    values: _select_data.brandColors
 
 listTextColor:
   type: select
   comment: Color of list item text.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-text)"
-        name: Text
-      - id: "var(--color-text-inverse)"
-        name: Inverse (White)
-      - id: "#ffffff"
-        name: White
-      - id: "#000000"
-        name: Black
+    allow_empty: true
+    values: _select_data.brandColors
 
 checkmarkColor:
   type: select
   comment: Color of the Fontello checkmark icons.
   options:
-    values:
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "#DDCA52"
-        name: Gold
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "#000000"
-        name: Black
+    allow_empty: true
+    values: _select_data.brandColors
 items:
   type: array
   comment: Blocks for each image + heading + text
@@ -140,3 +92,25 @@ $.items[*].listText:
 # text:
 #   type: text
 #   comment: The text content for the component.
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

@@ -3,13 +3,14 @@ icon: dashboard
 description: Full-width PEP hero banner with an overlaid heading, body copy, stamp graphic, and desktop-only background image.
 value:
   _component: pep-components/pep-banner-benefits-expire
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
-  borderColor: "var(--color-accent)"
+  borderColor: ""
   headingColor: "var(--color-text-inverse)"
   textColor: "var(--color-text)"
   heading: "Let Your <br>Insurance <br>Help You Save"
-  headingFontFamily: ""
   text: |
     We get it. Things are expensive. At the same time, millions of Americans pay for dental benefits they never use. We do not want that to happen to you. In fact, letting your insurance help you pay for the dental care you need now saves you a lot of money in the long run.
 

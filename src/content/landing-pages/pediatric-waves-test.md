@@ -1,7 +1,6 @@
 ---
 _schema: landing-page-pediatric-waves
 title: Pediatric Waves Test
-pageTheme: pediatric-waves
 landingStyle: pediatric-waves
 landingMainNav:
   - _component: navigation/landing/landing-header-pediatric-waves
@@ -26,33 +25,33 @@ landingMainNav:
         uppercase: true
     offices: []
     addressLinkColor: var(--color-brand)
-    addressLinkHoverColor: '#fff'
+    addressLinkHoverColor: "#ffffff"
     phoneLinkColor: var(--color-brand-secondary)
     phoneLinkHoverColor: var(--color-brand)
     mobileCallLabel: Call Now
     mobileRequestLabel: Request a FREE Consultation
     mobileRequestHref: ''
     mobileBarBackground: ''
-    mobileCallBackground: '#000'
-    mobileRequestBackground: var(--color-brand-secondary)
-    mobileCallTextColor: '#fff'
-    mobileCallSmallTextColor: '#fff'
+    mobileCallBackground: var(--color-bg-black)
+    mobileRequestBackground: var(--color-bg-brand-secondary)
+    mobileCallTextColor: "#ffffff"
+    mobileCallSmallTextColor: "#ffffff"
     mobileRequestTextColor: var(--color-brand)
-    mobileRequestSmallTextColor: '#fff'
+    mobileRequestSmallTextColor: "#ffffff"
     mobileMapLabel: Map
     mobileMapHref: ''
-    mobileApptBackground: var(--color-accent-1)
-    mobileMapBackground: var(--color-accent-2)
+    mobileApptBackground: var(--color-brand-secondary)
+    mobileMapBackground: var(--color-brand)
 landingFooter:
   - _component: navigation/landing/landing-footer-pediatric-waves
     logoSource: /images/logo.svg
     logoAlt: Logo
     contactTitle: Contact Us
     offices: []
-    phoneLinkColor: '#fff'
+    phoneLinkColor: "#ffffff"
     phoneLinkHoverColor: var(--color-brand)
     addressLinkColor: var(--color-brand)
-    addressLinkHoverColor: '#fff'
+    addressLinkHoverColor: "#ffffff"
     legalLinks:
       - name: Privacy Policy
         path: /privacy-policy/
@@ -188,7 +187,7 @@ landingPageSections:
     id: friendly-expertise
     backgroundColor: base
     heading: Friendly <span>Expertise</span>
-    headingFontFamily: ''
+    fontHeadings: ''
     paragraphs:
       - body: >-
           We want kids to love visiting the dentist. Our team provides
@@ -239,7 +238,7 @@ landingPageSections:
     reviewLogo:
       source: https://placehold.co/220x80
       alt: Google logo
-    badgeBackgroundColor: var(--color-accent-2)
+    badgeBackgroundColor: var(--color-bg-brand)
     headingColor: ''
     waveTopImage:
       source: ''
@@ -252,9 +251,9 @@ landingPageSections:
       alt: ''
   - _component: landing-page-components/pediatric-waves/split
     id: one-stop-convenience
-    backgroundColor: var(--color-bg-surface)
+    backgroundColor: surface
     heading: One-Stop Convenience
-    headingFontFamily: ''
+    fontHeadings: ''
     paragraphs:
       - body: >-
           Life is busy, especially with kids. We offer everything from routine
@@ -296,7 +295,7 @@ landingPageSections:
     id: flexible-affordable
     backgroundColor: base
     heading: Flexible & <span>Affordable</span>
-    headingFontFamily: ''
+    fontHeadings: ''
     paragraphs:
       - body: >-
           If you have dental insurance, we are likely in-network and we work

@@ -3,6 +3,8 @@ icon: contact_page
 description: A call-to-action section with a doctor photo, phone number link, and embedded CTM appointment form iframe. Optional bottom text block displayed over the section background.
 value:
   _component: pep-components/pep-form-ctm
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: none
   contentBackgroundColor: ""

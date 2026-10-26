@@ -65,7 +65,7 @@ landingPageSections:
     figcaption: "Dr. Jane Smith | Dr. John Doe"
     buttonSections: []
     accentColor: "var(--color-brand)"
-    headingColor: "#ccc"
+    headingColor: ""
   - _component: landing-page-components/dental-implants/service-callouts
     id: ""
     backgroundColor: base
@@ -95,7 +95,7 @@ landingPageSections:
           alt: All-on-4 Implants
         text: "A full arch of teeth supported by just four implants — same-day results."
         link: /all-on-4/
-    headingColor: "var(--color-heading)"
+    headingColor: ""
     accentColor: "var(--color-brand)"
   - _component: landing-page-components/dental-implants/split
     id: ""
@@ -122,7 +122,7 @@ landingPageSections:
         width: md
     reverse: false
     imageNoShadow: false
-    headingColor: "var(--color-heading)"
+    headingColor: ""
     accentColor: "var(--color-brand)"
   - _component: landing-page-components/dental-implants/split
     id: ""
@@ -138,7 +138,7 @@ landingPageSections:
     buttonSections: []
     reverse: true
     imageNoShadow: false
-    headingColor: "var(--color-heading)"
+    headingColor: ""
     accentColor: "var(--color-brand)"
   - _component: landing-page-components/dental-implants/secondary-callouts
     id: ""
@@ -172,7 +172,7 @@ landingPageSections:
         iconColor: ""
         iconPosition: "middle"
         link: /financing/
-    sectionColor: "#000000"
+    sectionColor: var(--color-bg-black)
     accentColor: "var(--color-brand-secondary)"
   - _component: landing-page-components/dental-implants/split
     id: ""
@@ -188,7 +188,7 @@ landingPageSections:
     buttonSections: []
     reverse: true
     imageNoShadow: false
-    headingColor: "var(--color-heading)"
+    headingColor: ""
     accentColor: "var(--color-brand)"
   - _component: landing-page-components/dental-implants/split
     id: ""
@@ -215,6 +215,6 @@ landingPageSections:
         width: md
     reverse: false
     imageNoShadow: false
-    headingColor: "var(--color-heading)"
+    headingColor: ""
     accentColor: "var(--color-brand)"
 ---

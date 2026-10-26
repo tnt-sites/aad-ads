@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the section behind the callout cards.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 overlapBanner:
   type: checkbox
   comment: When enabled, the cards overlap the section above by 100px (designed to sit below the banner). Disable if placing elsewhere on the page.
@@ -75,54 +62,48 @@ primaryCardColor:
   type: select
   comment: Background color for the first and last cards.
   options:
-    values:
-      - id: ""
-        name: Default (Light Gray)
-      - id: "var(--color-bg-surface)"
-        name: Surface
-      - id: "var(--color-bg-accent)"
-        name: Accent
-      - id: "var(--color-bg)"
-        name: Base
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 accentCardColor:
   type: select
   comment: Background color for the middle (accent) card.
   options:
-    values:
-      - id: ""
-        name: Default (Brand)
-      - id: "var(--color-bg-brand)"
-        name: Brand
-      - id: "var(--color-bg-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-bg-surface)"
-        name: Surface
+    allow_empty: true
+    values: _select_data.backgroundColors
 
 accentCardTextColor:
   type: select
   comment: Text color for the middle (accent) card.
   options:
-    values:
-      - id: ""
-        name: Default (White)
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-text)"
-        name: Body Text
+    allow_empty: true
+    values: _select_data.brandColors
 
 bulletColor:
   type: select
   comment: Color of the + bullet markers in card lists.
   options:
-    values:
-      - id: ""
-        name: Default (Brand)
-      - id: "var(--color-brand)"
-        name: Brand
-      - id: "var(--color-brand-secondary)"
-        name: Brand Secondary
-      - id: "var(--color-brand-muted)"
-        name: Brand Tertiary
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

@@ -2,21 +2,8 @@ backgroundColor:
   type: select
   comment: Background color of the banner section.
   options:
-    values:
-      - id: none
-        name: None
-      - id: base
-        name: Base
-      - id: surface
-        name: Surface
-      - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
-      - id: dark
-        name: Dark
-      - id: black
-        name: Black
+    allow_empty: true
+    values: _select_data.sectionBackgrounds
 
 backgroundImage:
   type: file
@@ -49,75 +36,29 @@ borderColor:
   type: select
   comment: Color of the bottom border stripe. Leave blank to use the default brand color.
   options:
-    values:
-      - id: ""
-        name: Default (Brand)
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "var(--color-accent)"
-        name: Accent
-      - id: "#000000"
-        name: Black
-      - id: "#ffffff"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 headingColor:
   type: select
   comment: Color of the H1 heading text. Leave blank to use the theme default.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 dividerColor:
   type: select
   comment: Color of the short divider under the heading. Leave blank to match the heading color.
   options:
-    values:
-      - id: ""
-        name: Default (Match Heading)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 textColor:
   type: select
   comment: Color of the body copy. Leave blank to inherit the component default.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
+    allow_empty: true
+    values: _select_data.brandColors
 
 paddingVertical:
   type: select
@@ -144,13 +85,6 @@ paddingVertical:
 heading:
   type: text
   comment: Main H1 heading. Supports <br> for manual line breaks.
-
-headingFontFamily:
-  type: select
-  comment: Heading font. Leave blank for the headings font. "Accent" is the decorative font set by the page theme.
-  options:
-    allow_empty: true
-    values: _select_data.fontRoles
 
 contentStyle:
   type: select
@@ -201,34 +135,34 @@ checkColor:
   type: select
   comment: Color of the oversized checkmarks in checklist mode.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
 
 checkmarkShadowColor:
   type: select
   comment: Shadow color behind checklist checkmarks.
   options:
-    values:
-      - id: ""
-        name: Default
-      - id: "var(--color-brand)"
-        name: Brand (Primary)
-      - id: "var(--color-brand-secondary)"
-        name: Brand (Secondary)
-      - id: "var(--color-brand-muted)"
-        name: Brand (Tertiary)
-      - id: "var(--color-text)"
-        name: Dark
-      - id: "var(--color-text-inverse)"
-        name: White
+    allow_empty: true
+    values: _select_data.brandColors
+
+fontHeadings:
+  type: select
+  comment: Heading font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name
+
+fontBody:
+  type: select
+  comment: Body text font for this section. Leave blank to use the site font. Devs add fonts in src/data/fonts.json.
+  options:
+    allow_empty: true
+    values: data.fonts
+    value_key: id
+    preview:
+      text:
+        - key: name

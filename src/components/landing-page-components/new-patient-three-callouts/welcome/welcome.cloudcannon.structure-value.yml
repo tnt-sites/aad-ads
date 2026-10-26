@@ -3,6 +3,8 @@ icon: waving_hand
 description: Centered text section with accent-colored emphasis phrases at the start of each paragraph (e.g. "We understand.", "We are different,").
 value:
   _component: landing-page-components/new-patient-three-callouts/welcome
+  fontHeadings: ""
+  fontBody: ""
   id: ""
   backgroundColor: base
   paragraphs:
