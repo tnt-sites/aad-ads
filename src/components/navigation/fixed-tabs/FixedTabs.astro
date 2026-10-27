@@ -109,8 +109,11 @@ if (!_component && visibleTabs.length === 0) {
     }
 
     a {
-      display: block;
+      align-items: center;
+      display: flex;
       font-size: 14px;
+      gap: 5px;
+      justify-content: center;
       font-weight: 700;
       color: var(--color-text-inverse);
       position: relative;
@@ -200,7 +203,7 @@ if (!_component && visibleTabs.length === 0) {
       display: flex;
 
       a {
-        padding: 12px 0;
+        padding: 13px 5px;
         flex: 1;
 
         span {

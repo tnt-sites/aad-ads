@@ -87,14 +87,12 @@ landingPageSections:
       - itemClass: call
         href: tel:+12055579298
         icon: phone
-        textMobile: "Call "
-        textStrong: Our Office
+        textMobile: Call
       - itemClass: map
         href: https://maps.app.goo.gl/U7qqqkBHWFuD8oHk8
         target: _blank
         icon: map-pin
-        textMobile: "Map "
-        textStrong: Us
+        textMobile: Map
   - _component: landing-page-components/new-patient-three-callouts/banner
     fontHeadings: ""
     fontBody: ""
