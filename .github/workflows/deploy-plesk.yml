@@ -1,0 +1,63 @@
+name: Build Plesk deploy branch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aad-ads-plesk-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DISABLE_COMPONENT_LIBRARY: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build:no-library
+      - run: npm run package:plesk
+
+      - name: Publish static output to deploy branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf "$RUNNER_TEMP/aad-ads-deploy"
+          mkdir -p "$RUNNER_TEMP/aad-ads-deploy"
+          cp -a deploy/. "$RUNNER_TEMP/aad-ads-deploy/"
+          cd "$RUNNER_TEMP/aad-ads-deploy"
+
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          if git ls-remote --exit-code --heads origin deploy >/dev/null 2>&1; then
+            git fetch --depth=1 origin deploy
+            git reset --soft FETCH_HEAD
+          else
+            git checkout --orphan deploy
+          fi
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Deploy output is unchanged."
+            exit 0
+          fi
+
+          git commit -m "deploy: ${GITHUB_SHA}"
+          git push origin HEAD:deploy
