@@ -9,6 +9,7 @@ landingPageSections:
     id: sitemap
     backgroundColor: base
     heading: Sitemap
+    practice: Alabaster Aesthetic Dentistry
     hiddenPages:
       - thanks
       - sitemap

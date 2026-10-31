@@ -9,6 +9,10 @@ heading:
   type: text
   comment: Page heading (h1).
 
+practice:
+  type: text
+  comment: The name in "Browse the pages available on …".
+
 hiddenPages:
   type: array
   comment: >-

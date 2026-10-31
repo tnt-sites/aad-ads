@@ -8,6 +8,7 @@ value:
   id: ""
   backgroundColor: base
   heading: Sitemap
+  practice: ""
   hiddenPages:
     - thanks
     - sitemap

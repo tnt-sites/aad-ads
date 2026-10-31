@@ -1,10 +1,10 @@
 ---
 import CustomSection from "@builders/custom-section/CustomSection.astro";
-import Heading from "@core-elements/heading/Heading.astro";
 import { getCollection } from "astro:content";
 
 const {
   heading = "Sitemap",
+  practice = "",
   hiddenPages = [] as string[],
   headingColor = "",
   backgroundColor = "base",
@@ -37,18 +37,22 @@ const pages = (await getCollection("landing-pages"))
   style={inlineStyle || undefined}
   {...htmlAttributes}
 >
-  <div class="block text-center">
+  <div class="block">
     <article>
-      {heading && <Heading text={heading} level="h1" alignX="center" data-prop="heading" />}
-      <ul>
-        {
-          pages.map((page) => (
-            <li>
-              <a href={`/landing/${page.id}/`}>{page.data.title || page.id}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <p class="eyebrow">Explore</p>
+      <h1 data-prop="heading">{heading || "Sitemap"}</h1>
+      <p class="intro">Browse the pages available on {practice || "this practice"}.</p>
+      <nav aria-label="Sitemap pages">
+        <ul>
+          {
+            pages.map((page) => (
+              <li>
+                <a href={`/landing/${page.id}/`}>{page.data.title || page.id}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
     </article>
   </div>
 </CustomSection>
@@ -56,54 +60,75 @@ const pages = (await getCollection("landing-pages"))
 <style>
   .landing-sitemap article {
     margin: 0 auto;
-    max-width: 850px;
-    padding: 60px 0 50px;
+    max-width: 900px;
+    padding: 90px 0 100px;
   }
 
-  .landing-sitemap article :global(.heading) {
+  .landing-sitemap .eyebrow {
+    margin: 0;
     color: var(--sitemap-heading-color, var(--color-brand));
-    font-family: var(--font-headings);
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.2;
-    margin: 0 0 30px;
-    text-align: inherit;
+    font: 700 21px/1.25 var(--font-headings);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .landing-sitemap h1 {
+    margin: 12px 0 28px;
+    color: var(--sitemap-heading-color, var(--color-brand));
+    font: 400 clamp(48px, 6vw, 72px) / 1.1 var(--font-headings);
+  }
+
+  .landing-sitemap .intro {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .landing-sitemap nav {
+    margin-top: 44px;
   }
 
   .landing-sitemap ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: grid;
+    gap: 14px;
+    text-align: left;
   }
 
   .landing-sitemap li {
-    font-size: 20px;
-    margin: 15px 0;
+    margin: 0;
     padding: 0;
   }
 
-  /* Drop the global `main ul li` bullet */
   .landing-sitemap li::before {
     content: none;
   }
 
   .landing-sitemap a {
-    color: var(--color-link);
+    display: block;
+    border: 1px solid #d9e2e8;
+    color: var(--sitemap-heading-color, var(--color-brand));
+    font-size: 22px;
+    font-weight: 700;
+    padding: 18px 22px;
     text-decoration: none;
   }
 
   .landing-sitemap a:hover {
-    color: var(--color-link-hover);
+    background: var(--sitemap-heading-color, var(--color-brand));
+    color: #fff;
   }
 
-  @media (min-width: 1024px) {
+  @media (width < 1025px) {
     .landing-sitemap article {
-      padding: 120px 0 80px;
+      padding: 64px 0 80px;
     }
 
-    .landing-sitemap article :global(.heading) {
-      font-size: 55px;
+    .landing-sitemap .intro,
+    .landing-sitemap a {
+      font-size: 19px;
     }
   }
 </style>
